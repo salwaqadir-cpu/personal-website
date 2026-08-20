@@ -1,0 +1,274 @@
+import Link from "next/link";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+
+const pillars = [
+  {
+    number: "01",
+    title: "Intention",
+    icon: (
+      <svg aria-hidden="true" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="15" />
+        <circle cx="24" cy="24" r="7" />
+        <path d="M24 6v6m0 24v6M6 24h6m24 0h6" />
+      </svg>
+    ),
+    copy: "Know what you’re working toward, why you’re doing it and what it should feel like in your body. We choose and explain goals, exercises, nutrition and priorities with purpose—based on your body and your life—so every session has a clear focus and a deeper reason behind it.",
+  },
+  {
+    number: "02",
+    title: "Strength",
+    icon: (
+      <svg aria-hidden="true" viewBox="0 0 48 48">
+        <path d="M8 21h6v6H8zm26 0h6v6h-6zM14 18h5v12h-5zm15 0h5v12h-5zM19 22h10v4H19z" />
+      </svg>
+    ),
+    copy: "Build physical and mental strength through progressive training and education. As you understand your body, your exercises and your progress, you develop the confidence to make informed choices—and the self-trust to believe in what you’re capable of.",
+  },
+  {
+    number: "03",
+    title: "Sisterhood",
+    icon: (
+      <svg aria-hidden="true" viewBox="0 0 48 48">
+        <circle cx="17" cy="17" r="5" />
+        <circle cx="32" cy="18" r="4" />
+        <path d="M8 38c1-8 5-12 10-12s9 4 10 12m-2-9c2-3 4-5 7-5 4 0 7 4 8 11" />
+      </svg>
+    ),
+    copy: "We help you communicate your goals and invite your loved ones into the journey so they can support you—and benefit from the stronger, more capable person you’re becoming. When support is limited, your coach and the WBC sisterhood are here for you to lean on.",
+  },
+];
+
+const credentials = [
+  "12+ years of full-time coaching women in strength + fitness",
+  "Fitness educator + workshop facilitator for personal trainers",
+  "Advanced Fascial Stretch Therapy — Level 3",
+  "Exercise Therapy + Nutrition Coaching",
+  "Barbell Strength + Hypertrophy Training",
+  "Competitive Powerlifter · Powerlifting Coach · Provincial Referee",
+];
+
+const services = [
+  {
+    tag: "COACHING",
+    title: "Women’s Strength Coaching",
+    copy: "One-to-one coaching to help you get stronger, feel more confident and make your training work with your goals, priorities and current chapter of life.",
+    meta: (
+      <>
+        <span>Mississauga and Milton, Ontario</span>
+        <span>Limited one-to-one availability · Inquire about current openings</span>
+      </>
+    ),
+    featured: true,
+  },
+  {
+    tag: "MENTORSHIP",
+    title: "Fitness Business Mentorship",
+    copy: "Focused one-to-one calls for women building careers and businesses in fitness. Bring client questions, sales challenges or business-development decisions and we’ll troubleshoot them together with practical, experience-led guidance.",
+    meta: <span>Limited one-to-one availability · Inquire about current openings</span>,
+  },
+  {
+    tag: "EDUCATION",
+    title: "Workshops + Speaking",
+    copy: "Practical education for women, personal trainers and communities on strength, training and sustainable health.",
+    meta: <span>In-person + virtual</span>,
+  },
+  {
+    tag: "COLLABORATION",
+    title: "Brand + Media Partnerships",
+    copy: "Values-aligned collaborations in women’s health, fitness, strength, recovery and longevity.",
+    meta: <span>Partnership inquiries</span>,
+  },
+];
+
+export default function Home() {
+  return (
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
+      <SiteHeader />
+      <main id="main">
+        <section className="hero shell">
+          <div className="hero-copy">
+            <p className="eyebrow">WOMEN’S STRENGTH COACH · EDUCATOR · ATHLETE · FOUNDER</p>
+            <h1>
+              Women don’t need to be told to do more.{" "}
+              <span className="hero-highlight">They need to be built up so they can.</span>
+            </h1>
+            <p className="hero-lede">
+              Through my signature From Bodyweight to Barbells program, I help women transform physically and mentally, fall in love with fitness and become confident barbell lifters. I help them build strength that supports them through every chapter of life and benefits the people they love. Every stage of that journey is grounded in the three pillars of The Women’s Barbell Club: Intention, Strength and Sisterhood.
+            </p>
+            <div className="hero-actions">
+              <Link className="button button-primary" href="#work">Work with me</Link>
+              <Link className="text-link" href="#about">My story</Link>
+            </div>
+            <div aria-label="Professional highlights" className="hero-proof">
+              <div><strong>12+</strong><span>years coaching women</span></div>
+              <div><strong>3</strong><span>pillars for lasting progress</span></div>
+              <div><strong>1</strong><span>goal: strength for real life</span></div>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <div className="shape shape-one" />
+            <div className="shape shape-two" />
+            <div className="photo-frame">
+              <img alt="Salwa Qadir strength training outdoors" className="site-photo hero-photo" src="/assets/hero.jpg" />
+            </div>
+            <div aria-label="Train, learn, live" className="hero-note">
+              <span>TRAIN</span><span>LEARN</span><span>LIVE</span>
+            </div>
+          </div>
+        </section>
+
+        <section aria-label="Core themes" className="marquee">
+          <div className="marquee-track">
+            {["MOVE WITH PURPOSE", "EAT TO SUPPORT YOUR LIFE", "RECOVER ON PURPOSE", "FEEL MORE CAPABLE", "GET STRONGER", "MOVE WITH PURPOSE", "EAT TO SUPPORT YOUR LIFE", "RECOVER ON PURPOSE"].map((item, index) => (
+              <span className="marquee-item" key={`${item}-${index}`}>{item}<i>•</i></span>
+            ))}
+          </div>
+        </section>
+
+        <section className="statement section shell split-editorial" id="approach">
+          <div className="editorial-copy">
+            <p className="eyebrow">MY APPROACH</p>
+            <h2>Strength has to work<br /><em>while life is happening.</em></h2>
+            <p className="statement-copy">We train your body while working with the life you’re already living. As you get physically stronger, you also practise adjusting, prioritizing, recovering, following through and making room for what matters to you. Confidence, self-trust and mental strength improve through the same process—not afterward. The goal isn’t to finish becoming strong and then use it. It’s to become stronger while living your life and get better at doing both.</p>
+          </div>
+          <div className="section-photo-wrap approach-photo-wrap">
+            <img alt="Salwa Qadir seated with a barbell and stability ball" className="site-photo" src="/assets/approach.jpg" />
+          </div>
+        </section>
+
+        <section aria-labelledby="wbc-framework-heading" className="pillars shell">
+          <div className="pillar-intro">
+            <p className="eyebrow">THE WBC FRAMEWORK</p>
+            <h2 id="wbc-framework-heading">Three pillars.<br /><em>One connected approach.</em></h2>
+            <p>We use Intention, Strength and Sisterhood to connect your training, nutrition, recovery and real life—so you can achieve your goals, keep evolving through every chapter and never have to start from scratch again.</p>
+          </div>
+          {pillars.map((pillar) => (
+            <article className="pillar-card" key={pillar.number}>
+              <span className="pillar-number">{pillar.number}</span>
+              {pillar.icon}
+              <h3>{pillar.title}</h3>
+              <p>{pillar.copy}</p>
+            </article>
+          ))}
+        </section>
+
+        <div className="foundations-visual">
+          <img alt="Salwa Qadir training outdoors with her daughter" className="site-photo wide-photo" src="/assets/foundations.jpg" />
+        </div>
+
+        <section className="statement section shell split-editorial" id="values">
+          <div className="editorial-copy">
+            <p className="eyebrow">COACHING THE WOMAN IN FRONT OF ME</p>
+            <h2>Your goals matter.<br /><em>So do your values, culture and priorities.</em></h2>
+            <p className="statement-copy">Growing up across cultures taught me early that women can have very different relationships with family, food, movement, time and personal goals. I don’t expect you to fit yourself into a generic version of fitness. We shape strength and wellness around who you are and the chapter of life you’re in—respecting your values, culture and priorities while helping you get stronger in the life you actually live.</p>
+          </div>
+          <div className="section-photo-wrap values-photo-wrap">
+            <img alt="Salwa Qadir beside a stability ball and water bottle" className="site-photo" src="/assets/values.jpg" />
+          </div>
+        </section>
+
+        <section className="about section" id="about">
+          <div className="shell about-grid">
+            <div className="about-visual">
+              <div className="about-photo">
+                <img alt="Salwa Qadir smiling during a candid family fitness moment" className="site-photo about-image" src="/assets/about.jpg" />
+              </div>
+              <div className="lavender-card">STRENGTH<br />IS A SKILL.</div>
+            </div>
+            <div className="about-copy">
+              <p className="eyebrow">ABOUT SALWA</p>
+              <h2>I learned how to get stronger in the middle of a full life.</h2>
+              <p>I’m a Women’s Strength Coach, educator, competitive powerlifter and mom. I didn’t start out loving weights. My relationship with fitness changed when I stopped asking how to become smaller and started asking what my body could do.</p>
+              <p>That shift took me from dance to the weight room, then into a full-time career coaching women, educating trainers and growing into leadership in the fitness industry. At the same time, I trained and competed as a powerlifter, protected my own physical wellbeing and raised a family.</p>
+              <p>I learned that every chapter of life can’t hold the same amount. I learned when to push, when to pull back, and how to make room for my goals without losing sight of what I needed. That’s how I coach now: physical strength, confidence and self-trust develop together while we learn how to adjust, prioritize and make room for what matters in real life.</p>
+              <Link className="text-link light-link" href="#work">See how we can work together <span aria-hidden="true">→</span></Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="credentials section shell">
+          <div className="credentials-intro">
+            <p className="eyebrow">EXPERIENCE + CREDENTIALS</p>
+            <h2>More than a decade coaching women.<br />A career shaped by teaching strength well.</h2>
+            <div className="credential-photo-wrap">
+              <img alt="Salwa Qadir in a professional portrait" className="site-photo credential-photo" src="/assets/experience.jpg" />
+            </div>
+          </div>
+          <div className="credential-list">
+            {credentials.map((credential, index) => (
+              <div key={credential}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <p>{credential}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="athlete-photo-band shell">
+          <div className="athlete-photo-wrap">
+            <img alt="Salwa Qadir preparing to lift at a powerlifting competition" className="site-photo athlete-photo" src="/assets/powerlifter.jpg" />
+          </div>
+          <p className="athlete-caption">Competitive Powerlifter · Powerlifting Coach · Provincial Referee</p>
+        </section>
+
+        <section className="work section" id="work">
+          <div className="shell">
+            <p className="eyebrow">WORK WITH ME</p>
+            <div className="work-heading">
+              <h2>Get stronger for what matters to you.</h2>
+              <p>Whether we’re coaching one-to-one, mentoring a fitness professional, teaching a room or collaborating on education, the aim is the same: help women become stronger, more confident and more capable of doing what matters to them.</p>
+            </div>
+            <div className="work-grid">
+              {services.map((service) => (
+                <article className={`work-card${service.featured ? " featured" : ""}`} key={service.title}>
+                  <span className="card-tag">{service.tag}</span>
+                  <h3>{service.title}</h3>
+                  <p>{service.copy}</p>
+                  <div className="card-meta">{service.meta}</div>
+                </article>
+              ))}
+            </div>
+            <Link className="button button-primary work-cta" href="/contact">Start a conversation</Link>
+          </div>
+        </section>
+
+        <section className="wbc section" id="wbc">
+          <div className="shell wbc-card">
+            <div className="wbc-copy">
+              <p className="eyebrow">FOUNDED BY SALWA</p>
+              <h2>The Women’s<br />Barbell Club</h2>
+              <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
+              <p className="wbc-definition">A community-based approach to strength training that teaches women to fall in love with fitness through every chapter of life.</p>
+              <p>The Women’s Barbell Club is a hybrid online and in-person space where women train and learn together, apply the lifestyle practices that support their training and wellness and lean on one another as they create more room in their lives to become stronger, more balanced and more fulfilled—for themselves and their loved ones.</p>
+            </div>
+            <div aria-label="Coming soon" className="coming-soon">
+              <span>COMING</span><strong>SOON</strong><small>THE WOMEN’S BARBELL CLUB</small>
+            </div>
+          </div>
+        </section>
+
+        <section className="quote-band">
+          <div className="shell">
+            <p>“Women don’t need to be told to do more.<br /><em>They need to be built up so they can do more—and shown how.</em>”</p>
+          </div>
+        </section>
+
+        <section className="contact-teaser section">
+          <div className="shell contact-teaser-card">
+            <div className="contact-photo-wrap">
+              <img alt="Salwa Qadir in a relaxed seated portrait" className="site-photo contact-photo" src="/assets/contact.jpg" />
+            </div>
+            <div>
+              <p className="eyebrow">GET IN TOUCH</p>
+              <h2>Have a question, an idea, or want to work together?</h2>
+            </div>
+            <Link className="button button-primary" href="/contact">Contact Salwa</Link>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
