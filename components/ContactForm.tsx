@@ -34,7 +34,7 @@ export default function ContactForm() {
           <option>Women’s Strength Coaching</option>
           <option>Fitness Business Mentorship</option>
           <option>Workshops + Speaking</option>
-          <option>Brand + Media Partnership</option>
+          <option>Brand + Media Partnerships</option>
           <option>General Inquiry</option>
         </select>
       </label>

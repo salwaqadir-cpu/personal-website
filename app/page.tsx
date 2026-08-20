@@ -13,7 +13,7 @@ const pillars = [
         <path d="M24 6v6m0 24v6M6 24h6m24 0h6" />
       </svg>
     ),
-    copy: "Know what you’re working toward, why you’re doing it and what it should feel like in your body. We choose and explain goals, exercises, nutrition and priorities with purpose—based on your body and your life—so every session has a clear focus and a deeper reason behind it.",
+    copy: "Know what you’re working toward, why you’re doing it, and how it should feel in your body. Based on your body and your life, we make purposeful decisions about your goals, exercises, nutrition, and priorities—and explain the reasoning behind them—so every session has a clear focus and a deeper reason behind it.",
   },
   {
     number: "02",
@@ -23,7 +23,7 @@ const pillars = [
         <path d="M8 21h6v6H8zm26 0h6v6h-6zM14 18h5v12h-5zm15 0h5v12h-5zM19 22h10v4H19z" />
       </svg>
     ),
-    copy: "Build physical and mental strength through progressive training and education. As you understand your body, your exercises and your progress, you develop the confidence to make informed choices—and the self-trust to believe in what you’re capable of.",
+    copy: "Build physical and mental strength through progressive training and education. As you understand your body, your exercises, and your progress, you develop the confidence to make informed choices—and the self-trust to believe in what you’re capable of.",
   },
   {
     number: "03",
@@ -40,7 +40,7 @@ const pillars = [
 ];
 
 const credentials = [
-  "12+ years of full-time coaching women in strength + fitness",
+  "12+ years of full-time experience coaching women in strength + fitness",
   "Fitness educator + workshop facilitator for personal trainers",
   "Advanced Fascial Stretch Therapy — Level 3",
   "Exercise Therapy + Nutrition Coaching",
@@ -52,7 +52,7 @@ const services = [
   {
     tag: "COACHING",
     title: "Women’s Strength Coaching",
-    copy: "One-to-one coaching to help you get stronger, feel more confident and make your training work with your goals, priorities and current chapter of life.",
+    copy: "One-to-one coaching to help you get stronger, feel more confident, and make your training work with your goals, priorities, and life.",
     meta: (
       <>
         <span>Mississauga and Milton, Ontario</span>
@@ -64,19 +64,19 @@ const services = [
   {
     tag: "MENTORSHIP",
     title: "Fitness Business Mentorship",
-    copy: "Focused one-to-one calls for women building careers and businesses in fitness. Bring client questions, sales challenges or business-development decisions and we’ll troubleshoot them together with practical, experience-led guidance.",
+    copy: "Focused one-to-one calls for women building careers in fitness. Bring client questions, sales challenges, or business-development decisions, and we’ll troubleshoot them together with practical, experience-led guidance.",
     meta: <span>Limited one-to-one availability · Inquire about current openings</span>,
   },
   {
     tag: "EDUCATION",
     title: "Workshops + Speaking",
-    copy: "Practical education for women, personal trainers and communities on strength, training and sustainable health.",
+    copy: "Practical education for women, personal trainers, and communities on strength, training, and sustainable health.",
     meta: <span>In-person + virtual</span>,
   },
   {
     tag: "COLLABORATION",
     title: "Brand + Media Partnerships",
-    copy: "Values-aligned collaborations in women’s health, fitness, strength, recovery and longevity.",
+    copy: "Values-aligned collaborations in women’s health, fitness, strength, recovery, and longevity.",
     meta: <span>Partnership inquiries</span>,
   },
 ];
@@ -95,7 +95,7 @@ export default function Home() {
               <span className="hero-highlight">They need to be built up so they can.</span>
             </h1>
             <p className="hero-lede">
-              Through my signature From Bodyweight to Barbells program, I help women transform physically and mentally, fall in love with fitness and become confident barbell lifters. I help them build strength that supports them through every chapter of life and benefits the people they love. Every stage of that journey is grounded in the three pillars of The Women’s Barbell Club: Intention, Strength and Sisterhood.
+              Through my signature From Bodyweight to Barbells program, I help women transform physically and mentally, fall in love with fitness, and become confident barbell lifters. I help them build strength that supports them through every chapter of life. Every stage of that journey is grounded in the three pillars of The Women’s Barbell Club: Intention, Strength, and Sisterhood.
             </p>
             <div className="hero-actions">
               <Link className="button button-primary" href="#work">Work with me</Link>
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="editorial-copy">
             <p className="eyebrow">MY APPROACH</p>
             <h2>Strength has to work<br /><em>while life is happening.</em></h2>
-            <p className="statement-copy">We train your body while working with the life you’re already living. As you get physically stronger, you also practise adjusting, prioritizing, recovering, following through and making room for what matters to you. Confidence, self-trust and mental strength improve through the same process—not afterward. The goal isn’t to finish becoming strong and then use it. It’s to become stronger while living your life and get better at doing both.</p>
+            <p className="statement-copy">We train your body while working with the life you’re already living. As you get physically stronger, you also practise adjusting, prioritizing, recovering, following through, and making room for what matters to you. Confidence, self-trust, and mental strength improve through the same process—not afterward. The goal isn’t to finish becoming strong and then use that strength. It’s to become stronger while living your life and to get better at doing both.</p>
           </div>
           <div className="section-photo-wrap approach-photo-wrap">
             <img alt="Salwa Qadir seated with a barbell and stability ball" className="site-photo" src="/assets/approach.jpg" />
@@ -142,7 +142,7 @@ export default function Home() {
           <div className="pillar-intro">
             <p className="eyebrow">THE WBC FRAMEWORK</p>
             <h2 id="wbc-framework-heading">Three pillars.<br /><em>One connected approach.</em></h2>
-            <p>We use Intention, Strength and Sisterhood to connect your training, nutrition, recovery and real life—so you can achieve your goals, keep evolving through every chapter and never have to start from scratch again.</p>
+            <p>We use Intention, Strength, and Sisterhood to connect your training, nutrition, recovery, and real life—so you can achieve your goals, keep evolving through every season, and never have to start from scratch again.</p>
           </div>
           {pillars.map((pillar) => (
             <article className="pillar-card" key={pillar.number}>
@@ -161,8 +161,8 @@ export default function Home() {
         <section className="statement section shell split-editorial" id="values">
           <div className="editorial-copy">
             <p className="eyebrow">COACHING THE WOMAN IN FRONT OF ME</p>
-            <h2>Your goals matter.<br /><em>So do your values, culture and priorities.</em></h2>
-            <p className="statement-copy">Growing up across cultures taught me early that women can have very different relationships with family, food, movement, time and personal goals. I don’t expect you to fit yourself into a generic version of fitness. We shape strength and wellness around who you are and the chapter of life you’re in—respecting your values, culture and priorities while helping you get stronger in the life you actually live.</p>
+            <h2>Your goals matter.<br /><em>So do your values, culture, and priorities.</em></h2>
+            <p className="statement-copy">Growing up across cultures taught me early that women can have very different relationships with family, food, movement, time, and personal goals. I don’t expect you to fit yourself into a generic version of fitness. We shape strength and wellness around who you are and the season of life you’re in—respecting your values, culture, and priorities while helping you get stronger in the life you actually live.</p>
           </div>
           <div className="section-photo-wrap values-photo-wrap">
             <img alt="Salwa Qadir beside a stability ball and water bottle" className="site-photo" src="/assets/values.jpg" />
@@ -180,9 +180,9 @@ export default function Home() {
             <div className="about-copy">
               <p className="eyebrow">ABOUT SALWA</p>
               <h2>I learned how to get stronger in the middle of a full life.</h2>
-              <p>I’m a Women’s Strength Coach, educator, competitive powerlifter and mom. I didn’t start out loving weights. My relationship with fitness changed when I stopped asking how to become smaller and started asking what my body could do.</p>
-              <p>That shift took me from dance to the weight room, then into a full-time career coaching women, educating trainers and growing into leadership in the fitness industry. At the same time, I trained and competed as a powerlifter, protected my own physical wellbeing and raised a family.</p>
-              <p>I learned that every chapter of life can’t hold the same amount. I learned when to push, when to pull back, and how to make room for my goals without losing sight of what I needed. That’s how I coach now: physical strength, confidence and self-trust develop together while we learn how to adjust, prioritize and make room for what matters in real life.</p>
+              <p>I’m a women’s strength coach, educator, competitive powerlifter, and mom. I didn’t start out loving weights. My relationship with fitness changed when I stopped asking how to become smaller and started asking what my body could do.</p>
+              <p>That shift took me from dance to the weight room, then into a full-time career coaching women, educating trainers, and growing into leadership in the fitness industry. At the same time, I trained and competed as a powerlifter, protected my own physical wellbeing, and raised a family.</p>
+              <p>I learned that not every chapter of life can hold the same amount. I learned when to push, when to pull back, and how to make room for my goals without losing sight of what I needed. That’s how I coach now: physical strength, confidence, and self-trust develop together while we learn how to adjust, prioritize, and make room for what matters in real life.</p>
               <Link className="text-link light-link" href="#work">See how we can work together <span aria-hidden="true">→</span></Link>
             </div>
           </div>
@@ -218,7 +218,7 @@ export default function Home() {
             <p className="eyebrow">WORK WITH ME</p>
             <div className="work-heading">
               <h2>Get stronger for what matters to you.</h2>
-              <p>Whether we’re coaching one-to-one, mentoring a fitness professional, teaching a room or collaborating on education, the aim is the same: help women become stronger, more confident and more capable of doing what matters to them.</p>
+              <p>Whether we’re coaching one-to-one, mentoring a fitness professional, leading a workshop, or collaborating on education, the aim is the same: to help women become stronger, more confident, and more capable of doing what matters to them.</p>
             </div>
             <div className="work-grid">
               {services.map((service) => (
@@ -240,8 +240,8 @@ export default function Home() {
               <p className="eyebrow">FOUNDED BY SALWA</p>
               <h2>The Women’s<br />Barbell Club</h2>
               <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
-              <p className="wbc-definition">A community-based approach to strength training that teaches women to fall in love with fitness through every chapter of life.</p>
-              <p>The Women’s Barbell Club is a hybrid online and in-person space where women train and learn together, apply the lifestyle practices that support their training and wellness and lean on one another as they create more room in their lives to become stronger, more balanced and more fulfilled—for themselves and their loved ones.</p>
+              <p className="wbc-definition">A community-based approach to strength training that teaches women to fall in love with fitness through every season of life.</p>
+              <p>The Women’s Barbell Club is a hybrid online and in-person space where women train and learn together, apply the lifestyle practices that support their training and wellness, and lean on one another as they create more room to become stronger and live a more balanced and fulfilled life.</p>
             </div>
             <div aria-label="Coming soon" className="coming-soon">
               <span>COMING</span><strong>SOON</strong><small>THE WOMEN’S BARBELL CLUB</small>
@@ -262,7 +262,7 @@ export default function Home() {
             </div>
             <div>
               <p className="eyebrow">GET IN TOUCH</p>
-              <h2>Have a question, an idea, or want to work together?</h2>
+              <h2>Have a question or an idea? Want to work together?</h2>
             </div>
             <Link className="button button-primary" href="/contact">Contact Salwa</Link>
           </div>

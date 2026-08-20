@@ -13,7 +13,7 @@ const inquiryTypes = [
   "Women’s Strength Coaching",
   "Fitness Business Mentorship",
   "Workshops + Speaking",
-  "Brand + Media",
+  "Brand + Media Partnerships",
   "General Inquiry",
 ];
 
@@ -28,7 +28,7 @@ export default function ContactPage() {
             <div className="contact-page-copy">
               <p className="eyebrow">CONTACT</p>
               <h1>Let’s start with what you’re looking for.</h1>
-              <p className="contact-lede">Whether you’re interested in coaching, mentorship, education, a collaboration or simply have a question, send a note below. I’ll make sure it gets to the right place.</p>
+              <p className="contact-lede">Whether you’re interested in coaching, mentorship, education, a collaboration, or simply have a question, send a note below. I’ll make sure it gets to the right place.</p>
               <div aria-label="Inquiry types" className="inquiry-types">
                 {inquiryTypes.map((type) => <span key={type}>{type}</span>)}
               </div>
@@ -45,7 +45,7 @@ export default function ContactPage() {
               <p className="eyebrow">A GOOD FIT</p>
               <h2>Clear, practical, women-centred work.</h2>
             </div>
-            <p>I’m most interested in work that helps women build strength, understand their health and feel more capable in the lives they are already living.</p>
+            <p>I’m most interested in work that helps women build strength, understand their health, and feel more capable in the lives they are already living.</p>
           </div>
         </section>
       </main>

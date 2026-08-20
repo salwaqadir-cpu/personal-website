@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -11,8 +12,8 @@
   --lavender-deep: #836cae;
   --butter: #fff1b9;
   --line: rgba(23, 57, 47, 0.16);
-  --serif: Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
+  --serif: "DM Serif Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
   --shadow: 0 24px 80px rgba(28, 45, 38, 0.1);
 }
 
