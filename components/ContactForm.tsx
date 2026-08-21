@@ -10,9 +10,9 @@ export default function ContactForm() {
     const email = String(data.get("email") || "");
     const inquiry = String(data.get("inquiry") || "General Inquiry");
     const message = String(data.get("message") || "");
-    const subject = encodeURIComponent(`${inquiry} — ${name}`);
+    const subject = encodeURIComponent(`${inquiry}: ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry: ${inquiry}\n\n${message}`);
-    window.location.href = `mailto:salwaqadir@me.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:salwa@salwaqadir.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -31,7 +31,7 @@ export default function ContactForm() {
         <span>What can I help with?</span>
         <select defaultValue="" name="inquiry" required>
           <option disabled value="">Choose one</option>
-          <option>Women’s Strength Coaching — One-to-One or Small Group</option>
+          <option>Women’s Strength Coaching: One-to-One or Small Group</option>
           <option>Fitness Business Mentorship</option>
           <option>Workshops + Speaking</option>
           <option>Brand + Media Partnerships</option>
@@ -43,7 +43,7 @@ export default function ContactForm() {
         <textarea name="message" placeholder="Tell me a little about what you’re looking for." required />
       </label>
       <button className="button button-primary" type="submit">Send inquiry</button>
-      <p className="form-status">Or email <a href="mailto:salwaqadir@me.com">salwaqadir@me.com</a> directly.</p>
+      <p className="form-status">Or email <a href="mailto:salwa@salwaqadir.com">salwa@salwaqadir.com</a> directly.</p>
     </form>
   );
 }

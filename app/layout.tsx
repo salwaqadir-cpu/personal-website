@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: `${basePath}${SOCIAL_IMAGE}`,
         width: 1731,
         height: 909,
-        alt: "Salwa Qadir — Women don’t need to be told to do more. They need to be built up so they can.",
+        alt: "Salwa Qadir: Women don’t need to be told to do more. They need to be built up so they can.",
       },
     ],
     type: "website",
