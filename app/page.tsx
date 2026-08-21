@@ -82,6 +82,45 @@ const services = [
   },
 ];
 
+const testimonials = [
+  {
+    quote: (
+      <>
+        After two C-sections and major abdominal surgery, I’d lost all my core strength. Within six months I was strength training—going on vacation and doing <em>hard things</em>, keeping up with my kids, even training while fasting through Ramadan. She knew how I ate as a South Asian woman and coached me around my real life. It was her warmth and encouragement that changed my life for the better.
+      </>
+    ),
+    name: "Anam S.",
+    relationship: "Client, 6 years",
+  },
+  {
+    quote: (
+      <>
+        I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell—both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a physical therapist, and an extraordinary coach.
+      </>
+    ),
+    name: "Maryam H.",
+    relationship: "Client, 6 years",
+  },
+  {
+    quote: (
+      <>
+        I’d never been under a bar in over a decade of training with other trainers. Salwa moulds the entire plan around whatever is happening in your life—you never feel like you’re failing; you always feel on track. She’s a life coach, trainer, and guide, not just the hour you see her at the gym.
+      </>
+    ),
+    name: "Mehwish J.",
+    relationship: "Client, 4 years",
+  },
+  {
+    quote: (
+      <>
+        After a fall left me with a compression fracture, I thought I’d have to live with the limits. She built a progressive program with my physio and understood my body mechanics exceptionally well. It has literally been life-changing—I can resume and enjoy so many of the daily activities I couldn’t after the accident.
+      </>
+    ),
+    name: "Dr. Linda Deppisch",
+    relationship: "Client, 7 years",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -232,6 +271,30 @@ export default function Home() {
               ))}
             </div>
             <Link className="button button-primary work-cta" href="/contact">Start a conversation</Link>
+          </div>
+        </section>
+
+        <section className="stories section" id="stories">
+          <div className="shell">
+            <div className="stories-heading">
+              <div>
+                <p className="eyebrow">CLIENT STORIES</p>
+                <h2>Strength that shows up <em>in real life.</em></h2>
+              </div>
+              <p>These are women who came in with pain, big life changes, or years of stalled starts—and left stronger, more capable, and more at home in their bodies. In their own words.</p>
+            </div>
+            <div className="stories-grid">
+              {testimonials.map((testimonial) => (
+                <blockquote className="story-card" key={testimonial.name}>
+                  <span aria-hidden="true" className="story-mark">“</span>
+                  <p>{testimonial.quote}</p>
+                  <footer>
+                    <strong>{testimonial.name}</strong>
+                    <span>{testimonial.relationship}</span>
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
           </div>
         </section>
 
