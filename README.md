@@ -6,7 +6,9 @@ The source for Salwa Qadir's personal website, including the homepage, contact p
 
 The workflow in `.github/workflows/deploy-pages.yml` builds and publishes the website to GitHub Pages whenever a commit is pushed to `main`. It can also be run manually from the repository's **Actions** tab.
 
-Published site: `https://salwaqadir-cpu.github.io/personal-website/`
+Published site: `https://www.salwaqadir.com/`
+
+The apex domain, `salwaqadir.com`, is configured at the DNS provider and redirects to the canonical `www.salwaqadir.com` address through GitHub Pages.
 
 ## Local development
 
