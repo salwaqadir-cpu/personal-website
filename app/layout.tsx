@@ -1,30 +1,57 @@
 import type { Metadata } from "next";
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  SOCIAL_IMAGE,
+} from "@/lib/seo";
 import "./globals.css";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  "https://salwa-qadir.dark-note-5102.chatgpt.site";
+  SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: SITE_NAME,
   title: {
-    default: "Salwa Qadir | Women’s Strength Coach",
+    default: SITE_TITLE,
     template: "%s | Salwa Qadir",
   },
-  description:
-    "Salwa Qadir is a women’s strength coach helping women get stronger physically and mentally, feel more capable, and do more of what matters to them.",
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "Women’s strength coaching",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: `${basePath}/favicon.svg`,
     shortcut: `${basePath}/favicon.svg`,
   },
   openGraph: {
-    title: "Salwa Qadir | Women’s Strength Coach",
-    description:
-      "Through From Bodyweight to Barbells, Salwa helps women transform physically and mentally, fall in love with fitness, and become confident barbell lifters.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "/",
+    siteName: SITE_NAME,
+    locale: "en_CA",
     images: [
       {
-        url: `${basePath}/og.jpg`,
+        url: `${basePath}${SOCIAL_IMAGE}`,
         width: 1731,
         height: 909,
         alt: "Salwa Qadir — Women don’t need to be told to do more. They need to be built up so they can.",
@@ -34,10 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Salwa Qadir | Women’s Strength Coach",
-    description:
-      "Through From Bodyweight to Barbells, Salwa helps women transform physically and mentally, fall in love with fitness, and become confident barbell lifters.",
-    images: [`${basePath}/og.jpg`],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [`${basePath}${SOCIAL_IMAGE}`],
   },
 };
 
