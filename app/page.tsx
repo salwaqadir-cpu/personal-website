@@ -136,8 +136,7 @@ const credentials = [
 
 const services = [
   {
-    tag: "COACHING",
-    program: "FROM BODYWEIGHT TO BARBELLS",
+    tag: "IN-PERSON COACHING",
     title: "Women’s Strength Coaching",
     copy: "One-to-one coaching and small-group training built around my signature From Bodyweight to Barbells program. We start at your current level and develop the strength, skill, and confidence to progress from foundational movement to confident barbell lifting.",
     meta: (
@@ -350,7 +349,6 @@ export default function Home() {
               {services.map((service) => (
                 <article className={`work-card${service.featured ? " featured" : ""}`} key={service.title}>
                   <span className="card-tag">{service.tag}</span>
-                  {service.program && <span className="card-program">{service.program}</span>}
                   <h3>{service.title}</h3>
                   <p>{service.copy}</p>
                   <div className="card-meta">{service.meta}</div>
@@ -367,9 +365,12 @@ export default function Home() {
               <p className="eyebrow">FOUNDED BY SALWA</p>
               <h2>THE WOMEN’S<br />BARBELL CLUB</h2>
               <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
-              <p className="wbc-tagline">Strong in the gym. <em>Supported in real life.</em></p>
-              <p className="wbc-definition">WBC is more than lifting. It’s a community for building strength, fueling your body, and navigating real life together.</p>
-              <p>From meal prep and lifting events to retreats and wellness, we’re creating the support women need to make space for themselves, their families, and their careers.</p>
+              <p className="wbc-tagline">
+                <span>Strong in the gym.</span>
+                <em>Supported in real life.</em>
+              </p>
+              <p className="wbc-body">WBC is more than lifting. It’s a community for building strength, fueling your body, and navigating real life together.</p>
+              <p className="wbc-body">From meal prep and lifting events to retreats and wellness, we’re creating the support women need to make space for themselves, their families, and their careers.</p>
             </div>
             <a aria-label="Join The Women’s Barbell Club waitlist" className="wbc-waitlist" href={wbcUrl}>
               <span>JOIN THE</span><strong>WAITLIST</strong><small>THE WOMEN’S BARBELL CLUB ↗</small>
