@@ -2,11 +2,56 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import StructuredData from "@/components/StructuredData";
+import { SITE_URL, SOCIAL_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Women’s Strength Coaching",
   description:
-    "Contact Salwa Qadir about women’s strength coaching, fitness business mentorship, workshops, speaking and brand or media partnerships.",
+    "Contact Salwa Qadir about women’s strength coaching in Milton and Mississauga, fitness business mentorship, workshops, speaking and partnerships.",
+  alternates: {
+    canonical: "/contact/",
+  },
+  openGraph: {
+    title: "Contact Salwa Qadir | Women’s Strength Coaching",
+    description:
+      "Inquire about women’s strength coaching in Milton and Mississauga, fitness business mentorship, workshops, speaking and partnerships.",
+    url: "/contact/",
+    images: [{ url: SOCIAL_IMAGE }],
+  },
+};
+
+const contactStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": `${SITE_URL}/contact/#contact-page`,
+      url: `${SITE_URL}/contact/`,
+      name: "Contact Salwa Qadir",
+      description:
+        "Contact Salwa Qadir about women’s strength coaching, mentorship, education and partnerships.",
+      inLanguage: "en-CA",
+      about: { "@id": `${SITE_URL}/#salwa-qadir` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${SITE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Contact",
+          item: `${SITE_URL}/contact/`,
+        },
+      ],
+    },
+  ],
 };
 
 const inquiryTypes = [
@@ -20,6 +65,7 @@ const inquiryTypes = [
 export default function ContactPage() {
   return (
     <>
+      <StructuredData data={contactStructuredData} />
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader contactActive />
       <main id="main">
