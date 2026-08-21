@@ -1,9 +1,64 @@
 import Link from "next/link";
+import StructuredData from "@/components/StructuredData";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/seo";
 import { withBasePath } from "@/lib/site-path";
 
 const wbcUrl = "https://www.thewomensbarbell.club/";
+
+const homepageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: "Salwa Qadir",
+      description: SITE_DESCRIPTION,
+      inLanguage: "en-CA",
+      publisher: { "@id": `${SITE_URL}/#salwa-qadir` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#profile-page`,
+      url: `${SITE_URL}/`,
+      name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      inLanguage: "en-CA",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      mainEntity: { "@id": `${SITE_URL}/#salwa-qadir` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#salwa-qadir`,
+      name: "Salwa Qadir",
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}/assets/experience.jpg`,
+      jobTitle: "Women’s Strength Coach, Educator and Founder",
+      description:
+        "Women’s strength coach, fitness educator, competitive powerlifter and founder of The Women’s Barbell Club.",
+      knowsAbout: [
+        "Women’s strength training",
+        "Barbell training",
+        "Powerlifting",
+        "Fitness education",
+        "Fascial Stretch Therapy",
+        "Nutrition coaching",
+      ],
+      founder: { "@id": "https://www.thewomensbarbell.club/#organization" },
+      mainEntityOfPage: { "@id": `${SITE_URL}/#profile-page` },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.thewomensbarbell.club/#organization",
+      name: "The Women’s Barbell Club",
+      url: "https://www.thewomensbarbell.club/",
+      slogan: "Intention · Strength · Sisterhood",
+      founder: { "@id": `${SITE_URL}/#salwa-qadir` },
+    },
+  ],
+};
 
 const programStages = [
   {
@@ -163,6 +218,7 @@ const testimonials = [
 export default function Home() {
   return (
     <>
+      <StructuredData data={homepageStructuredData} />
       <a className="skip-link" href="#main">Skip to content</a>
       <SiteHeader />
       <main id="main">
@@ -190,7 +246,7 @@ export default function Home() {
             <div className="shape shape-one" />
             <div className="shape shape-two" />
             <div className="photo-frame">
-              <img alt="Salwa Qadir strength training outdoors" className="site-photo hero-photo" src={withBasePath("/assets/hero.jpg")} />
+              <img alt="Salwa Qadir strength training outdoors" className="site-photo hero-photo" decoding="async" fetchPriority="high" height="1248" src={withBasePath("/assets/hero.jpg")} width="2000" />
             </div>
             <div aria-label="Train, learn, live" className="hero-note">
               <span>TRAIN</span><span>LEARN</span><span>LIVE</span>
@@ -329,7 +385,7 @@ export default function Home() {
             <p className="statement-copy">We train your body while working with the life you’re already living. As you get physically stronger, you also practise adjusting, prioritizing, recovering, following through, and making room for what matters to you. Confidence, self-trust, and mental strength improve through the same process—not afterward. The goal isn’t to finish becoming strong and then use that strength. It’s to become stronger while living your life and to get better at doing both.</p>
           </div>
           <div className="section-photo-wrap approach-photo-wrap">
-            <img alt="Salwa Qadir seated with a barbell and stability ball" className="site-photo" src={withBasePath("/assets/approach.jpg")} />
+            <img alt="Salwa Qadir seated with a barbell and stability ball" className="site-photo" decoding="async" height="1700" loading="lazy" src={withBasePath("/assets/approach.jpg")} width="1131" />
           </div>
         </section>
 
@@ -350,7 +406,7 @@ export default function Home() {
         </section>
 
         <div className="foundations-visual">
-          <img alt="Salwa Qadir training outdoors with her daughter" className="site-photo wide-photo" src={withBasePath("/assets/foundations.jpg")} />
+          <img alt="Salwa Qadir training outdoors with her daughter" className="site-photo wide-photo" decoding="async" height="722" loading="lazy" src={withBasePath("/assets/foundations.jpg")} width="1700" />
         </div>
 
         <section className="statement section shell split-editorial" id="values">
@@ -360,7 +416,7 @@ export default function Home() {
             <p className="statement-copy">Growing up across cultures taught me early that women can have very different relationships with family, food, movement, time, and personal goals. I don’t expect you to fit yourself into a generic version of fitness. We shape strength and wellness around who you are and the season of life you’re in—respecting your values, culture, and priorities while helping you get stronger in the life you actually live.</p>
           </div>
           <div className="section-photo-wrap values-photo-wrap">
-            <img alt="Salwa Qadir beside a stability ball and water bottle" className="site-photo" src={withBasePath("/assets/values.jpg")} />
+            <img alt="Salwa Qadir beside a stability ball and water bottle" className="site-photo" decoding="async" height="1700" loading="lazy" src={withBasePath("/assets/values.jpg")} width="1131" />
           </div>
         </section>
 
@@ -368,7 +424,7 @@ export default function Home() {
           <div className="shell about-grid">
             <div className="about-visual">
               <div className="about-photo">
-                <img alt="Salwa Qadir smiling during a candid family fitness moment" className="site-photo about-image" src={withBasePath("/assets/about.jpg")} />
+                <img alt="Salwa Qadir smiling during a candid family fitness moment" className="site-photo about-image" decoding="async" height="1700" loading="lazy" src={withBasePath("/assets/about.jpg")} width="1132" />
               </div>
               <div className="lavender-card">STRENGTH<br />IS A SKILL.</div>
             </div>
@@ -388,7 +444,7 @@ export default function Home() {
             <p className="eyebrow">EXPERIENCE + CREDENTIALS</p>
             <h2>More than a decade coaching women.<br />A career shaped by teaching strength well.</h2>
             <div className="credential-photo-wrap">
-              <img alt="Salwa Qadir in a professional portrait" className="site-photo credential-photo" src={withBasePath("/assets/experience.jpg")} />
+              <img alt="Salwa Qadir in a professional portrait" className="site-photo credential-photo" decoding="async" height="1700" loading="lazy" src={withBasePath("/assets/experience.jpg")} width="1131" />
             </div>
           </div>
           <div className="credential-list">
@@ -403,7 +459,7 @@ export default function Home() {
 
         <section className="athlete-photo-band shell">
           <div className="athlete-photo-wrap">
-            <img alt="Salwa Qadir preparing to lift at a powerlifting competition" className="site-photo athlete-photo" src={withBasePath("/assets/powerlifter.jpg")} />
+            <img alt="Salwa Qadir preparing to lift at a powerlifting competition" className="site-photo athlete-photo" decoding="async" height="2000" loading="lazy" src={withBasePath("/assets/powerlifter.jpg")} width="1333" />
           </div>
           <p className="athlete-caption">Competitive Powerlifter · Powerlifting Coach · Provincial Referee</p>
         </section>
@@ -417,7 +473,7 @@ export default function Home() {
         <section className="contact-teaser section">
           <div className="shell contact-teaser-card">
             <div className="contact-photo-wrap">
-              <img alt="Salwa Qadir in a relaxed seated portrait" className="site-photo contact-photo" src={withBasePath("/assets/contact.jpg")} />
+              <img alt="Salwa Qadir in a relaxed seated portrait" className="site-photo contact-photo" decoding="async" height="1700" loading="lazy" src={withBasePath("/assets/contact.jpg")} width="1132" />
             </div>
             <div>
               <p className="eyebrow">GET IN TOUCH</p>
