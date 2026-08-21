@@ -1,6 +1,5 @@
 name: Deploy website to GitHub Pages
 
-# Publishes automatically after every update merged into main.
 on:
   push:
     branches: ["main"]
@@ -38,7 +37,7 @@ jobs:
         env:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_BASE_PATH: ""
-          NEXT_PUBLIC_SITE_URL: https://www.salwaqadir.com/
+          NEXT_PUBLIC_SITE_URL: https://salwaqadir.com/
         run: npm run build:github-pages
 
       - name: Upload GitHub Pages artifact
