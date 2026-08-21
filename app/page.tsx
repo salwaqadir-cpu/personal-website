@@ -371,8 +371,8 @@ export default function Home() {
                 <span>Strong in the gym.</span>
                 <em>Supported in real life.</em>
               </p>
-              <p className="wbc-definition">WBC is more than lifting. It’s a community for building strength, fueling your body, and navigating real life together.</p>
-              <p>From meal prep and lifting events to retreats and wellness, we’re creating the support women need to make space for themselves, their families, and their careers.</p>
+              <p className="wbc-body">WBC is more than lifting. It’s a community for building strength, fueling your body, and navigating real life together.</p>
+              <p className="wbc-body">From meal prep and lifting events to retreats and wellness, we’re creating the support women need to make space for themselves, their families, and their careers.</p>
             </div>
             <a aria-label="Join The Women’s Barbell Club waitlist" className="wbc-waitlist" href={wbcUrl}>
               <span>JOIN THE</span><strong>WAITLIST</strong><small>THE WOMEN’S BARBELL CLUB ↗</small>
