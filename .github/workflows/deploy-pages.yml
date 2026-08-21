@@ -1,5 +1,6 @@
 name: Deploy website to GitHub Pages
 
+# Publishes automatically after every update merged into main.
 on:
   push:
     branches: ["main"]
