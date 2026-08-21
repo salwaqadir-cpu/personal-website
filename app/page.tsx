@@ -136,8 +136,7 @@ const credentials = [
 
 const services = [
   {
-    tag: "COACHING",
-    program: "FROM BODYWEIGHT TO BARBELLS",
+    tag: "IN-PERSON COACHING",
     title: "Women’s Strength Coaching",
     copy: "One-to-one coaching and small-group training built around my signature From Bodyweight to Barbells program. We start at your current level and develop the strength, skill, and confidence to progress from foundational movement to confident barbell lifting.",
     meta: (
@@ -350,7 +349,6 @@ export default function Home() {
               {services.map((service) => (
                 <article className={`work-card${service.featured ? " featured" : ""}`} key={service.title}>
                   <span className="card-tag">{service.tag}</span>
-                  {service.program && <span className="card-program">{service.program}</span>}
                   <h3>{service.title}</h3>
                   <p>{service.copy}</p>
                   <div className="card-meta">{service.meta}</div>
