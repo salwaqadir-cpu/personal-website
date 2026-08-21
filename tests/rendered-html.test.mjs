@@ -29,7 +29,10 @@ test("renders the finished homepage and contact page", async () => {
     /^text\/html\b/i,
   );
   const homepage = await response.text();
-  assert.match(homepage, /<title>Salwa Qadir \| Women’s Strength Coach<\/title>/);
+  assert.match(homepage, /<title>Salwa Qadir \| Women’s Strength Coach in Milton &amp; Mississauga<\/title>/);
+  assert.match(homepage, /rel="canonical" href="https:\/\/salwaqadir\.com\/"/);
+  assert.match(homepage, /application\/ld\+json/);
+  assert.match(homepage, /ProfilePage/);
   assert.match(homepage, /Women don’t need to be told to do more\./);
   assert.match(homepage, /From Bodyweight to Barbells/);
   assert.match(homepage, /Canada’s largest fitness company/);
@@ -48,7 +51,8 @@ test("renders the finished homepage and contact page", async () => {
   const contactResponse = await fetchPage("/contact");
   assert.equal(contactResponse.status, 200);
   const contactPage = await contactResponse.text();
-  assert.match(contactPage, /<title>Contact \| Salwa Qadir<\/title>/);
+  assert.match(contactPage, /<title>Contact \| Women’s Strength Coaching \| Salwa Qadir<\/title>/);
+  assert.match(contactPage, /rel="canonical" href="https:\/\/salwaqadir\.com\/contact\/"/);
   assert.match(contactPage, /Let’s start with what you’re looking for\./);
   assert.match(contactPage, /Brand \+ Media Partnerships/);
 });
