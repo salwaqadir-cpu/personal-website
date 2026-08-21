@@ -232,6 +232,7 @@ button, input, select, textarea { font: inherit; }
 .wbc-card::after { content: ""; position: absolute; top: -140px; right: -120px; width: 340px; height: 340px; border-radius: 50%; background: rgba(217, 207, 240, 0.09); }
 .wbc-copy .eyebrow { color: var(--butter); }
 .wbc-copy h2 { max-width: 700px; margin: 0; font: 400 clamp(2.8rem, 4.7vw, 4.7rem) / 0.92 var(--serif); }
+.wbc-copy h2 em { color: var(--lavender); font-weight: 400; }
 .wbc-pillars { margin: 25px 0 18px; color: var(--lavender); font-size: 0.71rem; font-weight: 700; letter-spacing: 0.16em; }
 .wbc-pillars i { color: var(--butter); font-style: normal; }
 .wbc-definition { max-width: 570px; margin: 0 0 18px; color: rgba(255, 255, 255, 0.96); font: 400 1.35rem / 1.25 var(--serif); }
