@@ -8,7 +8,7 @@ export default function SiteFooter() {
           <span>SALWA</span>
           <span>QADIR</span>
         </Link>
-        <p>WOMEN’S STRENGTH COACH · EDUCATOR · ATHLETE · FOUNDER</p>
+        <p>WOMEN’S STRENGTH COACH · EDUCATOR · ATHLETE · FOUNDER OF THE WOMEN’S BARBELL CLUB</p>
         <p>© {new Date().getFullYear()} Salwa Qadir</p>
       </div>
     </footer>

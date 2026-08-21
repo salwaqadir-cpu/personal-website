@@ -31,7 +31,7 @@ export default function ContactForm() {
         <span>What can I help with?</span>
         <select defaultValue="" name="inquiry" required>
           <option disabled value="">Choose one</option>
-          <option>Women’s Strength Coaching</option>
+          <option>Women’s Strength Coaching — One-to-One or Small Group</option>
           <option>Fitness Business Mentorship</option>
           <option>Workshops + Speaking</option>
           <option>Brand + Media Partnerships</option>

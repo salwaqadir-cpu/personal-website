@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const inquiryTypes = [
-  "Women’s Strength Coaching",
+  "Women’s Strength Coaching — One-to-One or Small Group",
   "Fitness Business Mentorship",
   "Workshops + Speaking",
   "Brand + Media Partnerships",
@@ -28,7 +28,7 @@ export default function ContactPage() {
             <div className="contact-page-copy">
               <p className="eyebrow">CONTACT</p>
               <h1>Let’s start with what you’re looking for.</h1>
-              <p className="contact-lede">Whether you’re interested in coaching, mentorship, education, a collaboration, or simply have a question, send a note below. I’ll make sure it gets to the right place.</p>
+              <p className="contact-lede">Whether you’re interested in coaching, mentorship, education, or a collaboration, send a note below. Tell me a little about what you’re looking for, and I’ll make sure your inquiry reaches the right place.</p>
               <div aria-label="Inquiry types" className="inquiry-types">
                 {inquiryTypes.map((type) => <span key={type}>{type}</span>)}
               </div>
@@ -36,6 +36,17 @@ export default function ContactPage() {
             <div className="contact-form-wrap">
               <ContactForm />
             </div>
+          </div>
+        </section>
+
+        <section className="contact-wbc">
+          <div className="shell contact-wbc-card">
+            <div>
+              <p className="eyebrow">THE WOMEN’S BARBELL CLUB</p>
+              <h2>Interested in WBC?</h2>
+              <p>Join the waitlist for launch updates and first access.</p>
+            </div>
+            <a className="button button-primary" href="https://www.thewomensbarbell.club/">Join the WBC waitlist ↗</a>
           </div>
         </section>
 

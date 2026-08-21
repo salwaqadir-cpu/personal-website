@@ -2,6 +2,35 @@ import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
+const wbcUrl = "https://www.thewomensbarbell.club/";
+
+const programStages = [
+  {
+    number: "01",
+    title: "Bodyweight",
+    line: "Learn how your body moves.",
+    copy: "We develop control, stability, mobility, and confidence in the movement patterns that support everything that comes next.",
+  },
+  {
+    number: "02",
+    title: "Dumbbells",
+    line: "Add load with control.",
+    copy: "Dumbbells help you develop coordination, balance, and strength while learning how to move weight intentionally—not simply complete repetitions.",
+  },
+  {
+    number: "03",
+    title: "Machines",
+    line: "Build strength with precision.",
+    copy: "Machines allow us to target specific muscles, practise effort, and build capacity while maintaining the control and technique established in the earlier stages.",
+  },
+  {
+    number: "04",
+    title: "Barbell",
+    line: "Bring the foundation together.",
+    copy: "We introduce the barbell progressively so you understand the lifts, trust your body, and feel confident taking up space at the rack.",
+  },
+];
+
 const pillars = [
   {
     number: "01",
@@ -52,14 +81,16 @@ const credentials = [
 const services = [
   {
     tag: "COACHING",
+    program: "FROM BODYWEIGHT TO BARBELLS",
     title: "Women’s Strength Coaching",
-    copy: "One-to-one coaching and small-group training to help you get stronger, feel more confident, and make your training work with your goals, priorities, and life.",
+    copy: "One-to-one coaching and small-group training built around my signature From Bodyweight to Barbells program. We start at your current level and develop the strength, skill, and confidence to progress from foundational movement to confident barbell lifting.",
     meta: (
       <>
         <span>Mississauga and Milton, Ontario</span>
         <span>Limited availability · Inquire about current openings</span>
       </>
     ),
+    cta: "Inquire about coaching",
     featured: true,
   },
   {
@@ -67,23 +98,27 @@ const services = [
     title: "Fitness Business Mentorship",
     copy: "Focused one-to-one calls for women building careers in fitness. Bring client questions, sales challenges, or business-development decisions, and we’ll troubleshoot them together with practical, experience-led guidance.",
     meta: <span>Limited one-to-one availability · Inquire about current openings</span>,
+    cta: "Inquire about mentorship",
   },
   {
     tag: "EDUCATION",
     title: "Workshops + Speaking",
     copy: "Practical education for women, personal trainers, and communities on strength, training, and sustainable health.",
     meta: <span>In-person + virtual</span>,
+    cta: "Discuss a workshop",
   },
   {
     tag: "COLLABORATION",
     title: "Brand + Media Partnerships",
     copy: "Values-aligned collaborations in women’s health, fitness, strength, recovery, and longevity.",
     meta: <span>Partnership inquiries</span>,
+    cta: "Discuss a partnership",
   },
 ];
 
 const testimonials = [
   {
+    outcome: "Strength after major surgery",
     quote: (
       <>
         After two C-sections and major abdominal surgery, I’d lost all my core strength. Within six months I was strength training—going on vacation and doing <em>hard things</em>, keeping up with my kids, even training while fasting through Ramadan. She knew how I ate as a South Asian woman and coached me around my real life. It was her warmth and encouragement that changed my life for the better.
@@ -93,15 +128,17 @@ const testimonials = [
     relationship: "Client, 6 years",
   },
   {
+    outcome: "From bodyweight squat to a 125 lb barbell",
     quote: (
       <>
-        I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell—both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a physical therapist, and an extraordinary coach.
+        I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell—both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a movement specialist, and an extraordinary coach.
       </>
     ),
     name: "Maryam H.",
     relationship: "Client, 6 years",
   },
   {
+    outcome: "A plan that moves with real life",
     quote: (
       <>
         I’d never been under a bar in over a decade of training with other trainers. Salwa moulds the entire plan around whatever is happening in your life—you never feel like you’re failing; you always feel on track. She’s a life coach, trainer, and guide, not just the hour you see her at the gym.
@@ -111,6 +148,7 @@ const testimonials = [
     relationship: "Client, 5 years",
   },
   {
+    outcome: "Rebuilding strength after injury",
     quote: (
       <>
         After a fall left me with a compression fracture, I thought I’d have to live with the limits. She built a progressive program with my physio and understood my body mechanics exceptionally well. It has literally been life-changing—I can resume and enjoy so many of the daily activities I couldn’t after the accident.
@@ -129,20 +167,20 @@ export default function Home() {
       <main id="main">
         <section className="hero shell">
           <div className="hero-copy">
-            <p className="eyebrow">WOMEN’S STRENGTH COACH · EDUCATOR · ATHLETE · FOUNDER</p>
+            <p className="eyebrow">WOMEN’S STRENGTH COACH · EDUCATOR · ATHLETE · FOUNDER OF THE WOMEN’S BARBELL CLUB</p>
             <h1>
               Women don’t need to be told to do more.{" "}
               <span className="hero-highlight">They need to be built up so they can.</span>
             </h1>
             <p className="hero-lede">
-              Through my signature From Bodyweight to Barbells program, I help women transform physically and mentally, fall in love with fitness, and become confident barbell lifters. I help them build strength that supports them through every chapter of life. Every stage of that journey is grounded in the three pillars of The Women’s Barbell Club: Intention, Strength, and Sisterhood.
+              Through my signature From Bodyweight to Barbells program, I help women transform physically and mentally, fall in love with fitness, and become confident barbell lifters. We start where you are and build the strength, skill, and self-trust to keep progressing through every chapter of life.
             </p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="#work">Work with me</Link>
-              <Link className="text-link" href="#about">My story</Link>
+              <Link className="button button-primary" href="#program">Explore the program</Link>
+              <a className="text-link" href={wbcUrl}>Visit The Women’s Barbell Club ↗</a>
             </div>
             <div aria-label="Professional highlights" className="hero-proof">
-              <div><strong>12+</strong><span>years coaching women · multiple awards</span></div>
+              <div><strong>12+</strong><span>years coaching women · multiple awards at Canada’s largest fitness company</span></div>
               <div><strong>3</strong><span>pillars for lasting progress</span></div>
               <div><strong>1</strong><span>goal: strength for real life</span></div>
             </div>
@@ -164,6 +202,122 @@ export default function Home() {
             {["MOVE WITH PURPOSE", "EAT TO SUPPORT YOUR LIFE", "RECOVER ON PURPOSE", "FEEL MORE CAPABLE", "GET STRONGER", "MOVE WITH PURPOSE", "EAT TO SUPPORT YOUR LIFE", "RECOVER ON PURPOSE"].map((item, index) => (
               <span className="marquee-item" key={`${item}-${index}`}>{item}<i>•</i></span>
             ))}
+          </div>
+        </section>
+
+        <section className="program section" id="program">
+          <div className="shell">
+            <div className="program-heading">
+              <div>
+                <p className="eyebrow">SIGNATURE PROGRAM · THE WOMEN’S BARBELL CLUB</p>
+                <h2>From Bodyweight<br /><em>to Barbells.</em></h2>
+              </div>
+              <div className="program-intro">
+                <p className="program-lede">A progressive strength program that meets you where you are and teaches you how to become a confident lifter—one purposeful stage at a time.</p>
+                <p>From Bodyweight to Barbells is the signature coaching pathway of The Women’s Barbell Club and the method at the centre of my one-to-one and small-group strength coaching.</p>
+              </div>
+            </div>
+
+            <div aria-label="From Bodyweight to Barbells progression" className="program-stages">
+              {programStages.map((stage) => (
+                <article className="program-stage" key={stage.number}>
+                  <span className="program-number">{stage.number}</span>
+                  <h3>{stage.title}</h3>
+                  <strong>{stage.line}</strong>
+                  <p>{stage.copy}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="program-details">
+              <div>
+                <p className="eyebrow">HOW IT WORKS</p>
+                <p>Your starting point may be bodyweight, dumbbells, machines, or the barbell itself. We assess what your body, experience, and current season need, then use every stage with purpose. You learn how to move, why your program is structured the way it is, and how to keep building strength without feeling as though every interruption sends you back to the beginning.</p>
+                <p>Progression is never about rushing toward the barbell or treating one form of training as more legitimate than another. It is about using the right tool at the right time and developing confidence through experience.</p>
+              </div>
+              <div className="program-fit">
+                <p className="eyebrow">WHO IT IS FOR</p>
+                <ul>
+                  <li>Women new to strength training</li>
+                  <li>Women returning after time away</li>
+                  <li>Women rebuilding after pain or a significant life change</li>
+                  <li>Women ready to progress beyond familiar exercises or equipment</li>
+                  <li>Women who want to become confident barbell lifters</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="program-action">
+              <div>
+                <strong>One-to-one coaching + small-group training</strong>
+                <span>Mississauga and Milton, Ontario · Limited availability</span>
+              </div>
+              <Link className="button button-primary" href="/contact">Inquire about the program</Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="stories section" id="stories">
+          <div className="shell">
+            <div className="stories-heading">
+              <div>
+                <p className="eyebrow">CLIENT STORIES</p>
+                <h2>Strength that shows up <em>in real life.</em></h2>
+              </div>
+              <p>These women started in different places—with pain, significant life changes, or years of stalled starts. What connects them is the strength they built and the way it began showing up beyond the gym. In their own words.</p>
+            </div>
+            <div className="stories-grid">
+              {testimonials.map((testimonial) => (
+                <blockquote className="story-card" key={testimonial.name}>
+                  <span className="story-outcome">{testimonial.outcome}</span>
+                  <span aria-hidden="true" className="story-mark">“</span>
+                  <p>{testimonial.quote}</p>
+                  <footer>
+                    <strong>{testimonial.name}</strong>
+                    <span>{testimonial.relationship}</span>
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="work section" id="work">
+          <div className="shell">
+            <p className="eyebrow">WORK WITH ME</p>
+            <div className="work-heading">
+              <h2>Get stronger for what matters to you.</h2>
+              <p>My work takes different forms, but the starting point is always the woman in front of me. Whether you are here to get stronger, build your fitness career, bring meaningful education to a group, or explore a collaboration, we begin with what matters to you.</p>
+            </div>
+            <div className="work-grid">
+              {services.map((service) => (
+                <article className={`work-card${service.featured ? " featured" : ""}`} key={service.title}>
+                  <span className="card-tag">{service.tag}</span>
+                  {service.program && <span className="card-program">{service.program}</span>}
+                  <h3>{service.title}</h3>
+                  <p>{service.copy}</p>
+                  <div className="card-meta">{service.meta}</div>
+                  <Link className="card-link" href="/contact">{service.cta} <span aria-hidden="true">→</span></Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="wbc section" id="wbc">
+          <div className="shell wbc-card">
+            <div className="wbc-copy">
+              <p className="eyebrow">FOUNDED BY SALWA</p>
+              <h2>I created the strength space I want the next generation to inherit.</h2>
+              <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
+              <p className="wbc-definition">A community-based approach to strength training that teaches women to fall in love with fitness through every season of life.</p>
+              <p>After more than a decade coaching women, I knew access to the weight room was not enough. Women needed a clear way to learn, progress, support one another, and take ownership of the spaces where strength is built—not remain guests in them.</p>
+              <p>I created The Women’s Barbell Club in response to what I saw women, especially younger women, asking for: credible coaching, practical education, a healthier relationship with fitness, and real sisterhood.</p>
+              <p>WBC is a hybrid online and in-person pathway from beginner to confident lifter—and, eventually, leader. It is built around Intention, Strength, and Sisterhood so women can train, learn, and create more room to become stronger in the lives they are already living.</p>
+            </div>
+            <a aria-label="Join The Women’s Barbell Club waitlist" className="wbc-waitlist" href={wbcUrl}>
+              <span>JOIN THE</span><strong>WAITLIST</strong><small>THE WOMEN’S BARBELL CLUB ↗</small>
+            </a>
           </div>
         </section>
 
@@ -251,66 +405,6 @@ export default function Home() {
             <img alt="Salwa Qadir preparing to lift at a powerlifting competition" className="site-photo athlete-photo" src="/assets/powerlifter.jpg" />
           </div>
           <p className="athlete-caption">Competitive Powerlifter · Powerlifting Coach · Provincial Referee</p>
-        </section>
-
-        <section className="stories section" id="stories">
-          <div className="shell">
-            <div className="stories-heading">
-              <div>
-                <p className="eyebrow">CLIENT STORIES</p>
-                <h2>Strength that shows up <em>in real life.</em></h2>
-              </div>
-              <p>These are women who came in with pain, big life changes, or years of stalled starts—and left stronger, more capable, and more at home in their bodies. In their own words.</p>
-            </div>
-            <div className="stories-grid">
-              {testimonials.map((testimonial) => (
-                <blockquote className="story-card" key={testimonial.name}>
-                  <span aria-hidden="true" className="story-mark">“</span>
-                  <p>{testimonial.quote}</p>
-                  <footer>
-                    <strong>{testimonial.name}</strong>
-                    <span>{testimonial.relationship}</span>
-                  </footer>
-                </blockquote>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="work section" id="work">
-          <div className="shell">
-            <p className="eyebrow">WORK WITH ME</p>
-            <div className="work-heading">
-              <h2>Get stronger for what matters to you.</h2>
-              <p>My work takes different forms: one-to-one and small-group coaching, fitness-business mentorship, workshops, and educational collaborations. The aim is always the same: to help women become stronger, more confident, and more capable of doing what matters to them.</p>
-            </div>
-            <div className="work-grid">
-              {services.map((service) => (
-                <article className={`work-card${service.featured ? " featured" : ""}`} key={service.title}>
-                  <span className="card-tag">{service.tag}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.copy}</p>
-                  <div className="card-meta">{service.meta}</div>
-                </article>
-              ))}
-            </div>
-            <Link className="button button-primary work-cta" href="/contact">Start a conversation</Link>
-          </div>
-        </section>
-
-        <section className="wbc section" id="wbc">
-          <div className="shell wbc-card">
-            <div className="wbc-copy">
-              <p className="eyebrow">FOUNDED BY SALWA</p>
-              <h2>The Women’s<br />Barbell Club</h2>
-              <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
-              <p className="wbc-definition">A community-based approach to strength training that teaches women to fall in love with fitness through every season of life.</p>
-              <p>The Women’s Barbell Club is a hybrid online and in-person space where women train and learn together, apply the lifestyle practices that support their training and wellness, and lean on one another as they create more room to become stronger and live a more balanced and fulfilled life.</p>
-            </div>
-            <div aria-label="Coming soon" className="coming-soon">
-              <span>COMING</span><strong>SOON</strong><small>THE WOMEN’S BARBELL CLUB</small>
-            </div>
-          </div>
         </section>
 
         <section className="quote-band">

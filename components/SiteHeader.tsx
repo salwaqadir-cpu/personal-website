@@ -52,7 +52,7 @@ export default function SiteHeader({ contactActive = false }: SiteHeaderProps) {
           <Link href="/#about" onClick={closeMenu}>About</Link>
           <Link href="/#approach" onClick={closeMenu}>Approach</Link>
           <Link href="/#work" onClick={closeMenu}>Work with me</Link>
-          <Link href="/#wbc" onClick={closeMenu}>WBC</Link>
+          <a href="https://www.thewomensbarbell.club/" onClick={closeMenu}>WBC ↗</a>
           <Link className={`nav-cta${contactActive ? " active" : ""}`} href="/contact" onClick={closeMenu}>Contact</Link>
         </nav>
       </div>
