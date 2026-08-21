@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("renders the finished homepage and contact page", async () => {
@@ -55,4 +56,11 @@ test("renders the finished homepage and contact page", async () => {
   assert.match(contactPage, /rel="canonical" href="https:\/\/salwaqadir\.com\/contact\/"/);
   assert.match(contactPage, /Let’s start with what you’re looking for\./);
   assert.match(contactPage, /Brand \+ Media Partnerships/);
+});
+
+test("uses an opaque full-viewport mobile navigation panel", async () => {
+  const stylesheet = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(stylesheet, /\.site-header \{ backdrop-filter: none; \}/);
+  assert.match(stylesheet, /\.site-nav \{[^}]*z-index: 101;[^}]*min-height: 100dvh;[^}]*background-color: #fbfcf9;/);
 });
