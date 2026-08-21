@@ -32,6 +32,9 @@ test("renders the finished homepage and contact page", async () => {
   assert.match(homepage, /<title>Salwa Qadir \| Women’s Strength Coach<\/title>/);
   assert.match(homepage, /Women don’t need to be told to do more\./);
   assert.match(homepage, /From Bodyweight to Barbells/);
+  assert.match(homepage, /Canada’s largest fitness company/);
+  assert.match(homepage, /small-group training/);
+  assert.match(homepage, /Limited small-group spots/);
   assert.match(homepage, /src="\/assets\/hero\.jpg"/);
   assert.match(homepage, /property="og:image"/);
 
