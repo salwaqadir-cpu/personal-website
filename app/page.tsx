@@ -364,13 +364,11 @@ export default function Home() {
         <section className="wbc section" id="wbc">
           <div className="shell wbc-card">
             <div className="wbc-copy">
-              <p className="eyebrow">FOUNDED BY SALWA</p>
-              <h2>I created the strength space I want the next generation to inherit.</h2>
+              <p className="eyebrow">THE WOMEN’S BARBELL CLUB · FOUNDED BY SALWA</p>
+              <h2>Strong in the gym.<br /><em>Supported in real life.</em></h2>
               <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
-              <p className="wbc-definition">A community-based approach to strength training that teaches women to fall in love with fitness through every season of life.</p>
-              <p>After more than a decade coaching women, I knew access to the weight room was not enough. Women needed a clear way to learn, progress, support one another, and take ownership of the spaces where strength is built rather than remain guests in them.</p>
-              <p>I created The Women’s Barbell Club in response to what I saw women, especially younger women, asking for: credible coaching, practical education, a healthier relationship with fitness, and real sisterhood.</p>
-              <p>WBC is a hybrid online and in-person pathway from beginner to confident lifter and, eventually, leader. It is built around Intention, Strength, and Sisterhood so women can train, learn, and create more room to become stronger in the lives they are already living.</p>
+              <p className="wbc-definition">WBC is more than lifting. It’s a community for building strength, fueling your body, and navigating real life together.</p>
+              <p>From meal prep and lifting events to retreats and wellness, we’re creating the support women need to make space for themselves, their families, and their careers.</p>
             </div>
             <a aria-label="Join The Women’s Barbell Club waitlist" className="wbc-waitlist" href={wbcUrl}>
               <span>JOIN THE</span><strong>WAITLIST</strong><small>THE WOMEN’S BARBELL CLUB ↗</small>
