@@ -230,7 +230,7 @@ export default function Home() {
               <span className="hero-highlight">They need to be built up so they can.</span>
             </h1>
             <p className="hero-lede">
-              My signature program, From Bodyweight to Barbells, helps women fall in love with fitness, build strength and self-trust, and become confident barbell lifters—for life.
+              My signature program, <em className="hero-program-name">From Bodyweight to Barbells</em>, helps women fall in love with fitness, build strength and self-trust, and become confident barbell lifters—for life.
             </p>
             <div className="hero-actions">
               <Link className="button button-primary" href="#program">Explore the program</Link>
@@ -287,26 +287,26 @@ export default function Home() {
             </div>
 
             <div className="program-details">
-              <div>
+              <div className="program-how">
                 <p className="eyebrow">HOW IT WORKS</p>
-                <p>Your starting point may be bodyweight, dumbbells, machines, or the barbell itself. We assess what your body, experience, and current season need, then use every stage with purpose. You learn how to move, why your program is structured the way it is, and how to keep building strength without feeling as though every interruption sends you back to the beginning.</p>
+                <p className="program-details-lede">Your starting point may be bodyweight, dumbbells, machines, or the barbell itself. We assess what your body, experience, and current season need, then use every stage with purpose. You learn how to move, why your program is structured the way it is, and how to keep building strength without feeling as though every interruption sends you back to the beginning.</p>
                 <p>Progression is never about rushing toward the barbell or treating one form of training as more legitimate than another. It is about using the right tool at the right time and developing confidence through experience.</p>
               </div>
               <div className="program-fit">
-                <p className="eyebrow">WHO IT IS FOR</p>
+                <p className="eyebrow">THIS IS FOR WOMEN WHO</p>
                 <ul>
-                  <li>Women new to strength training</li>
-                  <li>Women returning after time away</li>
-                  <li>Women rebuilding after pain or a significant life change</li>
-                  <li>Women ready to progress beyond familiar exercises or equipment</li>
-                  <li>Women who want to become confident barbell lifters</li>
+                  <li>Are new to strength training</li>
+                  <li>Are returning after time away</li>
+                  <li>Are rebuilding after pain or a significant life change</li>
+                  <li>Are ready to progress beyond familiar exercises or equipment</li>
+                  <li>Want to become confident barbell lifters</li>
                 </ul>
               </div>
             </div>
 
             <div className="program-action">
               <div>
-                <strong>One-to-one coaching + small-group training</strong>
+                <strong>One-to-One Coaching + Small-Group Training</strong>
                 <span>Mississauga and Milton, Ontario · Limited availability</span>
               </div>
               <Link className="button button-primary" href="/contact">Inquire about the program</Link>
