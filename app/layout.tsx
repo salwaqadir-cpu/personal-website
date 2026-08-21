@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Through From Bodyweight to Barbells, Salwa helps women transform physically and mentally, fall in love with fitness, and become confident barbell lifters.",
     images: [
       {
-        url: `${basePath}/og.png`,
+        url: `${basePath}/og.jpg`,
         width: 1731,
         height: 909,
         alt: "Salwa Qadir — Women don’t need to be told to do more. They need to be built up so they can.",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Salwa Qadir | Women’s Strength Coach",
     description:
       "Through From Bodyweight to Barbells, Salwa helps women transform physically and mentally, fall in love with fitness, and become confident barbell lifters.",
-    images: [`${basePath}/og.png`],
+    images: [`${basePath}/og.jpg`],
   },
 };
 
