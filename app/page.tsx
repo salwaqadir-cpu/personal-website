@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { withBasePath } from "@/lib/site-path";
 
 const wbcUrl = "https://www.thewomensbarbell.club/";
 
@@ -189,7 +190,7 @@ export default function Home() {
             <div className="shape shape-one" />
             <div className="shape shape-two" />
             <div className="photo-frame">
-              <img alt="Salwa Qadir strength training outdoors" className="site-photo hero-photo" src="/assets/hero.jpg" />
+              <img alt="Salwa Qadir strength training outdoors" className="site-photo hero-photo" src={withBasePath("/assets/hero.jpg")} />
             </div>
             <div aria-label="Train, learn, live" className="hero-note">
               <span>TRAIN</span><span>LEARN</span><span>LIVE</span>
@@ -328,7 +329,7 @@ export default function Home() {
             <p className="statement-copy">We train your body while working with the life you’re already living. As you get physically stronger, you also practise adjusting, prioritizing, recovering, following through, and making room for what matters to you. Confidence, self-trust, and mental strength improve through the same process—not afterward. The goal isn’t to finish becoming strong and then use that strength. It’s to become stronger while living your life and to get better at doing both.</p>
           </div>
           <div className="section-photo-wrap approach-photo-wrap">
-            <img alt="Salwa Qadir seated with a barbell and stability ball" className="site-photo" src="/assets/approach.jpg" />
+            <img alt="Salwa Qadir seated with a barbell and stability ball" className="site-photo" src={withBasePath("/assets/approach.jpg")} />
           </div>
         </section>
 
@@ -349,7 +350,7 @@ export default function Home() {
         </section>
 
         <div className="foundations-visual">
-          <img alt="Salwa Qadir training outdoors with her daughter" className="site-photo wide-photo" src="/assets/foundations.jpg" />
+          <img alt="Salwa Qadir training outdoors with her daughter" className="site-photo wide-photo" src={withBasePath("/assets/foundations.jpg")} />
         </div>
 
         <section className="statement section shell split-editorial" id="values">
@@ -359,7 +360,7 @@ export default function Home() {
             <p className="statement-copy">Growing up across cultures taught me early that women can have very different relationships with family, food, movement, time, and personal goals. I don’t expect you to fit yourself into a generic version of fitness. We shape strength and wellness around who you are and the season of life you’re in—respecting your values, culture, and priorities while helping you get stronger in the life you actually live.</p>
           </div>
           <div className="section-photo-wrap values-photo-wrap">
-            <img alt="Salwa Qadir beside a stability ball and water bottle" className="site-photo" src="/assets/values.jpg" />
+            <img alt="Salwa Qadir beside a stability ball and water bottle" className="site-photo" src={withBasePath("/assets/values.jpg")} />
           </div>
         </section>
 
@@ -367,7 +368,7 @@ export default function Home() {
           <div className="shell about-grid">
             <div className="about-visual">
               <div className="about-photo">
-                <img alt="Salwa Qadir smiling during a candid family fitness moment" className="site-photo about-image" src="/assets/about.jpg" />
+                <img alt="Salwa Qadir smiling during a candid family fitness moment" className="site-photo about-image" src={withBasePath("/assets/about.jpg")} />
               </div>
               <div className="lavender-card">STRENGTH<br />IS A SKILL.</div>
             </div>
@@ -387,7 +388,7 @@ export default function Home() {
             <p className="eyebrow">EXPERIENCE + CREDENTIALS</p>
             <h2>More than a decade coaching women.<br />A career shaped by teaching strength well.</h2>
             <div className="credential-photo-wrap">
-              <img alt="Salwa Qadir in a professional portrait" className="site-photo credential-photo" src="/assets/experience.jpg" />
+              <img alt="Salwa Qadir in a professional portrait" className="site-photo credential-photo" src={withBasePath("/assets/experience.jpg")} />
             </div>
           </div>
           <div className="credential-list">
@@ -402,7 +403,7 @@ export default function Home() {
 
         <section className="athlete-photo-band shell">
           <div className="athlete-photo-wrap">
-            <img alt="Salwa Qadir preparing to lift at a powerlifting competition" className="site-photo athlete-photo" src="/assets/powerlifter.jpg" />
+            <img alt="Salwa Qadir preparing to lift at a powerlifting competition" className="site-photo athlete-photo" src={withBasePath("/assets/powerlifter.jpg")} />
           </div>
           <p className="athlete-caption">Competitive Powerlifter · Powerlifting Coach · Provincial Referee</p>
         </section>
@@ -416,7 +417,7 @@ export default function Home() {
         <section className="contact-teaser section">
           <div className="shell contact-teaser-card">
             <div className="contact-photo-wrap">
-              <img alt="Salwa Qadir in a relaxed seated portrait" className="site-photo contact-photo" src="/assets/contact.jpg" />
+              <img alt="Salwa Qadir in a relaxed seated portrait" className="site-photo contact-photo" src={withBasePath("/assets/contact.jpg")} />
             </div>
             <div>
               <p className="eyebrow">GET IN TOUCH</p>
