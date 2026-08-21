@@ -34,7 +34,9 @@ test("renders the finished homepage and contact page", async () => {
   assert.match(homepage, /From Bodyweight to Barbells/);
   assert.match(homepage, /Canada’s largest fitness company/);
   assert.match(homepage, /small-group training/);
-  assert.match(homepage, /Limited small-group spots/);
+  assert.match(homepage, /resource developer for personal trainers/);
+  assert.match(homepage, /coaching and refereeing in the sport/);
+  assert.match(homepage, /Limited availability · Inquire about current openings/);
   assert.match(homepage, /src="\/assets\/hero\.jpg"/);
   assert.match(homepage, /property="og:image"/);
 

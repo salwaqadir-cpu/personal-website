@@ -42,7 +42,7 @@ const pillars = [
 const credentials = [
   "12+ years of full-time experience coaching women in strength + fitness",
   "Multiple awards + accolades at Canada’s largest fitness company",
-  "Fitness educator + workshop facilitator for personal trainers",
+  "Fitness educator + workshop facilitator + resource developer for personal trainers",
   "Advanced Fascial Stretch Therapy — Level 3",
   "Exercise Therapy + Nutrition Coaching",
   "Barbell Strength + Hypertrophy Training",
@@ -57,8 +57,7 @@ const services = [
     meta: (
       <>
         <span>Mississauga and Milton, Ontario</span>
-        <span>Limited one-to-one availability · Limited small-group spots</span>
-        <span>Inquire about current openings</span>
+        <span>Limited availability · Inquire about current openings</span>
       </>
     ),
     featured: true,
@@ -183,7 +182,7 @@ export default function Home() {
               <p className="eyebrow">ABOUT SALWA</p>
               <h2>I learned how to get stronger in the middle of a full life.</h2>
               <p>I’m a women’s strength coach, educator, competitive powerlifter, and mom. I didn’t start out loving weights. My relationship with fitness changed when I stopped asking how to become smaller and started asking what my body could do.</p>
-              <p>That shift took me from dance to the weight room, then into a full-time career coaching women, educating trainers, and growing into leadership at Canada’s largest fitness company. My work there was recognized with multiple awards and accolades. At the same time, I trained and competed as a powerlifter, protected my own physical wellbeing, and raised a family.</p>
+              <p>That shift took me from dance to the weight room, then into a full-time career coaching women, educating trainers, and growing into leadership at Canada’s largest fitness company. My work there was recognized with multiple awards and accolades. At the same time, I trained and competed as a powerlifter while coaching and refereeing in the sport. I also protected my own physical wellbeing and raised a family.</p>
               <p>I learned that not every chapter of life can hold the same amount. I learned when to push, when to pull back, and how to make room for my goals without losing sight of what I needed. That’s how I coach now: physical strength, confidence, and self-trust develop together while we learn how to adjust, prioritize, and make room for what matters in real life.</p>
               <Link className="text-link light-link" href="#work">See how we can work together <span aria-hidden="true">→</span></Link>
             </div>
@@ -220,7 +219,7 @@ export default function Home() {
             <p className="eyebrow">WORK WITH ME</p>
             <div className="work-heading">
               <h2>Get stronger for what matters to you.</h2>
-              <p>Whether we’re working one-to-one or in a small group, mentoring a fitness professional, leading a workshop, or collaborating on education, the aim is the same: to help women become stronger, more confident, and more capable of doing what matters to them.</p>
+              <p>My work takes different forms: one-to-one and small-group coaching, fitness-business mentorship, workshops, and educational collaborations. The aim is always the same: to help women become stronger, more confident, and more capable of doing what matters to them.</p>
             </div>
             <div className="work-grid">
               {services.map((service) => (
