@@ -173,7 +173,7 @@ export default function Home() {
               <span className="hero-highlight">They need to be built up so they can.</span>
             </h1>
             <p className="hero-lede">
-              Through my signature From Bodyweight to Barbells program, I help women transform physically and mentally, fall in love with fitness, and become confident barbell lifters. We start where you are and build the strength, skill, and self-trust to keep progressing through every chapter of life.
+              My signature program, From Bodyweight to Barbells, helps women fall in love with fitness, build strength and self-trust, and become confident barbell lifters—for life.
             </p>
             <div className="hero-actions">
               <Link className="button button-primary" href="#program">Explore the program</Link>
