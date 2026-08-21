@@ -55,7 +55,7 @@ const contactStructuredData = {
 };
 
 const inquiryTypes = [
-  "Women’s Strength Coaching — One-to-One or Small Group",
+  "Women’s Strength Coaching: One-to-One or Small Group",
   "Fitness Business Mentorship",
   "Workshops + Speaking",
   "Brand + Media Partnerships",

@@ -71,13 +71,13 @@ const programStages = [
     number: "02",
     title: "Dumbbells",
     line: "Add load with control.",
-    copy: "Dumbbells help you develop coordination, balance, and strength while learning how to move weight intentionally—not simply complete repetitions.",
+    copy: "Dumbbells help you develop coordination, balance, and strength while learning how to move weight intentionally, not simply complete repetitions.",
   },
   {
     number: "03",
     title: "Machines",
-    line: "Build strength with precision.",
-    copy: "Machines allow us to target specific muscles, practise effort, and build capacity while maintaining the control and technique established in the earlier stages.",
+    line: "Build muscle with purpose.",
+    copy: "Machines are a powerful tool for building strength and lean muscle. You’ll learn to use them safely and effectively, building the confidence and strength to progress to barbell training.",
   },
   {
     number: "04",
@@ -98,7 +98,7 @@ const pillars = [
         <path d="M24 6v6m0 24v6M6 24h6m24 0h6" />
       </svg>
     ),
-    copy: "Know what you’re working toward, why you’re doing it, and how it should feel in your body. Based on your body and your life, we make purposeful decisions about your goals, exercises, nutrition, and priorities—and explain the reasoning behind them—so every session has a clear focus and a deeper reason behind it.",
+    copy: "Know what you’re working toward, why you’re doing it, and how it should feel in your body. Based on your body and your life, we make purposeful decisions about your goals, exercises, nutrition, and priorities, and explain the reasoning behind them so every session has a clear focus and a deeper reason behind it.",
   },
   {
     number: "02",
@@ -108,7 +108,7 @@ const pillars = [
         <path d="M8 21h6v6H8zm26 0h6v6h-6zM14 18h5v12h-5zm15 0h5v12h-5zM19 22h10v4H19z" />
       </svg>
     ),
-    copy: "Build physical and mental strength through progressive training and education. As you understand your body, your exercises, and your progress, you develop the confidence to make informed choices—and the self-trust to believe in what you’re capable of.",
+    copy: "Build physical and mental strength through progressive training and education. As you understand your body, your exercises, and your progress, you develop the confidence to make informed choices and the self-trust to believe in what you’re capable of.",
   },
   {
     number: "03",
@@ -120,7 +120,7 @@ const pillars = [
         <path d="M8 38c1-8 5-12 10-12s9 4 10 12m-2-9c2-3 4-5 7-5 4 0 7 4 8 11" />
       </svg>
     ),
-    copy: "We help you communicate your goals and invite your loved ones into the journey so they can support you—and benefit from the stronger, more capable person you’re becoming. When support is limited, your coach and the WBC sisterhood are here for you to lean on.",
+    copy: "We help you communicate your goals and invite your loved ones into the journey so they can support you and benefit from the stronger, more capable person you’re becoming. When support is limited, your coach and the WBC sisterhood are here for you to lean on.",
   },
 ];
 
@@ -128,7 +128,7 @@ const credentials = [
   "12+ years of full-time experience coaching women in strength + fitness",
   "Multiple awards + accolades at Canada’s largest fitness company",
   "Fitness educator + workshop facilitator + resource developer for personal trainers",
-  "Advanced Fascial Stretch Therapy — Level 3",
+  "Advanced Fascial Stretch Therapy, Level 3",
   "Exercise Therapy + Nutrition Coaching",
   "Barbell Strength + Hypertrophy Training",
   "Competitive Powerlifter · Powerlifting Coach · Provincial Referee",
@@ -177,7 +177,7 @@ const testimonials = [
     outcome: "Strength after major surgery",
     quote: (
       <>
-        After two C-sections and major abdominal surgery, I’d lost all my core strength. Within six months I was strength training—going on vacation and doing <em>hard things</em>, keeping up with my kids, even training while fasting through Ramadan. She knew how I ate as a South Asian woman and coached me around my real life. It was her warmth and encouragement that changed my life for the better.
+        After two C-sections and major abdominal surgery, I’d lost all my core strength. Within six months I was strength training, going on vacation and doing <em>hard things</em>, keeping up with my kids, even training while fasting through Ramadan. She knew how I ate as a South Asian woman and coached me around my real life. It was her warmth and encouragement that changed my life for the better.
       </>
     ),
     name: "Anam S.",
@@ -187,7 +187,7 @@ const testimonials = [
     outcome: "From bodyweight squat to a 125 lb barbell",
     quote: (
       <>
-        I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell—both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a movement specialist, and an extraordinary coach.
+        I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell, both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a movement specialist, and an extraordinary coach.
       </>
     ),
     name: "Maryam H.",
@@ -197,7 +197,7 @@ const testimonials = [
     outcome: "A plan that moves with real life",
     quote: (
       <>
-        I’d never been under a bar in over a decade of training with other trainers. Salwa moulds the entire plan around whatever is happening in your life—you never feel like you’re failing; you always feel on track. She’s a life coach, trainer, and guide, not just the hour you see her at the gym.
+        I’d never been under a bar in over a decade of training with other trainers. Salwa moulds the entire plan around whatever is happening in your life. You never feel like you’re failing; you always feel on track. She’s a life coach, trainer, and guide, not just the hour you see her at the gym.
       </>
     ),
     name: "Mehwish J.",
@@ -207,7 +207,7 @@ const testimonials = [
     outcome: "Rebuilding strength after injury",
     quote: (
       <>
-        After a fall left me with a compression fracture, I thought I’d have to live with the limits. She built a progressive program with my physio and understood my body mechanics exceptionally well. It has literally been life-changing—I can resume and enjoy so many of the daily activities I couldn’t after the accident.
+        After a fall left me with a compression fracture, I thought I’d have to live with the limits. She built a progressive program with my physio and understood my body mechanics exceptionally well. It has literally been life-changing. I can resume and enjoy so many of the daily activities I couldn’t after the accident.
       </>
     ),
     name: "Dr. Linda Deppisch",
@@ -230,7 +230,7 @@ export default function Home() {
               <span className="hero-highlight">They need to be built up so they can.</span>
             </h1>
             <p className="hero-lede">
-              My signature program, From Bodyweight to Barbells, helps women fall in love with fitness, build strength and self-trust, and become confident barbell lifters—for life.
+              My signature program, <em className="hero-program-name">From Bodyweight to Barbells</em>, helps women fall in love with fitness, build strength and self-trust, and become confident barbell lifters for life.
             </p>
             <div className="hero-actions">
               <Link className="button button-primary" href="#program">Explore the program</Link>
@@ -270,7 +270,7 @@ export default function Home() {
                 <h2>From Bodyweight<br /><em>to Barbells.</em></h2>
               </div>
               <div className="program-intro">
-                <p className="program-lede">A progressive strength program that meets you where you are and teaches you how to become a confident lifter—one purposeful stage at a time.</p>
+                <p className="program-lede">A progressive strength program that meets you where you are and teaches you how to become a confident lifter, one purposeful stage at a time.</p>
                 <p>From Bodyweight to Barbells is the signature coaching pathway of The Women’s Barbell Club and the method at the centre of my one-to-one and small-group strength coaching.</p>
               </div>
             </div>
@@ -287,26 +287,26 @@ export default function Home() {
             </div>
 
             <div className="program-details">
-              <div>
+              <div className="program-how">
                 <p className="eyebrow">HOW IT WORKS</p>
-                <p>Your starting point may be bodyweight, dumbbells, machines, or the barbell itself. We assess what your body, experience, and current season need, then use every stage with purpose. You learn how to move, why your program is structured the way it is, and how to keep building strength without feeling as though every interruption sends you back to the beginning.</p>
+                <p className="program-details-lede">Your starting point may be bodyweight, dumbbells, machines, or the barbell itself. We assess what your body, experience, and current season need, then use every stage with purpose. You learn how to move, why your program is structured the way it is, and how to keep building strength without feeling as though every interruption sends you back to the beginning.</p>
                 <p>Progression is never about rushing toward the barbell or treating one form of training as more legitimate than another. It is about using the right tool at the right time and developing confidence through experience.</p>
               </div>
               <div className="program-fit">
-                <p className="eyebrow">WHO IT IS FOR</p>
+                <p className="eyebrow">THIS IS FOR WOMEN WHO</p>
                 <ul>
-                  <li>Women new to strength training</li>
-                  <li>Women returning after time away</li>
-                  <li>Women rebuilding after pain or a significant life change</li>
-                  <li>Women ready to progress beyond familiar exercises or equipment</li>
-                  <li>Women who want to become confident barbell lifters</li>
+                  <li>Are new to strength training</li>
+                  <li>Are returning after time away</li>
+                  <li>Are rebuilding after pain or a significant life change</li>
+                  <li>Are ready to progress beyond familiar exercises or equipment</li>
+                  <li>Want to become confident barbell lifters</li>
                 </ul>
               </div>
             </div>
 
             <div className="program-action">
               <div>
-                <strong>One-to-one coaching + small-group training</strong>
+                <strong>One-to-One Coaching + Small-Group Training</strong>
                 <span>Mississauga and Milton, Ontario · Limited availability</span>
               </div>
               <Link className="button button-primary" href="/contact">Inquire about the program</Link>
@@ -321,7 +321,7 @@ export default function Home() {
                 <p className="eyebrow">CLIENT STORIES</p>
                 <h2>Strength that shows up <em>in real life.</em></h2>
               </div>
-              <p>These women started in different places—with pain, significant life changes, or years of stalled starts. What connects them is the strength they built and the way it began showing up beyond the gym. In their own words.</p>
+              <p>These women started in different places, including pain, significant life changes, or years of stalled starts. What connects them is the strength they built and the way it began showing up beyond the gym. In their own words.</p>
             </div>
             <div className="stories-grid">
               {testimonials.map((testimonial) => (
@@ -368,9 +368,9 @@ export default function Home() {
               <h2>I created the strength space I want the next generation to inherit.</h2>
               <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
               <p className="wbc-definition">A community-based approach to strength training that teaches women to fall in love with fitness through every season of life.</p>
-              <p>After more than a decade coaching women, I knew access to the weight room was not enough. Women needed a clear way to learn, progress, support one another, and take ownership of the spaces where strength is built—not remain guests in them.</p>
+              <p>After more than a decade coaching women, I knew access to the weight room was not enough. Women needed a clear way to learn, progress, support one another, and take ownership of the spaces where strength is built rather than remain guests in them.</p>
               <p>I created The Women’s Barbell Club in response to what I saw women, especially younger women, asking for: credible coaching, practical education, a healthier relationship with fitness, and real sisterhood.</p>
-              <p>WBC is a hybrid online and in-person pathway from beginner to confident lifter—and, eventually, leader. It is built around Intention, Strength, and Sisterhood so women can train, learn, and create more room to become stronger in the lives they are already living.</p>
+              <p>WBC is a hybrid online and in-person pathway from beginner to confident lifter and, eventually, leader. It is built around Intention, Strength, and Sisterhood so women can train, learn, and create more room to become stronger in the lives they are already living.</p>
             </div>
             <a aria-label="Join The Women’s Barbell Club waitlist" className="wbc-waitlist" href={wbcUrl}>
               <span>JOIN THE</span><strong>WAITLIST</strong><small>THE WOMEN’S BARBELL CLUB ↗</small>
@@ -382,7 +382,7 @@ export default function Home() {
           <div className="editorial-copy">
             <p className="eyebrow">MY APPROACH</p>
             <h2>Strength has to work<br /><em>while life is happening.</em></h2>
-            <p className="statement-copy">We train your body while working with the life you’re already living. As you get physically stronger, you also practise adjusting, prioritizing, recovering, following through, and making room for what matters to you. Confidence, self-trust, and mental strength improve through the same process—not afterward. The goal isn’t to finish becoming strong and then use that strength. It’s to become stronger while living your life and to get better at doing both.</p>
+            <p className="statement-copy">We train your body while working with the life you’re already living. As you get physically stronger, you also practise adjusting, prioritizing, recovering, following through, and making room for what matters to you. Confidence, self-trust, and mental strength improve through the same process rather than afterward. The goal isn’t to finish becoming strong and then use that strength. It’s to become stronger while living your life and to get better at doing both.</p>
           </div>
           <div className="section-photo-wrap approach-photo-wrap">
             <img alt="Salwa Qadir seated with a barbell and stability ball" className="site-photo" decoding="async" height="1700" loading="lazy" src={withBasePath("/assets/approach.jpg")} width="1131" />
@@ -393,7 +393,7 @@ export default function Home() {
           <div className="pillar-intro">
             <p className="eyebrow">THE WBC FRAMEWORK</p>
             <h2 id="wbc-framework-heading">Three pillars.<br /><em>One connected approach.</em></h2>
-            <p>We use Intention, Strength, and Sisterhood to connect your training, nutrition, recovery, and real life—so you can achieve your goals, keep evolving through every season, and never have to start from scratch again.</p>
+            <p>We use Intention, Strength, and Sisterhood to connect your training, nutrition, recovery, and real life so you can achieve your goals, keep evolving through every season, and never have to start from scratch again.</p>
           </div>
           {pillars.map((pillar) => (
             <article className="pillar-card" key={pillar.number}>
@@ -413,7 +413,7 @@ export default function Home() {
           <div className="editorial-copy">
             <p className="eyebrow">COACHING THE WOMAN IN FRONT OF ME</p>
             <h2>Your goals matter.<br /><em>So do your values, culture, and priorities.</em></h2>
-            <p className="statement-copy">Growing up across cultures taught me early that women can have very different relationships with family, food, movement, time, and personal goals. I don’t expect you to fit yourself into a generic version of fitness. We shape strength and wellness around who you are and the season of life you’re in—respecting your values, culture, and priorities while helping you get stronger in the life you actually live.</p>
+            <p className="statement-copy">Growing up across cultures taught me early that women can have very different relationships with family, food, movement, time, and personal goals. I don’t expect you to fit yourself into a generic version of fitness. We shape strength and wellness around who you are and the season of life you’re in, respecting your values, culture, and priorities while helping you get stronger in the life you actually live.</p>
           </div>
           <div className="section-photo-wrap values-photo-wrap">
             <img alt="Salwa Qadir beside a stability ball and water bottle" className="site-photo" decoding="async" height="1700" loading="lazy" src={withBasePath("/assets/values.jpg")} width="1131" />
@@ -466,7 +466,7 @@ export default function Home() {
 
         <section className="quote-band">
           <div className="shell">
-            <p>“Women don’t need to be told to do more.<br /><em>They need to be built up so they can do more—and shown how.</em>”</p>
+            <p>“Women don’t need to be told to do more.<br /><em>They need to be built up so they can do more and shown how.</em>”</p>
           </div>
         </section>
 
