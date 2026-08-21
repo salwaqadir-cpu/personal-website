@@ -40,6 +40,8 @@ test("renders the finished homepage and contact page", async () => {
   assert.match(homepage, /CLIENT STORIES/);
   assert.match(homepage, /Strength that shows up/);
   assert.match(homepage, /Dr\. Linda Deppisch/);
+  assert.match(homepage, /Mehwish J\.<\/strong><span>Client, 5 years/);
+  assert.ok(homepage.indexOf("CLIENT STORIES") < homepage.indexOf("WORK WITH ME"));
   assert.match(homepage, /src="\/assets\/hero\.jpg"/);
   assert.match(homepage, /property="og:image"/);
 

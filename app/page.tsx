@@ -108,7 +108,7 @@ const testimonials = [
       </>
     ),
     name: "Mehwish J.",
-    relationship: "Client, 4 years",
+    relationship: "Client, 5 years",
   },
   {
     quote: (
@@ -253,27 +253,6 @@ export default function Home() {
           <p className="athlete-caption">Competitive Powerlifter · Powerlifting Coach · Provincial Referee</p>
         </section>
 
-        <section className="work section" id="work">
-          <div className="shell">
-            <p className="eyebrow">WORK WITH ME</p>
-            <div className="work-heading">
-              <h2>Get stronger for what matters to you.</h2>
-              <p>My work takes different forms: one-to-one and small-group coaching, fitness-business mentorship, workshops, and educational collaborations. The aim is always the same: to help women become stronger, more confident, and more capable of doing what matters to them.</p>
-            </div>
-            <div className="work-grid">
-              {services.map((service) => (
-                <article className={`work-card${service.featured ? " featured" : ""}`} key={service.title}>
-                  <span className="card-tag">{service.tag}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.copy}</p>
-                  <div className="card-meta">{service.meta}</div>
-                </article>
-              ))}
-            </div>
-            <Link className="button button-primary work-cta" href="/contact">Start a conversation</Link>
-          </div>
-        </section>
-
         <section className="stories section" id="stories">
           <div className="shell">
             <div className="stories-heading">
@@ -295,6 +274,27 @@ export default function Home() {
                 </blockquote>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="work section" id="work">
+          <div className="shell">
+            <p className="eyebrow">WORK WITH ME</p>
+            <div className="work-heading">
+              <h2>Get stronger for what matters to you.</h2>
+              <p>My work takes different forms: one-to-one and small-group coaching, fitness-business mentorship, workshops, and educational collaborations. The aim is always the same: to help women become stronger, more confident, and more capable of doing what matters to them.</p>
+            </div>
+            <div className="work-grid">
+              {services.map((service) => (
+                <article className={`work-card${service.featured ? " featured" : ""}`} key={service.title}>
+                  <span className="card-tag">{service.tag}</span>
+                  <h3>{service.title}</h3>
+                  <p>{service.copy}</p>
+                  <div className="card-meta">{service.meta}</div>
+                </article>
+              ))}
+            </div>
+            <Link className="button button-primary work-cta" href="/contact">Start a conversation</Link>
           </div>
         </section>
 
