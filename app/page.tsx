@@ -367,7 +367,10 @@ export default function Home() {
               <p className="eyebrow">FOUNDED BY SALWA</p>
               <h2>THE WOMEN’S<br />BARBELL CLUB</h2>
               <p className="wbc-pillars">INTENTION <i>•</i> STRENGTH <i>•</i> SISTERHOOD</p>
-              <p className="wbc-tagline">Strong in the gym. <em>Supported in real life.</em></p>
+              <p className="wbc-tagline">
+                <span>Strong in the gym.</span>
+                <em>Supported in real life.</em>
+              </p>
               <p className="wbc-definition">WBC is more than lifting. It’s a community for building strength, fueling your body, and navigating real life together.</p>
               <p>From meal prep and lifting events to retreats and wellness, we’re creating the support women need to make space for themselves, their families, and their careers.</p>
             </div>
