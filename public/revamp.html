@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#151515">
+  <meta name="description" content="Salwa Qadir is a women’s strength coach, educator, athlete, and founder of The Women’s Barbell Club.">
+  <title>Salwa Qadir — Women’s Strength Coach</title>
+  <link rel="preload" as="image" href="/assets/hero.jpg">
+  <style>
+    :root {
+      --ink: #161616;
+      --paper: #f7f5ef;
+      --white: #fff;
+      --acid: #d7ff58;
+      --line: rgba(255,255,255,.32);
+      --pad: clamp(1.25rem, 4vw, 4.5rem);
+      --header-h: 4.75rem;
+      --ease: cubic-bezier(.77,0,.18,1);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--ink)}
+    body{margin:0;color:var(--white);background:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.2;-webkit-font-smoothing:antialiased}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{color:inherit;font:inherit}
+    img{display:block;width:100%}
+    ::selection{color:var(--ink);background:var(--acid)}
+    .skip-link{position:fixed;z-index:1000;top:.75rem;left:.75rem;transform:translateY(-180%);padding:.75rem 1rem;color:var(--ink);background:var(--acid);font-weight:700}
+    .skip-link:focus{transform:none}
+
+    .site-header{position:fixed;z-index:100;top:0;right:0;left:0;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);color:var(--white);transition:background .25s ease,color .25s ease}
+    .site-header::after{position:absolute;right:var(--pad);bottom:0;left:var(--pad);height:1px;content:"";background:var(--line)}
+    .site-header.scrolled{color:var(--ink);background:rgba(247,245,239,.94);backdrop-filter:blur(16px)}
+    .site-header.scrolled::after{background:rgba(22,22,22,.18)}
+    .wordmark{position:relative;z-index:2;font-size:.88rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+    .header-actions{display:flex;align-items:center;gap:.55rem}
+    .quick-link{display:none;min-height:2.75rem;align-items:center;padding:0 1.1rem;border-radius:999px;color:var(--ink);background:var(--acid);font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+    .menu-toggle{position:relative;z-index:102;width:2.75rem;height:2.75rem;border:0;border-radius:50%;background:rgba(255,255,255,.14);cursor:pointer;backdrop-filter:blur(8px)}
+    .site-header.scrolled .menu-toggle{background:rgba(22,22,22,.08)}
+    .menu-toggle span{position:absolute;left:.78rem;width:1.2rem;height:1.5px;background:currentColor;transition:transform .35s var(--ease),top .35s var(--ease)}
+    .menu-toggle span:first-child{top:1.08rem}.menu-toggle span:last-child{top:1.62rem}
+    .menu-toggle[aria-expanded="true"]{color:var(--ink);background:rgba(22,22,22,.08)}
+    .menu-toggle[aria-expanded="true"] span:first-child{top:1.36rem;transform:rotate(45deg)}
+    .menu-toggle[aria-expanded="true"] span:last-child{top:1.36rem;transform:rotate(-45deg)}
+
+    .menu-scrim{position:fixed;z-index:89;inset:0;border:0;visibility:hidden;opacity:0;background:rgba(0,0,0,.46);transition:opacity .45s ease,visibility .45s}
+    .menu-scrim.open{visibility:visible;opacity:1}
+    .menu-panel{position:fixed;z-index:90;top:0;right:0;bottom:0;width:min(100%,36rem);display:flex;flex-direction:column;overflow-y:auto;transform:translateX(101%);padding:calc(var(--header-h) + 2.5rem) var(--pad) 2rem;color:var(--ink);background:var(--paper);transition:transform .55s var(--ease)}
+    .menu-panel.open{transform:none}
+    .menu-kicker{margin:0 0 1.6rem;font-size:.65rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+    .menu-nav{display:grid;border-top:1px solid rgba(22,22,22,.22)}
+    .menu-nav a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(22,22,22,.22);font-size:clamp(1.9rem,8vw,3.8rem);font-weight:700;letter-spacing:-.05em}
+    .menu-nav a::after{content:"↗";font-size:.9rem}.menu-nav a[href^="#"]::after{content:"↓"}
+    .menu-footer{display:grid;gap:.55rem;margin-top:auto;padding-top:3rem;font-size:.76rem}
+    .menu-footer strong{letter-spacing:.12em;text-transform:uppercase}.menu-footer a{width:max-content;border-bottom:1px solid}
+
+    .panel{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;scroll-margin-top:var(--header-h);background:#343434}
+    .panel-image,.panel-shade{position:absolute;inset:0}
+    .panel-image{z-index:-2;width:100%;height:100%;object-fit:cover;transform:scale(1.01);transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+    .panel.in-view .panel-image{transform:scale(1.045)}
+    .panel-shade{z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.06) 18%,rgba(0,0,0,.06) 42%,rgba(0,0,0,.78) 100%)}
+    .panel-content{width:100%;max-width:80rem;padding:calc(var(--header-h) + 3rem) var(--pad) max(2.25rem,env(safe-area-inset-bottom))}
+    .panel-kicker{margin:0 0 .75rem;font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .panel h1,.panel h2{max-width:18ch;margin:0;font-size:clamp(2.65rem,11.2vw,7.5rem);font-weight:700;letter-spacing:-.065em;line-height:.88;text-wrap:balance}
+    .hero h1{max-width:11ch}
+    .panel-copy{max-width:37rem;margin:1.15rem 0 0;font-size:clamp(.98rem,2vw,1.2rem);line-height:1.42}
+    .panel-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.35rem}
+    .button{min-height:3rem;display:inline-flex;align-items:center;justify-content:center;padding:0 1.25rem;border:1px solid var(--white);border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;transition:color .2s ease,background .2s ease,transform .2s ease}
+    .button:hover{transform:translateY(-2px)}
+    .button-primary{border-color:var(--acid);color:var(--ink);background:var(--acid)}
+    .button-light{background:rgba(255,255,255,.12);backdrop-filter:blur(8px)}
+    .scroll-cue{position:absolute;right:var(--pad);bottom:2.8rem;display:none;align-items:center;gap:.65rem;font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;writing-mode:vertical-rl}
+    .scroll-cue::after{width:1px;height:3rem;content:"";background:currentColor}
+    .hero .panel-image{object-position:57% center}.program .panel-image{object-position:62% center}.athlete .panel-image{object-position:48% center}.sisterhood .panel-image{object-position:53% center}.about .panel-image{object-position:50% 34%}.contact .panel-image{object-position:48% center}
+
+    .light-panel{color:var(--ink);background:var(--paper)}
+    .light-panel .panel-shade{background:linear-gradient(180deg,rgba(247,245,239,.05) 22%,rgba(247,245,239,.16) 45%,rgba(247,245,239,.96) 100%)}
+    .light-panel .button{border-color:var(--ink)}.light-panel .button-primary{border-color:var(--ink);color:var(--white);background:var(--ink)}
+    .chapter-marker{position:absolute;z-index:2;top:calc(var(--header-h) + 1.25rem);left:var(--pad);display:flex;align-items:center;gap:.65rem;font-size:.62rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .chapter-marker::before{width:2rem;height:1px;content:"";background:currentColor}
+
+    .footer-bar{display:grid;gap:1.8rem;padding:2.5rem var(--pad);color:var(--white);background:var(--ink)}
+    .footer-bar .wordmark{font-size:1rem}.footer-meta{display:grid;gap:.6rem;font-size:.7rem;color:rgba(255,255,255,.6)}
+    .footer-links{display:flex;flex-wrap:wrap;gap:1.25rem;font-size:.72rem;font-weight:700}
+
+    @media(min-width:48rem){:root{--header-h:5.5rem}.quick-link{display:inline-flex}.panel-content{padding-bottom:4.5rem}.panel-copy{margin-top:1.5rem}.scroll-cue{display:flex}.footer-bar{grid-template-columns:1fr auto auto;align-items:end}.footer-meta{text-align:right}}
+    @media(min-width:64rem){
+      .panel h1,.panel h2{font-size:clamp(5rem,8vw,8.5rem)}.panel-content{padding-bottom:5rem}.hero .panel-content,.athlete .panel-content{padding-left:clamp(4.5rem,7vw,8rem)}
+      .program .panel-content,.about .panel-content{margin-left:auto;width:61%}.program .panel-image{object-position:35% 56%}
+      .program .panel-shade,.about .panel-shade{background:linear-gradient(90deg,rgba(0,0,0,.03) 20%,rgba(0,0,0,.12) 48%,rgba(0,0,0,.78) 100%)}
+      .light-panel.program .panel-shade{background:linear-gradient(90deg,rgba(247,245,239,.03) 24%,rgba(247,245,239,.35) 57%,rgba(247,245,239,.98) 100%)}
+      .about .panel-image{object-position:34% 40%}.about .panel-shade{background:linear-gradient(90deg,rgba(247,245,239,.02) 22%,rgba(247,245,239,.4) 54%,rgba(247,245,239,.98) 100%)}.sisterhood .panel-content{max-width:70rem}
+    }
+    @media(prefers-reduced-motion:no-preference) and (min-width:64rem){main{scroll-snap-type:y proximity}.panel{scroll-snap-align:start}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}.panel-image{transform:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="siteHeader">
+    <a class="wordmark" href="#top" aria-label="Salwa Qadir home">Salwa Qadir</a>
+    <div class="header-actions">
+      <a class="quick-link" href="/contact">Work with Salwa</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </header>
+  <button class="menu-scrim" type="button" tabindex="-1" aria-label="Close menu"></button>
+  <aside class="menu-panel" id="menuPanel" aria-hidden="true">
+    <p class="menu-kicker">Explore</p>
+    <nav class="menu-nav" aria-label="Main navigation">
+      <a href="#program">The program</a><a href="#approach">My approach</a><a href="#about">About Salwa</a>
+      <a href="https://www.thewomensbarbell.club/">Women’s Barbell Club</a><a href="/contact">Work with me</a>
+    </nav>
+    <div class="menu-footer"><strong>Mississauga + Milton, Ontario</strong><span>Women’s strength coaching · Education · Speaking</span><a href="mailto:hello@salwaqadir.com">hello@salwaqadir.com</a></div>
+  </aside>
+
+  <main id="main">
+    <section class="panel hero" id="top" aria-labelledby="hero-title">
+      <img class="panel-image" src="/assets/hero.jpg" alt="Salwa Qadir seated with training equipment outdoors"><div class="panel-shade"></div>
+      <div class="panel-content"><p class="panel-kicker">Women’s strength coach · Educator · Athlete</p><h1 id="hero-title">Built up for more.</h1><p class="panel-copy">Women don’t need to be told to do more. They need to be built up so they can.</p><div class="panel-actions"><a class="button button-primary" href="#program">Explore the program</a><a class="button button-light" href="/contact">Work with Salwa</a></div></div>
+      <span class="scroll-cue">Keep moving</span>
+    </section>
+
+    <section class="panel program light-panel" id="program" aria-labelledby="program-title">
+      <img class="panel-image" src="/assets/approach.jpg" alt="Salwa seated behind a loaded barbell"><div class="panel-shade"></div><span class="chapter-marker">01 · The program</span>
+      <div class="panel-content"><p class="panel-kicker">From Bodyweight to Barbells</p><h2 id="program-title">Start where you are.</h2><p class="panel-copy">Build control, add load, develop muscle, and earn confidence under the bar—one intentional step at a time.</p><div class="panel-actions"><a class="button button-primary" href="/contact">Ask about coaching</a></div></div>
+    </section>
+
+    <section class="panel athlete" id="approach" aria-labelledby="approach-title">
+      <img class="panel-image" src="/assets/powerlifter.jpg" alt="Salwa preparing for a competitive powerlifting attempt"><div class="panel-shade"></div><span class="chapter-marker">02 · The approach</span>
+      <div class="panel-content"><p class="panel-kicker">Intention over intensity</p><h2 id="approach-title">Strength is a skill.</h2><p class="panel-copy">Twelve-plus years of coaching, competitive powerlifting, and education—translated into training that makes sense for your body and your life.</p></div>
+    </section>
+
+    <section class="panel sisterhood" aria-labelledby="sisterhood-title">
+      <img class="panel-image" src="/assets/foundations.jpg" alt="Salwa and her daughter doing push-ups together"><div class="panel-shade"></div><span class="chapter-marker">03 · The why</span>
+      <div class="panel-content"><p class="panel-kicker">Intention · Strength · Sisterhood</p><h2 id="sisterhood-title">Strong women change the room.</h2><p class="panel-copy">What you build in training travels with you—into your family, your work, and every part of the life you want to live fully.</p><div class="panel-actions"><a class="button button-primary" href="https://www.thewomensbarbell.club/">Visit the Women’s Barbell Club ↗</a></div></div>
+    </section>
+
+    <section class="panel about light-panel" id="about" aria-labelledby="about-title">
+      <img class="panel-image" src="/assets/experience.jpg" alt="Portrait of Salwa Qadir"><div class="panel-shade"></div><span class="chapter-marker">04 · Meet your coach</span>
+      <div class="panel-content"><p class="panel-kicker">Coach · Founder · Lifelong student</p><h2 id="about-title">Hi, I’m Salwa.</h2><p class="panel-copy">I help women understand their bodies, trust their strength, and take up space at the rack—with coaching that is warm, rigorous, and built for real life.</p><div class="panel-actions"><a class="button button-primary" href="/contact">Start a conversation</a></div></div>
+    </section>
+
+    <section class="panel contact light-panel" aria-labelledby="contact-title">
+      <img class="panel-image" src="/assets/contact.jpg" alt="Salwa seated in her studio"><div class="panel-shade"></div><span class="chapter-marker">05 · Your next move</span>
+      <div class="panel-content"><p class="panel-kicker">Coaching · Mentorship · Workshops · Partnerships</p><h2 id="contact-title">Let’s build what’s next.</h2><p class="panel-copy">Tell me where you are, where you want to go, and what support would make the difference.</p><div class="panel-actions"><a class="button button-primary" href="/contact">Work with me</a><a class="button" href="mailto:hello@salwaqadir.com">Email Salwa</a></div></div>
+    </section>
+  </main>
+
+  <footer class="footer-bar">
+    <a class="wordmark" href="#top">Salwa Qadir</a><div class="footer-links"><a href="https://www.thewomensbarbell.club/">WBC ↗</a><a href="/contact">Contact</a><a href="#top">Back to top ↑</a></div><div class="footer-meta"><span>Mississauga + Milton, Ontario</span><span>© <span id="year"></span> Salwa Qadir</span></div>
+  </footer>
+
+  <script>
+    (() => {
+      const body=document.body,header=document.querySelector('#siteHeader'),toggle=document.querySelector('.menu-toggle'),menu=document.querySelector('#menuPanel'),scrim=document.querySelector('.menu-scrim'),menuLinks=[...menu.querySelectorAll('a')];let returnFocus=null;
+      const setMenu=open=>{body.classList.toggle('menu-open',open);menu.classList.toggle('open',open);scrim.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close menu':'Open menu');menu.setAttribute('aria-hidden',String(!open));if(open){returnFocus=document.activeElement;setTimeout(()=>menuLinks[0].focus(),180)}else if(returnFocus){returnFocus.focus()}};
+      toggle.addEventListener('click',()=>setMenu(toggle.getAttribute('aria-expanded')!=='true'));scrim.addEventListener('click',()=>setMenu(false));menuLinks.forEach(link=>link.addEventListener('click',()=>setMenu(false)));
+      document.addEventListener('keydown',event=>{if(event.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true')setMenu(false);if(event.key!=='Tab'||toggle.getAttribute('aria-expanded')!=='true')return;const focusable=[toggle,...menuLinks],first=focusable[0],last=focusable[focusable.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}});
+      const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>16);updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('in-view',entry.isIntersecting)),{threshold:.35});document.querySelectorAll('.panel').forEach(panel=>observer.observe(panel));
+      document.querySelector('#year').textContent=new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
