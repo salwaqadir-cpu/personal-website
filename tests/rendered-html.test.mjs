@@ -33,7 +33,11 @@ test("serves the approved editorial pages and route redirects", async () => {
   assert.match(homepage, /class="hero-media"/);
   assert.match(homepage, /class="menu-panel"/);
   assert.match(homepage, /From Bodyweight to Barbells/);
+  assert.doesNotMatch(homepage, /\.program-link \{[^}]*border-bottom/);
+  assert.match(homepage, /class="button button-solid" href="work\.html">Work With Me<\/a>/);
+  assert.match(homepage, /class="button button-outline" href="about\.html">About Me<\/a>/);
   assert.match(homepage, /The Women’s Barbell Club/);
+  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\//g)?.length, 1);
   assert.match(homepage, /About Me/);
   assert.match(homepage, /mailto:salwa@salwaqadir\.com/);
   assert.match(homepage, /property="og:image"/);
