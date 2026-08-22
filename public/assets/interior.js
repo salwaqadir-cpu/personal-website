@@ -27,7 +27,18 @@
     if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
   });
 
-  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+  const darkSections = [...document.querySelectorAll('[data-header-dark]')];
+  const updateHeader = () => {
+    const sampleY = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) / 2;
+    const overDark = darkSections.some(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= sampleY && rect.bottom >= sampleY;
+    });
+    header.classList.toggle('on-dark', overDark);
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  };
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
 
   if (form) form.addEventListener('submit', event => {
     event.preventDefault();

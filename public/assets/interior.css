@@ -76,8 +76,8 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 
 /* Light hero: image on top for mobile, left split for desktop. */
 .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; color: var(--green); background: var(--paper); }
-.hero-media { height: 58svh; min-height: 360px; overflow: hidden; background: var(--hairline); }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; }
+.hero-media { height: 68svh; min-height: 440px; overflow: hidden; background: var(--hairline); }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
 .hero-content { position: relative; display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 52px var(--gutter) 96px; background: var(--paper); }
 .hero h1 { max-width: 12ch; font-size: clamp(3rem, 12.5vw, 6.7rem); }
 .hero-copy { max-width: 620px; margin: 22px 0 0; color: var(--ink); font-size: clamp(.98rem, 1.4vw, 1.15rem); }
@@ -160,6 +160,37 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 .about-copy p { margin: 20px 0 0; color: rgba(255, 255, 255, .78); }
 .about-copy .text-link { margin-top: 22px; color: var(--white); }
 
+/* Approach, WBC framework, and culture-led coaching page. */
+.approach-page { background: var(--paper); }
+.editorial-grid { display: grid; gap: 44px; align-items: center; }
+.editorial-copy h1, .editorial-copy h2 { font-size: clamp(2.8rem, 7vw, 5.4rem); }
+.editorial-copy > p:last-child { margin: 22px 0 0; color: var(--muted); }
+.editorial-photo { min-height: 500px; overflow: hidden; border-radius: 22px; background: var(--hairline); box-shadow: var(--shadow); }
+.editorial-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.framework { background: #eef2ee; }
+.framework-intro { max-width: 820px; margin-bottom: 42px; }
+.framework-intro h2 { font-size: clamp(2.8rem, 7vw, 5.2rem); }
+.framework-intro > p:last-child { margin: 22px 0 0; color: var(--muted); }
+.pillars-grid { display: grid; gap: 14px; }
+.pillar-card { min-height: 320px; border: 1px solid rgba(23,57,47,.12); border-radius: 20px; background: var(--white); padding: 28px; }
+.pillar-number { color: var(--muted); font-size: .68rem; letter-spacing: .12em; }
+.pillar-card h3 { margin-top: 52px; font-size: 2rem; }
+.pillar-card p { margin: 16px 0 0; color: var(--muted); font-size: .88rem; }
+
+/* Experience, credentials, and quote on About Me. */
+.credentials { background: var(--paper); }
+.credentials-grid { display: grid; gap: 50px; }
+.credentials-intro h2 { font-size: clamp(2.6rem, 6vw, 4.4rem); }
+.credential-photo { height: 430px; margin-top: 30px; overflow: hidden; border-radius: 22px; box-shadow: var(--shadow); }
+.credential-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.credential-list { border-top: 1px solid var(--hairline); }
+.credential-item { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--hairline); }
+.credential-item span { color: var(--muted); font-size: .68rem; letter-spacing: .1em; }
+.credential-item p { margin: 0; color: var(--green); font-weight: 600; }
+.quote-band { padding: clamp(86px, 10vw, 130px) var(--gutter); color: var(--green); background: var(--gold); text-align: center; }
+.quote-band p { width: min(100%, 1100px); margin: 0 auto; font-family: var(--serif); font-size: clamp(2.5rem, 6.5vw, 5.4rem); line-height: .98; letter-spacing: -.035em; }
+.quote-band em { color: var(--lavender-deep); font-weight: 400; }
+
 /* Contact section and mailto form. */
 .contact { background: var(--white); }
 .contact-grid { display: grid; gap: 44px; }
@@ -194,9 +225,9 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 
 @media (min-width: 900px) {
   :root { --header-h: 86px; }
-  .hero { min-height: 100svh; display: grid; grid-template-columns: 52% 48%; }
+  .hero { min-height: 100svh; display: grid; grid-template-columns: 42% 58%; }
   .hero-media { height: 100svh; min-height: 100svh; }
-  .hero-media img { object-position: center 54%; }
+  .hero-media img { object-position: center bottom; }
   .hero-content { min-height: 100svh; padding: 130px clamp(48px, 6vw, 100px) 110px; }
   .hero h1 { font-size: clamp(4rem, 5.8vw, 6.4rem); }
   .scroll-hint { left: 76%; }
@@ -205,6 +236,11 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
   .section-heading > p:last-child { justify-self: end; }
   .program-ladder { grid-template-columns: repeat(4, 1fr); }
   .about-grid { grid-template-columns: .88fr 1.12fr; gap: 84px; align-items: center; }
+  .editorial-grid { grid-template-columns: 1fr 1fr; gap: 72px; }
+  .editorial-grid.reverse .editorial-copy { order: 2; }
+  .editorial-grid.reverse .editorial-photo { order: 1; }
+  .pillars-grid { grid-template-columns: repeat(3, 1fr); }
+  .credentials-grid { grid-template-columns: .9fr 1.1fr; gap: 78px; }
   .menu-panel { padding-right: max(var(--gutter), calc((100vw - 1200px) / 2)); padding-left: max(var(--gutter), calc((100vw - 1200px) / 2)); }
   .menu-nav a { min-height: 76px; }
 }
