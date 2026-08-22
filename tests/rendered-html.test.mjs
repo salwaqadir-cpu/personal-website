@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("renders the finished homepage and contact page", async () => {
+test("serves the approved editorial pages and route redirects", async () => {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
@@ -24,43 +24,35 @@ test("renders the finished homepage and contact page", async () => {
 
   const response = await fetchPage("/");
 
-  assert.equal(response.status, 200);
-  assert.match(
-    response.headers.get("content-type") ?? "",
-    /^text\/html\b/i,
-  );
-  const homepage = await response.text();
+  assert.equal(response.status, 307);
+  assert.equal(new URL(response.headers.get("location")).pathname, "/index.html");
+
+  const homepage = await readFile(new URL("../public/index.html", import.meta.url), "utf8");
   assert.match(homepage, /<title>Salwa Qadir \| Women’s Strength Coach in Milton &amp; Mississauga<\/title>/);
   assert.match(homepage, /rel="canonical" href="https:\/\/salwaqadir\.com\/"/);
-  assert.match(homepage, /application\/ld\+json/);
-  assert.match(homepage, /ProfilePage/);
-  assert.match(homepage, /Women don’t need to be told to do more\./);
+  assert.match(homepage, /class="hero-media"/);
+  assert.match(homepage, /class="menu-panel"/);
   assert.match(homepage, /From Bodyweight to Barbells/);
-  assert.match(homepage, /Canada’s largest fitness company/);
-  assert.match(homepage, /small-group training/);
-  assert.match(homepage, /resource developer for personal trainers/);
-  assert.match(homepage, /coaching and refereeing in the sport/);
-  assert.match(homepage, /Limited availability · Inquire about current openings/);
-  assert.match(homepage, /CLIENT STORIES/);
-  assert.match(homepage, /Strength that shows up/);
-  assert.match(homepage, /Dr\. Linda Deppisch/);
-  assert.match(homepage, /Mehwish J\.<\/strong><span>Client, 5 years/);
-  assert.ok(homepage.indexOf("CLIENT STORIES") < homepage.indexOf("WORK WITH ME"));
-  assert.match(homepage, /src="\/assets\/hero\.jpg"/);
+  assert.match(homepage, /The Women’s Barbell Club/);
+  assert.match(homepage, /About Me/);
+  assert.match(homepage, /mailto:salwa@salwaqadir\.com/);
   assert.match(homepage, /property="og:image"/);
+  assert.doesNotMatch(homepage, /—/);
 
   const contactResponse = await fetchPage("/contact");
-  assert.equal(contactResponse.status, 200);
-  const contactPage = await contactResponse.text();
-  assert.match(contactPage, /<title>Contact \| Women’s Strength Coaching \| Salwa Qadir<\/title>/);
-  assert.match(contactPage, /rel="canonical" href="https:\/\/salwaqadir\.com\/contact\/"/);
-  assert.match(contactPage, /Let’s start with what you’re looking for\./);
+  assert.equal(contactResponse.status, 307);
+  assert.equal(new URL(contactResponse.headers.get("location")).pathname, "/contact.html");
+
+  const contactPage = await readFile(new URL("../public/contact.html", import.meta.url), "utf8");
+  assert.match(contactPage, /IN-PERSON COACHING/);
   assert.match(contactPage, /Brand \+ Media Partnerships/);
+  assert.match(contactPage, /salwa@salwaqadir\.com/);
 });
 
 test("uses an opaque full-viewport mobile navigation panel", async () => {
-  const stylesheet = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+  const homepage = await readFile(new URL("../public/index.html", import.meta.url), "utf8");
+  const stylesheet = await readFile(new URL("../public/assets/interior.css", import.meta.url), "utf8");
 
-  assert.match(stylesheet, /\.site-header \{ backdrop-filter: none; \}/);
-  assert.match(stylesheet, /\.site-nav \{[^}]*z-index: 101;[^}]*min-height: 100dvh;[^}]*background-color: #fbfcf9;/);
+  assert.match(homepage, /\.menu-panel \{[^}]*position: fixed;[^}]*inset: 0;[^}]*background: var\(--white\);/);
+  assert.match(stylesheet, /\.menu-panel \{[^}]*position: fixed;[^}]*inset: 0;[^}]*background: var\(--white\);/);
 });
