@@ -69,7 +69,8 @@
     .menu-nav a { min-height: 62px; display: flex; align-items: center; border-bottom: 1px solid var(--hairline); font-family: var(--serif); font-size: clamp(1.55rem, 6.8vw, 3.4rem); line-height: 1; white-space: nowrap; transition: color .2s ease, transform .2s ease; }
     .menu-nav a:hover, .menu-nav a:focus-visible { color: var(--lavender-deep); transform: translateX(10px); }
     .menu-footer { display: grid; gap: 5px; margin-top: auto; padding-top: 34px; color: var(--muted); font-size: .76rem; line-height: 1.45; }
-    .menu-footer .gold-line { color: #8b6a23; font-weight: 600; }
+    .menu-instagram { width: max-content; margin-top: 6px; color: var(--green); font-weight: 600; }
+    .menu-instagram:hover, .menu-instagram:focus-visible { color: var(--lavender-deep); }
 
     /* Shared type, buttons, and section rhythm. */
     h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
@@ -208,6 +209,8 @@
     .site-footer { display: grid; gap: 20px; padding: 42px var(--gutter); color: var(--white); background: #102b23; }
     .site-footer p { margin: 0; color: rgba(255, 255, 255, .58); font-size: .68rem; }
     .site-footer .wordmark { color: var(--white); }
+    .site-footer .footer-instagram { display: inline-block; margin-top: 8px; color: var(--lavender); font-weight: 600; }
+    .site-footer .footer-instagram:hover, .site-footer .footer-instagram:focus-visible { color: var(--gold); }
 
     @media (min-width: 720px) {
       .offer-grid, .stories-grid { grid-template-columns: repeat(2, 1fr); }
@@ -263,6 +266,7 @@
     </nav>
     <div class="menu-footer">
       <span>Women’s Strength Coach · Educator · Athlete · Founder</span>
+      <a class="menu-instagram" href="https://www.instagram.com/salwaqfitness/" target="_blank" rel="noopener noreferrer">Instagram @salwaqfitness ↗</a>
     </div>
   </aside>
 
@@ -307,7 +311,7 @@
 
   <footer class="site-footer">
     <a class="wordmark" href="#hero" aria-label="Salwa Qadir home"><span>SALWA</span><span>QADIR</span></a>
-    <p>WOMEN’S STRENGTH COACH · EDUCATOR · ATHLETE · FOUNDER</p>
+    <p>WOMEN’S STRENGTH COACH · EDUCATOR · ATHLETE · FOUNDER<br><a class="footer-instagram" href="https://www.instagram.com/salwaqfitness/" target="_blank" rel="noopener noreferrer">Instagram @salwaqfitness ↗</a></p>
     <p>© <span id="year"></span> Salwa Qadir</p>
   </footer>
 

@@ -55,7 +55,8 @@ body.menu-open .menu-toggle { border-color: rgba(23, 57, 47, .2); background: rg
 .menu-nav a { min-height: 62px; display: flex; align-items: center; border-bottom: 1px solid var(--hairline); font-family: var(--serif); font-size: clamp(1.55rem, 6.8vw, 3.4rem); line-height: 1; white-space: nowrap; transition: color .2s ease, transform .2s ease; }
 .menu-nav a:hover, .menu-nav a:focus-visible { color: var(--lavender-deep); transform: translateX(10px); }
 .menu-footer { display: grid; gap: 5px; margin-top: auto; padding-top: 34px; color: var(--muted); font-size: .76rem; line-height: 1.45; }
-.menu-footer .gold-line { color: #8b6a23; font-weight: 600; }
+.menu-instagram { width: max-content; margin-top: 6px; color: var(--green); font-weight: 600; }
+.menu-instagram:hover, .menu-instagram:focus-visible { color: var(--lavender-deep); }
 
 /* Shared type, buttons, and section rhythm. */
 h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
@@ -116,6 +117,7 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 .featured .offer-tag { color: var(--gold); }
 .offer-card h3 { margin-top: 48px; font-size: 2rem; }
 .featured h3 { color: var(--white); }
+.offer-location { display: block; margin-top: 14px; color: var(--gold); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
 .offer-card > p { margin: 16px 0 0; color: var(--muted); font-size: .9rem; }
 .featured > p { color: rgba(255, 255, 255, .75); }
 .offer-meta { display: grid; gap: 6px; margin-top: auto; padding-top: 24px; font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
@@ -228,6 +230,8 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 .site-footer { display: grid; gap: 20px; padding: 42px var(--gutter); color: var(--white); background: #102b23; }
 .site-footer p { margin: 0; color: rgba(255, 255, 255, .58); font-size: .68rem; }
 .site-footer .wordmark { color: var(--white); }
+.site-footer .footer-instagram { display: inline-block; margin-top: 8px; color: var(--lavender); font-weight: 600; }
+.site-footer .footer-instagram:hover, .site-footer .footer-instagram:focus-visible { color: var(--gold); }
 
 @media (min-width: 720px) {
   .offer-grid, .stories-grid { grid-template-columns: repeat(2, 1fr); }
