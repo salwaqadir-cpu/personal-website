@@ -179,6 +179,7 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 .framework-intro h2 { font-size: clamp(2.8rem, 7vw, 5.2rem); }
 .framework-intro > p:last-child { margin: 22px 0 0; color: var(--muted); }
 .pillars-grid { display: grid; gap: 14px; }
+.framework-action { margin-top: 36px; }
 .pillar-card { min-height: 320px; border: 1px solid rgba(23,57,47,.12); border-radius: 20px; background: var(--white); padding: 28px; }
 .pillar-number { color: var(--muted); font-size: .68rem; letter-spacing: .12em; }
 .pillar-card h3 { margin-top: 52px; font-size: 2rem; }
