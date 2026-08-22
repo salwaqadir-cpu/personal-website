@@ -4,17 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#fbfcf9">
-  <meta name="description" content="[PAGE DESCRIPTION]">
-  <title>[PAGE TITLE]</title>
-
-  <!-- Required brand fonts: DM Serif Display for headings, Inter for UI/body. -->
+  <meta name="description" content="Women’s strength coaching in Milton and Mississauga through From Bodyweight to Barbells. Build strength, self-trust and confident barbell skills for life.">
+  <title>Salwa Qadir | Women’s Strength Coach in Milton &amp; Mississauga</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/hero.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/values.jpg">
 
   <style>
-    /* ---------- Exact brand tokens ---------- */
+    /* Exact approved brand tokens. */
     :root {
       --green: #17392f;
       --paper: #fbfcf9;
@@ -27,90 +25,36 @@
       --muted: #6c7a70;
       --serif: "DM Serif Display", Georgia, serif;
       --sans: "Inter", Arial, sans-serif;
-      --header-height: 76px;
+      --header-h: 76px;
       --gutter: clamp(20px, 4vw, 64px);
-      --menu-ease: cubic-bezier(.76, 0, .24, 1);
+      --shell: 1180px;
+      --ease: cubic-bezier(.76, 0, .24, 1);
+      --shadow: 0 24px 70px rgba(23, 57, 47, .1);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; background: var(--paper); }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--paper);
-      font-family: var(--sans);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.58; -webkit-font-smoothing: antialiased; }
     body.menu-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
-    button { color: inherit; font: inherit; }
-    img { display: block; max-width: 100%; }
+    button, input, select, textarea { color: inherit; font: inherit; }
+    img { display: block; width: 100%; max-width: 100%; }
     ::selection { color: var(--green); background: var(--lavender); }
-
-    .skip-link {
-      position: fixed;
-      z-index: 1000;
-      top: 12px;
-      left: 12px;
-      transform: translateY(-160%);
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      padding: 0 18px;
-      color: var(--white);
-      background: var(--green);
-      font-weight: 700;
-    }
+    .shell { width: min(var(--shell), calc(100% - (2 * var(--gutter)))); margin-inline: auto; }
+    .skip-link { position: fixed; z-index: 1000; top: 12px; left: 12px; transform: translateY(-160%); min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; color: var(--white); background: var(--green); font-weight: 700; }
     .skip-link:focus { transform: none; }
 
-    /* ---------- Fixed transparent header ---------- */
-    .site-header {
-      position: fixed;
-      z-index: 100;
-      inset: 0 0 auto;
-      height: var(--header-height);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 var(--gutter);
-      color: var(--green);
-      background: transparent;
-    }
-    .wordmark {
-      display: inline-flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 44px;
-      min-height: 44px;
-      color: var(--green);
-      font-family: var(--serif);
-      font-size: 18px;
-      line-height: .78;
-      letter-spacing: .04em;
-    }
+    /* Fixed header with explicit section-aware colours. */
+    .site-header { position: fixed; z-index: 100; inset: 0 0 auto; height: var(--header-h); display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); color: var(--green); background: transparent; transition: color .22s ease, background .22s ease, border-color .22s ease; }
+    .site-header.scrolled:not(.on-dark) { background: rgba(251, 252, 249, .94); border-bottom: 1px solid var(--hairline); backdrop-filter: blur(14px); }
+    .site-header.on-dark { color: var(--white); }
+    body.menu-open .site-header { color: var(--green); background: transparent; border-color: transparent; }
+    .wordmark { position: relative; z-index: 102; min-width: 44px; min-height: 44px; display: inline-flex; flex-direction: column; justify-content: center; color: currentColor; font-family: var(--serif); font-size: 18px; line-height: .78; letter-spacing: .04em; }
     .wordmark span:last-child { margin-left: 10px; }
-
-    .menu-toggle {
-      position: relative;
-      z-index: 102;
-      width: 48px;
-      height: 48px;
-      border: 1px solid rgba(23, 57, 47, .2);
-      border-radius: 50%;
-      background: rgba(251, 252, 249, .78);
-      cursor: pointer;
-      backdrop-filter: blur(8px);
-    }
-    .menu-toggle span {
-      position: absolute;
-      left: 13px;
-      width: 20px;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--green);
-      transition: top .32s var(--menu-ease), transform .32s var(--menu-ease), opacity .2s ease;
-    }
+    .menu-toggle { position: relative; z-index: 102; width: 48px; height: 48px; border: 1px solid rgba(23, 57, 47, .2); border-radius: 50%; background: rgba(251, 252, 249, .82); cursor: pointer; backdrop-filter: blur(8px); }
+    .site-header.on-dark .menu-toggle { border-color: rgba(255, 255, 255, .35); background: rgba(23, 57, 47, .35); }
+    body.menu-open .menu-toggle { border-color: rgba(23, 57, 47, .2); background: rgba(251, 252, 249, .82); }
+    .menu-toggle span { position: absolute; left: 13px; width: 20px; height: 2px; border-radius: 2px; background: currentColor; transition: top .32s var(--ease), transform .32s var(--ease), opacity .2s ease; }
     .menu-toggle span:nth-child(1) { top: 16px; }
     .menu-toggle span:nth-child(2) { top: 23px; }
     .menu-toggle span:nth-child(3) { top: 30px; }
@@ -118,164 +62,168 @@
     .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .menu-toggle[aria-expanded="true"] span:nth-child(3) { top: 23px; transform: rotate(-45deg); }
 
-    /* ---------- Full-screen slide-out menu ---------- */
-    .menu-panel {
-      position: fixed;
-      z-index: 90;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-      transform: translateX(100%);
-      padding: calc(var(--header-height) + 34px) var(--gutter) 30px;
-      color: var(--green);
-      background: var(--white);
-      visibility: hidden;
-      transition: transform .5s var(--menu-ease), visibility .5s;
-    }
+    /* White full-screen slide-out navigation. */
+    .menu-panel { position: fixed; z-index: 90; inset: 0; display: flex; flex-direction: column; overflow-y: auto; transform: translateX(100%); visibility: hidden; padding: calc(var(--header-h) + 42px) var(--gutter) 34px; color: var(--green); background: var(--white); transition: transform .5s var(--ease), visibility .5s; }
     .menu-panel.open { transform: translateX(0); visibility: visible; }
     .menu-nav { display: grid; border-top: 1px solid var(--hairline); }
-    .menu-nav a {
-      min-height: 58px;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--hairline);
-      font-family: var(--serif);
-      font-size: clamp(1.55rem, 7vw, 3.4rem);
-      line-height: 1;
-      white-space: nowrap;
-      transition: color .2s ease, transform .2s ease;
-    }
+    .menu-nav a { min-height: 62px; display: flex; align-items: center; border-bottom: 1px solid var(--hairline); font-family: var(--serif); font-size: clamp(1.55rem, 6.8vw, 3.4rem); line-height: 1; white-space: nowrap; transition: color .2s ease, transform .2s ease; }
     .menu-nav a:hover, .menu-nav a:focus-visible { color: var(--lavender-deep); transform: translateX(10px); }
-    .menu-footer {
-      display: grid;
-      gap: 5px;
-      margin-top: auto;
-      padding-top: 30px;
-      color: var(--muted);
-      font-size: .76rem;
-      line-height: 1.45;
-    }
+    .menu-footer { display: grid; gap: 5px; margin-top: auto; padding-top: 34px; color: var(--muted); font-size: .76rem; line-height: 1.45; }
     .menu-footer .gold-line { color: #8b6a23; font-weight: 600; }
 
-    /* ---------- Shared section styles ---------- */
-    .section { position: relative; min-height: 100svh; }
-    .eyebrow {
-      margin: 0 0 16px;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    h1, h2 {
-      margin: 0;
-      font-family: var(--serif);
-      font-weight: 400;
-      letter-spacing: -.035em;
-      line-height: .94;
-      text-wrap: balance;
-    }
-    .accent { color: var(--lavender-deep); font-family: var(--serif); font-style: italic; }
-    .section-copy { max-width: 590px; margin: 22px 0 0; font-size: clamp(.98rem, 1.4vw, 1.12rem); }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .button {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid transparent;
-      border-radius: 100px;
-      padding: 15px 34px;
-      font-size: .78rem;
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-      transition: transform .2s ease, background .2s ease, color .2s ease;
-    }
+    /* Shared type, buttons, and section rhythm. */
+    h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
+    .accent { color: var(--lavender-deep); font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .eyebrow { margin: 0 0 16px; color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .15em; line-height: 1.4; text-transform: uppercase; }
+    .section { padding-block: clamp(84px, 10vw, 132px); scroll-margin-top: var(--header-h); }
+    .section-heading { display: grid; gap: 22px; margin-bottom: 46px; }
+    .section-heading h2 { font-size: clamp(2.8rem, 7vw, 5.7rem); }
+    .section-heading > p:last-child { max-width: 600px; margin: 0; color: var(--muted); }
+    .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 100px; padding: 15px 34px; font-size: .76rem; font-weight: 700; line-height: 1; text-align: center; transition: transform .2s ease, background .2s ease, color .2s ease; }
     .button:hover { transform: translateY(-2px); }
-    .button:focus-visible, .menu-toggle:focus-visible, .wordmark:focus-visible {
-      outline: 3px solid var(--lavender-deep);
-      outline-offset: 3px;
-    }
-
-    /* ---------- Section 1: image-led light hero ---------- */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      color: var(--green);
-      background: var(--paper);
-    }
-    .hero-media { height: 58svh; min-height: 360px; overflow: hidden; background: var(--hairline); }
-    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 55% center; }
-    .hero-content {
-      position: relative;
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      justify-content: center;
-      padding: 50px var(--gutter) 92px;
-      background: var(--paper);
-    }
-    .hero h1 { max-width: 10ch; font-size: clamp(3rem, 13vw, 6.8rem); }
-    .hero .section-copy { color: var(--ink); }
     .button-solid { color: var(--white); background: var(--green); }
     .button-outline { border-color: var(--green); color: var(--green); background: transparent; }
     .button-outline:hover { color: var(--white); background: var(--green); }
+    .button-lavender { color: var(--white); background: var(--lavender-deep); }
+    .text-link { display: inline-block; width: max-content; padding-bottom: 3px; border-bottom: 1px solid currentColor; color: var(--green); font-size: .78rem; font-weight: 700; }
+    :focus-visible { outline: 3px solid var(--lavender-deep); outline-offset: 3px; }
 
-    .scroll-hint {
-      position: absolute;
-      bottom: 24px;
-      left: 50%;
-      display: grid;
-      justify-items: center;
-      gap: 7px;
-      transform: translateX(-50%);
-      color: var(--muted);
-      font-size: .62rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-    }
-    .scroll-hint::after {
-      width: 1px;
-      height: 22px;
-      content: "";
-      background: var(--muted);
-      animation: scrollPulse 1.7s ease-in-out infinite;
-      transform-origin: top;
-    }
+    /* Light hero: image on top for mobile, left split for desktop. */
+    .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; color: var(--green); background: var(--paper); }
+    .hero-media { height: 58svh; min-height: 360px; overflow: hidden; background: var(--hairline); }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 58%; }
+    .hero-content { position: relative; display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 52px var(--gutter) 96px; background: var(--paper); }
+    .hero h1 { max-width: 12ch; font-size: clamp(3rem, 12.5vw, 6.7rem); }
+    .hero-copy { max-width: 620px; margin: 22px 0 0; color: var(--ink); font-size: clamp(.98rem, 1.4vw, 1.15rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .scroll-hint { position: absolute; bottom: 24px; left: 50%; display: grid; justify-items: center; gap: 7px; transform: translateX(-50%); color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .18em; }
+    .scroll-hint::after { width: 1px; height: 22px; content: ""; background: var(--muted); animation: scrollPulse 1.7s ease-in-out infinite; transform-origin: top; }
     @keyframes scrollPulse { 0%, 100% { transform: scaleY(.35); opacity: .45; } 50% { transform: scaleY(1); opacity: 1; } }
 
-    /* ---------- Section 2: solid secondary brand panel ---------- */
-    .secondary {
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      color: var(--white);
-      background: linear-gradient(160deg, #20493d, #17392f);
-    }
-    .secondary-content { width: min(100%, 1160px); padding: 110px var(--gutter) 72px; }
-    .secondary .eyebrow { color: var(--lavender); }
-    .gold-tagline { margin: 0 0 20px; color: var(--gold); font-size: .78rem; font-weight: 600; letter-spacing: .1em; }
-    .secondary h2 { max-width: 12ch; font-size: clamp(3rem, 12vw, 7rem); }
-    .secondary .accent { color: var(--gold); }
-    .secondary .section-copy { color: rgba(255, 255, 255, .8); }
-    .button-lavender { color: var(--white); background: var(--lavender-deep); }
+    /* Full-height secondary WBC brand panel: deliberately no image. */
+    .wbc { min-height: 100svh; display: flex; align-items: center; color: var(--white); background: linear-gradient(160deg, #20493d, #17392f); }
+    .wbc-content { width: min(100%, var(--shell)); margin-inline: auto; padding: 116px var(--gutter) 76px; }
+    .wbc .eyebrow { color: var(--lavender); }
+    .wbc-pillars { margin: 0 0 20px; color: var(--gold); font-size: .78rem; font-weight: 600; letter-spacing: .1em; }
+    .wbc h2 { max-width: 11ch; color: var(--white); font-size: clamp(3.2rem, 12vw, 7.4rem); }
+    .wbc .accent { color: var(--gold); }
+    .wbc-copy { max-width: 620px; margin: 24px 0 0; color: rgba(255, 255, 255, .8); font-size: clamp(1rem, 1.5vw, 1.16rem); }
+    .wbc .button { margin-top: 30px; }
 
-    /* ---------- Desktop split at exactly the requested breakpoint ---------- */
+    /* Offer cards. */
+    .work { background: var(--paper); }
+    .offer-grid { display: grid; gap: 14px; }
+    .offer-card { min-height: 330px; display: flex; flex-direction: column; border: 1px solid var(--hairline); border-radius: 22px; background: var(--white); padding: 28px; box-shadow: 0 12px 35px rgba(23, 57, 47, .04); }
+    .offer-card.featured { color: var(--white); background: var(--green); border-color: var(--green); }
+    .offer-tag { color: var(--lavender-deep); font-size: .65rem; font-weight: 700; letter-spacing: .15em; }
+    .featured .offer-tag { color: var(--gold); }
+    .offer-card h3 { margin-top: 48px; font-size: 2rem; }
+    .featured h3 { color: var(--white); }
+    .offer-card > p { margin: 16px 0 0; color: var(--muted); font-size: .9rem; }
+    .featured > p { color: rgba(255, 255, 255, .75); }
+    .offer-meta { display: grid; gap: 6px; margin-top: auto; padding-top: 24px; font-size: .68rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+    .offer-card .text-link { margin-top: 18px; }
+    .featured .text-link { color: var(--white); }
+
+    /* Four-stage ladder and supporting detail panels. */
+    .program { background: #eef2ee; }
+    .program-ladder { display: grid; gap: 12px; }
+    .stage { min-height: 300px; display: flex; flex-direction: column; border: 1px solid rgba(23, 57, 47, .12); border-radius: 20px; background: var(--white); padding: 26px; }
+    .stage:nth-child(2) { background: var(--gold); }
+    .stage:nth-child(3) { background: var(--lavender); }
+    .stage:nth-child(4) { color: var(--white); background: var(--green); }
+    .stage-number { color: var(--muted); font-size: .66rem; font-weight: 700; letter-spacing: .14em; }
+    .stage:nth-child(4) .stage-number { color: var(--gold); }
+    .stage h3 { margin-top: 52px; font-size: 2rem; }
+    .stage:nth-child(4) h3 { color: var(--white); }
+    .stage strong { margin-top: 12px; color: var(--lavender-deep); font-size: .8rem; }
+    .stage:nth-child(4) strong { color: var(--lavender); }
+    .stage p { margin: 14px 0 0; color: #58675f; font-size: .86rem; }
+    .stage:nth-child(4) p { color: rgba(255, 255, 255, .75); }
+    .program-details { display: grid; gap: 14px; margin-top: 34px; }
+    .detail-card { border: 1px solid rgba(23, 57, 47, .12); border-radius: 20px; background: rgba(255, 255, 255, .7); padding: 28px; }
+    .detail-card h3 { font-size: 1.7rem; }
+    .detail-card p { margin: 16px 0 0; color: var(--muted); }
+    .fit-list { display: grid; gap: 0; margin: 18px 0 0; padding: 0; list-style: none; }
+    .fit-list li { position: relative; padding: 12px 0 12px 24px; border-top: 1px solid rgba(23, 57, 47, .1); }
+    .fit-list li::before { position: absolute; top: 20px; left: 2px; width: 7px; height: 7px; border-radius: 50%; content: ""; background: var(--lavender-deep); }
+    .program-action { display: grid; gap: 20px; margin-top: 14px; border-radius: 20px; background: var(--gold); padding: 26px; }
+    .program-action strong { color: var(--green); font-family: var(--serif); font-size: 1.3rem; font-weight: 400; }
+    .program-action span { display: block; margin-top: 4px; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+
+    /* Testimonial grid. */
+    .stories { background: var(--paper); }
+    .stories-grid { display: grid; gap: 14px; }
+    .story { min-height: 410px; display: flex; flex-direction: column; margin: 0; border: 1px solid var(--hairline); border-radius: 22px; background: var(--white); padding: 28px; }
+    .story:nth-child(2) { background: var(--gold); }
+    .story:nth-child(3) { background: var(--lavender); }
+    .story-outcome { min-height: 34px; color: var(--green); font-size: .66rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .quote-mark { height: 52px; color: var(--lavender-deep); font-family: var(--serif); font-size: 5rem; line-height: .9; }
+    .story blockquote, .story > p { margin: 16px 0 26px; color: #3f5048; font-family: var(--serif); font-size: clamp(1.03rem, 1.5vw, 1.22rem); line-height: 1.48; }
+    .story footer { display: grid; gap: 3px; margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(23, 57, 47, .12); }
+    .story footer strong { color: var(--green); font-size: .82rem; }
+    .story footer span { color: var(--muted); font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+
+    /* Split about section. */
+    .about { color: var(--white); background: var(--green); }
+    .about-grid { display: grid; gap: 46px; }
+    .about-photo { position: relative; min-height: 520px; overflow: hidden; border-radius: 22px; background: var(--lavender); box-shadow: var(--shadow); }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .about-copy .eyebrow { color: var(--gold); }
+    .about-copy h2 { color: var(--white); font-size: clamp(2.8rem, 7vw, 5rem); }
+    .about-copy p { margin: 20px 0 0; color: rgba(255, 255, 255, .78); }
+    .about-copy .text-link { margin-top: 22px; color: var(--white); }
+
+    /* Contact section and mailto form. */
+    .contact { background: var(--white); }
+    .contact-grid { display: grid; gap: 44px; }
+    .contact-copy h2 { font-size: clamp(2.9rem, 7vw, 5.5rem); }
+    .contact-lede { max-width: 580px; margin: 22px 0 0; color: var(--muted); }
+    .inquiry-types { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    .inquiry-types span { border: 1px solid var(--hairline); border-radius: 100px; padding: 8px 12px; color: var(--green); font-size: .67rem; font-weight: 700; }
+    .contact-form-wrap { border-radius: 24px; background: #eef2ee; padding: 28px; }
+    .contact-form { display: grid; gap: 20px; }
+    .form-row { display: grid; gap: 20px; }
+    .contact-form label { display: grid; gap: 8px; }
+    .contact-form label > span { color: var(--green); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .contact-form input, .contact-form select, .contact-form textarea { width: 100%; min-height: 48px; border: 1px solid rgba(23, 57, 47, .18); border-radius: 12px; outline: none; background: var(--white); padding: 13px 14px; }
+    .contact-form textarea { min-height: 150px; resize: vertical; }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--lavender-deep); box-shadow: 0 0 0 3px rgba(124, 92, 191, .12); }
+    .contact-form .button { justify-self: start; border: 0; cursor: pointer; }
+    .form-status { margin: 0; color: var(--muted); font-size: .75rem; }
+    .form-status a { border-bottom: 1px solid currentColor; }
+    .site-footer { display: grid; gap: 20px; padding: 42px var(--gutter); color: var(--white); background: #102b23; }
+    .site-footer p { margin: 0; color: rgba(255, 255, 255, .58); font-size: .68rem; }
+    .site-footer .wordmark { color: var(--white); }
+
+    @media (min-width: 720px) {
+      .offer-grid, .stories-grid { grid-template-columns: repeat(2, 1fr); }
+      .program-ladder { grid-template-columns: repeat(2, 1fr); }
+      .program-details, .contact-grid { grid-template-columns: repeat(2, 1fr); }
+      .form-row { grid-template-columns: repeat(2, 1fr); }
+      .program-action { grid-template-columns: 1fr auto; align-items: center; }
+      .site-footer { grid-template-columns: 1fr 1fr auto; align-items: end; }
+      .site-footer p:last-child { text-align: right; }
+    }
+
     @media (min-width: 900px) {
-      :root { --header-height: 86px; }
+      :root { --header-h: 86px; }
       .hero { min-height: 100svh; display: grid; grid-template-columns: 52% 48%; }
-      .hero-media { width: 100%; height: 100svh; min-height: 100svh; }
-      .hero-media img { object-position: center; }
-      .hero-content { min-height: 100svh; padding: 130px clamp(48px, 6vw, 110px) 110px; }
-      .hero h1 { font-size: clamp(4.6rem, 6.4vw, 7rem); }
+      .hero-media { height: 100svh; min-height: 100svh; }
+      .hero-media img { object-position: center 54%; }
+      .hero-content { min-height: 100svh; padding: 130px clamp(48px, 6vw, 100px) 110px; }
+      .hero h1 { font-size: clamp(4rem, 5.8vw, 6.4rem); }
       .scroll-hint { left: 76%; }
-      .secondary-content { padding-block: 130px 90px; }
+      .wbc-content { padding-block: 130px 90px; }
+      .section-heading { grid-template-columns: 1.15fr .85fr; align-items: end; }
+      .section-heading > p:last-child { justify-self: end; }
+      .program-ladder { grid-template-columns: repeat(4, 1fr); }
+      .about-grid { grid-template-columns: .88fr 1.12fr; gap: 84px; align-items: center; }
       .menu-panel { padding-right: max(var(--gutter), calc((100vw - 1200px) / 2)); padding-left: max(var(--gutter), calc((100vw - 1200px) / 2)); }
-      .menu-nav a { min-height: 72px; }
+      .menu-nav a { min-height: 76px; }
     }
 
-    @media (max-height: 680px) { .scroll-hint { display: none; } .hero-content { padding-bottom: 48px; } }
+    @media (max-height: 680px) { .scroll-hint { display: none; } .hero-content { padding-bottom: 50px; } }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -286,75 +234,174 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Replace the two wordmark placeholders below. -->
-  <header class="site-header">
-    <a class="wordmark" href="#hero" aria-label="[WORDMARK] home">
-      <span>[FIRST]</span>
-      <span>[LAST]</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+  <header class="site-header" id="site-header">
+    <a class="wordmark" href="#hero" aria-label="Salwa Qadir home"><span>SALWA</span><span>QADIR</span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
   </header>
 
-  <!-- Replace each one-line nav placeholder and its href. -->
   <aside class="menu-panel" id="site-menu" aria-hidden="true">
     <nav class="menu-nav" aria-label="Primary navigation">
-      <a href="#hero">[NAV ITEM 01]</a>
-      <a href="#secondary">[NAV ITEM 02]</a>
-      <a href="#secondary">[NAV ITEM 03]</a>
-      <a href="#secondary">[NAV ITEM 04]</a>
-      <a href="#secondary">[NAV ITEM 05]</a>
-      <a href="#secondary">[NAV ITEM 06]</a>
-      <a href="#secondary">[NAV ITEM 07]</a>
+      <a href="#work">Work with me</a>
+      <a href="#program">From Bodyweight to Barbells</a>
+      <a href="#stories">Client stories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
     <div class="menu-footer">
-      <span>[FOOTER LINE 01]</span>
-      <span>[FOOTER LINE 02]</span>
-      <span class="gold-line">[GOLD TAGLINE]</span>
+      <span>Women’s Strength Coach · Educator · Athlete</span>
+      <span>Founder of The Women’s Barbell Club</span>
+      <span class="gold-line">Intention · Strength · Sisterhood</span>
     </div>
   </aside>
 
   <main id="main">
-    <!-- SECTION 1 COPY: Replace bracketed placeholders only. -->
-    <section class="section hero" id="hero" aria-labelledby="hero-heading">
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="hero-media">
-        <!-- PHOTO SWAP: Replace assets/hero.jpg with your real hero image path. -->
-        <img src="assets/hero.jpg" alt="[HERO PHOTO DESCRIPTION]">
+        <!-- CONFIRM HERO IMAGE SWAP: values.jpg is the “Coaching the Woman in Front of Me” photo beside the blue stability ball and teal water bottle; it is not the barbell photo. -->
+        <img src="assets/values.jpg" alt="Salwa Qadir beside a stability ball and water bottle" fetchpriority="high">
       </div>
       <div class="hero-content">
-        <p class="eyebrow">[EYEBROW]</p>
-        <h1 id="hero-heading">[HEADLINE <em class="accent">ACCENT</em>]</h1>
-        <p class="section-copy">[SUBTEXT]</p>
-        <div class="actions">
-          <a class="button button-solid" href="#secondary">[CTA PRIMARY]</a>
-          <a class="button button-outline" href="#secondary">[CTA SECONDARY]</a>
+        <p class="eyebrow">Women’s Strength Coach · Educator · Athlete · Founder of The Women’s Barbell Club</p>
+        <h1 id="hero-heading">Women don’t need to be told to do more. They need to be <em class="accent">built up</em> so they can.</h1>
+        <p class="hero-copy">My signature program, <em class="accent">From Bodyweight to Barbells</em>, helps women fall in love with fitness, build strength and self-trust, and become confident barbell lifters for life.</p>
+        <div class="hero-actions">
+          <a class="button button-solid" href="#program">Explore the program</a>
+          <a class="button button-outline" href="https://www.thewomensbarbell.club/">Visit The Women’s Barbell Club ↗</a>
         </div>
       </div>
       <span class="scroll-hint" aria-hidden="true">SCROLL</span>
     </section>
 
-    <!-- SECTION 2 COPY: Replace bracketed placeholders only. -->
-    <section class="section secondary" id="secondary" aria-labelledby="secondary-heading">
-      <div class="secondary-content">
-        <p class="eyebrow">[EYEBROW]</p>
-        <p class="gold-tagline">[GOLD TAGLINE]</p>
-        <h2 id="secondary-heading">[HEADLINE <em class="accent">GOLD ACCENT CLAUSE</em>]</h2>
-        <p class="section-copy">[SUBTEXT]</p>
-        <div class="actions">
-          <a class="button button-lavender" href="#hero">[CTA]</a>
+    <section class="wbc" id="wbc" aria-labelledby="wbc-heading">
+      <div class="wbc-content">
+        <p class="eyebrow">The Women’s Barbell Club · Founded by Salwa</p>
+        <p class="wbc-pillars">Intention · Strength · Sisterhood</p>
+        <h2 id="wbc-heading">Strong in the gym. <em class="accent">Supported in real life.</em></h2>
+        <p class="wbc-copy">WBC is more than lifting. It’s a community for building strength, fueling your body, and navigating real life together.</p>
+        <a class="button button-lavender" href="https://www.thewomensbarbell.club/">Join the waitlist ↗</a>
+      </div>
+    </section>
+
+    <section class="section work" id="work" aria-labelledby="work-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Work with me</p><h2 id="work-heading">Get stronger for what matters to you.</h2></div>
+          <p>My work takes different forms, but the starting point is always the woman in front of me.</p>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-card featured">
+            <span class="offer-tag">IN-PERSON COACHING</span><h3>Women’s Strength Coaching</h3>
+            <p>One-to-one coaching and small-group training built around my signature From Bodyweight to Barbells program. We start at your current level and develop the strength, skill, and confidence to progress from foundational movement to confident barbell lifting.</p>
+            <div class="offer-meta"><span>Mississauga and Milton, Ontario</span><span>Limited availability · Inquire about current openings</span></div>
+            <a class="text-link" href="#contact">Inquire about coaching →</a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-tag">MENTORSHIP</span><h3>Fitness Business Mentorship</h3>
+            <p>Focused one-to-one calls for women building careers in fitness. Bring client questions, sales challenges, or business-development decisions, and we’ll troubleshoot them together with practical, experience-led guidance.</p>
+            <div class="offer-meta"><span>Limited one-to-one availability · Inquire about current openings</span></div>
+            <a class="text-link" href="#contact">Inquire about mentorship →</a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-tag">EDUCATION</span><h3>Workshops + Speaking</h3>
+            <p>Practical education for women, personal trainers, and communities on strength, training, and sustainable health.</p>
+            <div class="offer-meta"><span>In-person + virtual</span></div>
+            <a class="text-link" href="#contact">Discuss a workshop →</a>
+          </article>
+          <article class="offer-card">
+            <span class="offer-tag">COLLABORATION</span><h3>Brand + Media Partnerships</h3>
+            <p>Values-aligned collaborations in women’s health, fitness, strength, recovery, and longevity.</p>
+            <div class="offer-meta"><span>Partnership inquiries</span></div>
+            <a class="text-link" href="#contact">Discuss a partnership →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section program" id="program" aria-labelledby="program-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Signature Program · The Women’s Barbell Club</p><h2 id="program-heading">From Bodyweight <em class="accent">to Barbells.</em></h2></div>
+          <p>A progressive strength program that meets you where you are and teaches you how to become a confident lifter, one purposeful stage at a time.</p>
+        </div>
+        <div class="program-ladder" aria-label="From Bodyweight to Barbells progression">
+          <article class="stage"><span class="stage-number">01</span><h3>Bodyweight</h3><strong>Learn how your body moves.</strong><p>We develop control, stability, mobility, and confidence in the movement patterns that support everything that comes next.</p></article>
+          <article class="stage"><span class="stage-number">02</span><h3>Dumbbells</h3><strong>Add load with control.</strong><p>Dumbbells help you develop coordination, balance, and strength while learning how to move weight intentionally.</p></article>
+          <article class="stage"><span class="stage-number">03</span><h3>Machines</h3><strong>Build muscle with purpose.</strong><p>Machines are a powerful tool for building strength and lean muscle. You’ll learn to use them safely and effectively, building the confidence and strength to progress to barbell training.</p></article>
+          <article class="stage"><span class="stage-number">04</span><h3>Barbell</h3><strong>Bring the foundation together.</strong><p>We introduce the barbell progressively so you understand the lifts, trust your body, and feel confident taking up space at the rack.</p></article>
+        </div>
+        <div class="program-details">
+          <article class="detail-card"><p class="eyebrow">How it works</p><h3>Use every stage with purpose.</h3><p>Your starting point may be bodyweight, dumbbells, machines, or the barbell itself. We assess what your body, experience, and current season need, then use every stage with purpose.</p></article>
+          <article class="detail-card"><h3>This is for women who</h3><ul class="fit-list"><li>Are new to strength training</li><li>Are returning after time away</li><li>Are rebuilding after pain or a significant life change</li><li>Are ready to progress beyond familiar exercises or equipment</li><li>Want to become confident barbell lifters</li></ul></article>
+        </div>
+        <div class="program-action"><div><strong>One-to-One Coaching + Small-Group Training</strong><span>Mississauga and Milton, Ontario · Limited availability</span></div><a class="button button-solid" href="#contact">Inquire about the program</a></div>
+      </div>
+    </section>
+
+    <section class="section stories" id="stories" aria-labelledby="stories-heading">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow">Client stories</p><h2 id="stories-heading">Strength that shows up <em class="accent">in real life.</em></h2></div>
+          <p>These women started in different places, including pain, significant life changes, or years of stalled starts. In their own words.</p>
+        </div>
+        <div class="stories-grid">
+          <article class="story"><span class="story-outcome">Strength after major surgery</span><span class="quote-mark" aria-hidden="true">“</span><p>After two C-sections and major abdominal surgery, I’d lost all my core strength. Within six months I was strength training, going on vacation and doing <em>hard things</em>, keeping up with my kids, even training while fasting through Ramadan. She knew how I ate as a South Asian woman and coached me around my real life. It was her warmth and encouragement that changed my life for the better.</p><footer><strong>Anam S.</strong><span>Client, 6 years</span></footer></article>
+          <article class="story"><span class="story-outcome">From bodyweight squat to a 125 lb barbell</span><span class="quote-mark" aria-hidden="true">“</span><p>I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell, both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a movement specialist, and an extraordinary coach.</p><footer><strong>Maryam H.</strong><span>Client, 6 years</span></footer></article>
+          <article class="story"><span class="story-outcome">A plan that moves with real life</span><span class="quote-mark" aria-hidden="true">“</span><p>I’d never been under a bar in over a decade of training with other trainers. Salwa moulds the entire plan around whatever is happening in your life. You never feel like you’re failing; you always feel on track. She’s a life coach, trainer, and guide, not just the hour you see her at the gym.</p><footer><strong>Mehwish J.</strong><span>Client, 5 years</span></footer></article>
+          <article class="story"><span class="story-outcome">Rebuilding strength after injury</span><span class="quote-mark" aria-hidden="true">“</span><p>After a fall left me with a compression fracture, I thought I’d have to live with the limits. She built a progressive program with my physio and understood my body mechanics exceptionally well. It has literally been life-changing. I can resume and enjoy so many of the daily activities I couldn’t after the accident.</p><footer><strong>Dr. Linda Deppisch</strong><span>Client, 7 years</span></footer></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="shell about-grid">
+        <div class="about-photo"><img src="assets/about.jpg" alt="Salwa Qadir smiling during a candid family fitness moment" loading="lazy"></div>
+        <div class="about-copy">
+          <p class="eyebrow">About Salwa</p>
+          <h2 id="about-heading">I learned how to get stronger in the middle of a full life.</h2>
+          <p>I’m a women’s strength coach, educator, competitive powerlifter, and mom. I didn’t start out loving weights. My relationship with fitness changed when I stopped asking how to become smaller and started asking what my body could do.</p>
+          <p>That shift took me from dance to the weight room, then into a full-time career coaching women, educating trainers, and growing into leadership at Canada’s largest fitness company. My work there was recognized with multiple awards and accolades. At the same time, I trained and competed as a powerlifter while coaching and refereeing in the sport. I also protected my own physical wellbeing and raised a family.</p>
+          <p>I learned that not every chapter of life can hold the same amount. I learned when to push, when to pull back, and how to make room for my goals without losing sight of what I needed. That’s how I coach now: physical strength, confidence, and self-trust develop together while we learn how to adjust, prioritize, and make room for what matters in real life.</p>
+          <a class="text-link" href="#work">See how we can work together →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-heading">
+      <div class="shell contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-heading">Let’s start with what you’re looking for.</h2>
+          <p class="contact-lede">Whether you’re interested in coaching, mentorship, education, or a collaboration, send a note below. Tell me a little about what you’re looking for, and I’ll make sure your inquiry reaches the right place.</p>
+          <div class="inquiry-types" aria-label="Inquiry types"><span>Women’s Strength Coaching: One-to-One or Small Group</span><span>Fitness Business Mentorship</span><span>Workshops + Speaking</span><span>Brand + Media Partnerships</span><span>General Inquiry</span></div>
+        </div>
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row"><label><span>Name</span><input autocomplete="name" name="name" required type="text"></label><label><span>Email</span><input autocomplete="email" name="email" required type="email"></label></div>
+            <label><span>What can I help with?</span><select name="inquiry" required><option disabled selected value="">Choose one</option><option>Women’s Strength Coaching: One-to-One or Small Group</option><option>Fitness Business Mentorship</option><option>Workshops + Speaking</option><option>Brand + Media Partnerships</option><option>General Inquiry</option></select></label>
+            <label><span>Message</span><textarea name="message" placeholder="Tell me a little about what you’re looking for." required></textarea></label>
+            <button class="button button-solid" type="submit">Send inquiry</button>
+            <p class="form-status">Or email <a href="mailto:salwa@salwaqadir.com">salwa@salwaqadir.com</a> directly.</p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <a class="wordmark" href="#hero" aria-label="Salwa Qadir home"><span>SALWA</span><span>QADIR</span></a>
+    <p>Women’s Strength Coach · Educator · Athlete · Founder of The Women’s Barbell Club</p>
+    <p>© <span id="year"></span> Salwa Qadir</p>
+  </footer>
+
   <script>
-    // Accessible full-screen menu: toggle, close on link/Escape, and trap keyboard focus.
     (() => {
       const body = document.body;
+      const header = document.querySelector('#site-header');
       const toggle = document.querySelector('.menu-toggle');
       const menu = document.querySelector('#site-menu');
       const links = [...menu.querySelectorAll('a')];
+      const darkSection = document.querySelector('#wbc');
+      const form = document.querySelector('#contact-form');
       let lastFocus = null;
 
       function setMenu(open) {
@@ -363,32 +410,43 @@
         menu.setAttribute('aria-hidden', String(!open));
         toggle.setAttribute('aria-expanded', String(open));
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-
-        if (open) {
-          lastFocus = document.activeElement;
-          window.setTimeout(() => links[0].focus(), 180);
-        } else if (lastFocus) {
-          lastFocus.focus();
-        }
+        if (open) { lastFocus = document.activeElement; window.setTimeout(() => links[0].focus(), 180); }
+        else if (lastFocus) lastFocus.focus();
       }
 
       toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
       links.forEach(link => link.addEventListener('click', () => setMenu(false)));
-
       document.addEventListener('keydown', event => {
         if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
         if (event.key !== 'Tab' || toggle.getAttribute('aria-expanded') !== 'true') return;
-
-        const focusable = [toggle, ...links];
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
+        const focusable = [toggle, ...links], first = focusable[0], last = focusable[focusable.length - 1];
         if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
         if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
       });
+
+      const updateHeader = () => {
+        const rect = darkSection.getBoundingClientRect();
+        const sampleY = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) / 2;
+        header.classList.toggle('on-dark', rect.top <= sampleY && rect.bottom >= sampleY);
+        header.classList.toggle('scrolled', window.scrollY > 12);
+      };
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const name = String(data.get('name') || '');
+        const email = String(data.get('email') || '');
+        const inquiry = String(data.get('inquiry') || 'General Inquiry');
+        const message = String(data.get('message') || '');
+        const subject = encodeURIComponent(`${inquiry}: ${name}`);
+        const content = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nInquiry: ${inquiry}\n\n${message}`);
+        window.location.href = `mailto:salwa@salwaqadir.com?subject=${subject}&body=${content}`;
+      });
+
+      document.querySelector('#year').textContent = new Date().getFullYear();
     })();
   </script>
-
-  <!-- PHOTO: Place the real image at assets/hero.jpg, or update the hero img src and alt text above. -->
-  <!-- COPY: Replace bracketed placeholders in the wordmark, menu, Section 1, Section 2, footer, title, and description. -->
 </body>
 </html>
