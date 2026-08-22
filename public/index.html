@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbfcf9">
+  <meta name="description" content="[PAGE DESCRIPTION]">
+  <title>[PAGE TITLE]</title>
+
+  <!-- Required brand fonts: DM Serif Display for headings, Inter for UI/body. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero.jpg">
+
+  <style>
+    /* ---------- Exact brand tokens ---------- */
+    :root {
+      --green: #17392f;
+      --paper: #fbfcf9;
+      --white: #ffffff;
+      --lavender: #c8b8e8;
+      --lavender-deep: #7c5cbf;
+      --gold: #f2d9a0;
+      --hairline: #e4e8e1;
+      --ink: #46554d;
+      --muted: #6c7a70;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+      --header-height: 76px;
+      --gutter: clamp(20px, 4vw, 64px);
+      --menu-ease: cubic-bezier(.76, 0, .24, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { color: inherit; font: inherit; }
+    img { display: block; max-width: 100%; }
+    ::selection { color: var(--green); background: var(--lavender); }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: 12px;
+      left: 12px;
+      transform: translateY(-160%);
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 18px;
+      color: var(--white);
+      background: var(--green);
+      font-weight: 700;
+    }
+    .skip-link:focus { transform: none; }
+
+    /* ---------- Fixed transparent header ---------- */
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      inset: 0 0 auto;
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--gutter);
+      color: var(--green);
+      background: transparent;
+    }
+    .wordmark {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      color: var(--green);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: .78;
+      letter-spacing: .04em;
+    }
+    .wordmark span:last-child { margin-left: 10px; }
+
+    .menu-toggle {
+      position: relative;
+      z-index: 102;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(23, 57, 47, .2);
+      border-radius: 50%;
+      background: rgba(251, 252, 249, .78);
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+    .menu-toggle span {
+      position: absolute;
+      left: 13px;
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--green);
+      transition: top .32s var(--menu-ease), transform .32s var(--menu-ease), opacity .2s ease;
+    }
+    .menu-toggle span:nth-child(1) { top: 16px; }
+    .menu-toggle span:nth-child(2) { top: 23px; }
+    .menu-toggle span:nth-child(3) { top: 30px; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { top: 23px; transform: rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { top: 23px; transform: rotate(-45deg); }
+
+    /* ---------- Full-screen slide-out menu ---------- */
+    .menu-panel {
+      position: fixed;
+      z-index: 90;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      transform: translateX(100%);
+      padding: calc(var(--header-height) + 34px) var(--gutter) 30px;
+      color: var(--green);
+      background: var(--white);
+      visibility: hidden;
+      transition: transform .5s var(--menu-ease), visibility .5s;
+    }
+    .menu-panel.open { transform: translateX(0); visibility: visible; }
+    .menu-nav { display: grid; border-top: 1px solid var(--hairline); }
+    .menu-nav a {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--hairline);
+      font-family: var(--serif);
+      font-size: clamp(1.55rem, 7vw, 3.4rem);
+      line-height: 1;
+      white-space: nowrap;
+      transition: color .2s ease, transform .2s ease;
+    }
+    .menu-nav a:hover, .menu-nav a:focus-visible { color: var(--lavender-deep); transform: translateX(10px); }
+    .menu-footer {
+      display: grid;
+      gap: 5px;
+      margin-top: auto;
+      padding-top: 30px;
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.45;
+    }
+    .menu-footer .gold-line { color: #8b6a23; font-weight: 600; }
+
+    /* ---------- Shared section styles ---------- */
+    .section { position: relative; min-height: 100svh; }
+    .eyebrow {
+      margin: 0 0 16px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-weight: 400;
+      letter-spacing: -.035em;
+      line-height: .94;
+      text-wrap: balance;
+    }
+    .accent { color: var(--lavender-deep); font-family: var(--serif); font-style: italic; }
+    .section-copy { max-width: 590px; margin: 22px 0 0; font-size: clamp(.98rem, 1.4vw, 1.12rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid transparent;
+      border-radius: 100px;
+      padding: 15px 34px;
+      font-size: .78rem;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button:focus-visible, .menu-toggle:focus-visible, .wordmark:focus-visible {
+      outline: 3px solid var(--lavender-deep);
+      outline-offset: 3px;
+    }
+
+    /* ---------- Section 1: image-led light hero ---------- */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      color: var(--green);
+      background: var(--paper);
+    }
+    .hero-media { height: 58svh; min-height: 360px; overflow: hidden; background: var(--hairline); }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 55% center; }
+    .hero-content {
+      position: relative;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px var(--gutter) 92px;
+      background: var(--paper);
+    }
+    .hero h1 { max-width: 10ch; font-size: clamp(3rem, 13vw, 6.8rem); }
+    .hero .section-copy { color: var(--ink); }
+    .button-solid { color: var(--white); background: var(--green); }
+    .button-outline { border-color: var(--green); color: var(--green); background: transparent; }
+    .button-outline:hover { color: var(--white); background: var(--green); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      display: grid;
+      justify-items: center;
+      gap: 7px;
+      transform: translateX(-50%);
+      color: var(--muted);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+    .scroll-hint::after {
+      width: 1px;
+      height: 22px;
+      content: "";
+      background: var(--muted);
+      animation: scrollPulse 1.7s ease-in-out infinite;
+      transform-origin: top;
+    }
+    @keyframes scrollPulse { 0%, 100% { transform: scaleY(.35); opacity: .45; } 50% { transform: scaleY(1); opacity: 1; } }
+
+    /* ---------- Section 2: solid secondary brand panel ---------- */
+    .secondary {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background: linear-gradient(160deg, #20493d, #17392f);
+    }
+    .secondary-content { width: min(100%, 1160px); padding: 110px var(--gutter) 72px; }
+    .secondary .eyebrow { color: var(--lavender); }
+    .gold-tagline { margin: 0 0 20px; color: var(--gold); font-size: .78rem; font-weight: 600; letter-spacing: .1em; }
+    .secondary h2 { max-width: 12ch; font-size: clamp(3rem, 12vw, 7rem); }
+    .secondary .accent { color: var(--gold); }
+    .secondary .section-copy { color: rgba(255, 255, 255, .8); }
+    .button-lavender { color: var(--white); background: var(--lavender-deep); }
+
+    /* ---------- Desktop split at exactly the requested breakpoint ---------- */
+    @media (min-width: 900px) {
+      :root { --header-height: 86px; }
+      .hero { min-height: 100svh; display: grid; grid-template-columns: 52% 48%; }
+      .hero-media { width: 100%; height: 100svh; min-height: 100svh; }
+      .hero-media img { object-position: center; }
+      .hero-content { min-height: 100svh; padding: 130px clamp(48px, 6vw, 110px) 110px; }
+      .hero h1 { font-size: clamp(4.6rem, 6.4vw, 7rem); }
+      .scroll-hint { left: 76%; }
+      .secondary-content { padding-block: 130px 90px; }
+      .menu-panel { padding-right: max(var(--gutter), calc((100vw - 1200px) / 2)); padding-left: max(var(--gutter), calc((100vw - 1200px) / 2)); }
+      .menu-nav a { min-height: 72px; }
+    }
+
+    @media (max-height: 680px) { .scroll-hint { display: none; } .hero-content { padding-bottom: 48px; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .scroll-hint::after { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Replace the two wordmark placeholders below. -->
+  <header class="site-header">
+    <a class="wordmark" href="#hero" aria-label="[WORDMARK] home">
+      <span>[FIRST]</span>
+      <span>[LAST]</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Replace each one-line nav placeholder and its href. -->
+  <aside class="menu-panel" id="site-menu" aria-hidden="true">
+    <nav class="menu-nav" aria-label="Primary navigation">
+      <a href="#hero">[NAV ITEM 01]</a>
+      <a href="#secondary">[NAV ITEM 02]</a>
+      <a href="#secondary">[NAV ITEM 03]</a>
+      <a href="#secondary">[NAV ITEM 04]</a>
+      <a href="#secondary">[NAV ITEM 05]</a>
+      <a href="#secondary">[NAV ITEM 06]</a>
+      <a href="#secondary">[NAV ITEM 07]</a>
+    </nav>
+    <div class="menu-footer">
+      <span>[FOOTER LINE 01]</span>
+      <span>[FOOTER LINE 02]</span>
+      <span class="gold-line">[GOLD TAGLINE]</span>
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- SECTION 1 COPY: Replace bracketed placeholders only. -->
+    <section class="section hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-media">
+        <!-- PHOTO SWAP: Replace assets/hero.jpg with your real hero image path. -->
+        <img src="assets/hero.jpg" alt="[HERO PHOTO DESCRIPTION]">
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">[EYEBROW]</p>
+        <h1 id="hero-heading">[HEADLINE <em class="accent">ACCENT</em>]</h1>
+        <p class="section-copy">[SUBTEXT]</p>
+        <div class="actions">
+          <a class="button button-solid" href="#secondary">[CTA PRIMARY]</a>
+          <a class="button button-outline" href="#secondary">[CTA SECONDARY]</a>
+        </div>
+      </div>
+      <span class="scroll-hint" aria-hidden="true">SCROLL</span>
+    </section>
+
+    <!-- SECTION 2 COPY: Replace bracketed placeholders only. -->
+    <section class="section secondary" id="secondary" aria-labelledby="secondary-heading">
+      <div class="secondary-content">
+        <p class="eyebrow">[EYEBROW]</p>
+        <p class="gold-tagline">[GOLD TAGLINE]</p>
+        <h2 id="secondary-heading">[HEADLINE <em class="accent">GOLD ACCENT CLAUSE</em>]</h2>
+        <p class="section-copy">[SUBTEXT]</p>
+        <div class="actions">
+          <a class="button button-lavender" href="#hero">[CTA]</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Accessible full-screen menu: toggle, close on link/Escape, and trap keyboard focus.
+    (() => {
+      const body = document.body;
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('#site-menu');
+      const links = [...menu.querySelectorAll('a')];
+      let lastFocus = null;
+
+      function setMenu(open) {
+        body.classList.toggle('menu-open', open);
+        menu.classList.toggle('open', open);
+        menu.setAttribute('aria-hidden', String(!open));
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+
+        if (open) {
+          lastFocus = document.activeElement;
+          window.setTimeout(() => links[0].focus(), 180);
+        } else if (lastFocus) {
+          lastFocus.focus();
+        }
+      }
+
+      toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+      links.forEach(link => link.addEventListener('click', () => setMenu(false)));
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
+        if (event.key !== 'Tab' || toggle.getAttribute('aria-expanded') !== 'true') return;
+
+        const focusable = [toggle, ...links];
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      });
+    })();
+  </script>
+
+  <!-- PHOTO: Place the real image at assets/hero.jpg, or update the hero img src and alt text above. -->
+  <!-- COPY: Replace bracketed placeholders in the wordmark, menu, Section 1, Section 2, footer, title, and description. -->
+</body>
+</html>
