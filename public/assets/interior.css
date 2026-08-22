@@ -155,12 +155,14 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 
 /* Split about section. */
 .about { color: var(--white); background: var(--green); }
+.about-page-title { margin-bottom: clamp(28px, 5vw, 48px); color: var(--white); font-size: clamp(3.5rem, 12vw, 6.5rem); }
 .about-grid { display: grid; gap: 46px; }
 .about-photo { position: relative; min-height: 520px; overflow: hidden; border-radius: 22px; background: var(--lavender); box-shadow: var(--shadow); }
 .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.about-copy .eyebrow { color: var(--gold); }
-.about-copy h1, .about-copy h2 { color: var(--white); font-size: clamp(2.8rem, 7vw, 5rem); }
+.about-copy h2 { color: var(--white); font-size: clamp(2.8rem, 7vw, 5rem); }
 .about-copy p { margin: 20px 0 0; color: rgba(255, 255, 255, .78); }
+.about-copy .about-statement { margin-top: 14px; color: var(--white); font-family: var(--serif); font-size: clamp(1.65rem, 3.8vw, 2.65rem); letter-spacing: -.025em; line-height: 1.05; }
+.about-statement em { color: var(--gold); font-style: italic; }
 .about-copy .text-link { margin-top: 22px; color: var(--white); }
 
 /* Approach, WBC framework, and culture-led coaching page. */
