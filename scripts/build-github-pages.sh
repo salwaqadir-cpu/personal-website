@@ -10,7 +10,7 @@ node_modules/.bin/next build
 # page shells with the approved static editorial design.
 cp public/index.html out/index.html
 
-for page in about approach contact program; do
+for page in about approach contact program stories work; do
   mkdir -p "out/${page}"
   cp "public/${page}.html" "out/${page}/index.html"
 done

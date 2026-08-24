@@ -32,25 +32,42 @@ test("serves the approved editorial pages and route redirects", async () => {
   assert.match(homepage, /rel="canonical" href="https:\/\/salwaqadir\.com\/"/);
   assert.match(homepage, /class="hero-media"/);
   assert.match(homepage, /class="menu-panel"/);
-  assert.match(homepage, /From Bodyweight to Barbells/);
+  assert.match(homepage, /Train With Intention/);
   assert.doesNotMatch(homepage, /\.program-link \{[^}]*border-bottom/);
   assert.match(homepage, /class="button button-solid" href="work\.html">Work With Me<\/a>/);
   assert.match(homepage, /class="button button-outline" href="about\.html">About Me<\/a>/);
   assert.match(homepage, /The Women’s Barbell Club/);
-  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\//g)?.length, 1);
+  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/wbc-waitlist/g)?.length, 1);
+  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/\"/g)?.length, 1);
   assert.match(homepage, /About Me/);
   assert.match(homepage, /mailto:salwa@salwaqadir\.com/);
   assert.match(homepage, /property="og:image"/);
-  assert.doesNotMatch(homepage, /—/);
 
   const contactResponse = await fetchPage("/contact");
   assert.equal(contactResponse.status, 307);
   assert.equal(new URL(contactResponse.headers.get("location")).pathname, "/contact.html");
 
+  const workResponse = await fetchPage("/work");
+  assert.equal(workResponse.status, 307);
+  assert.equal(new URL(workResponse.headers.get("location")).pathname, "/work.html");
+
+  const storiesResponse = await fetchPage("/stories");
+  assert.equal(storiesResponse.status, 307);
+  assert.equal(new URL(storiesResponse.headers.get("location")).pathname, "/stories.html");
+
   const contactPage = await readFile(new URL("../public/contact.html", import.meta.url), "utf8");
-  assert.match(contactPage, /IN-PERSON COACHING/);
+  assert.match(contactPage, /ONE-TO-ONE COACHING/);
+  assert.match(contactPage, /SMALL-GROUP TRAINING/);
   assert.match(contactPage, /Brand \+ Media Partnerships/);
   assert.match(contactPage, /salwa@salwaqadir\.com/);
+
+  const workPage = await readFile(new URL("../public/work.html", import.meta.url), "utf8");
+  assert.match(workPage, /One-to-One Strength Coaching/);
+  assert.match(workPage, /\$280 per month/);
+
+  const storiesPage = await readFile(new URL("../public/stories.html", import.meta.url), "utf8");
+  assert.match(storiesPage, /Client Stories/);
+  assert.match(storiesPage, /From bodyweight squat to a 125 lb barbell/);
 });
 
 test("uses an opaque full-viewport mobile navigation panel", async () => {

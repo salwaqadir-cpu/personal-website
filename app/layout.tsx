@@ -52,9 +52,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${basePath}${SOCIAL_IMAGE}`,
-        width: 1731,
+        width: 1730,
         height: 909,
-        alt: "Salwa Qadir: Women don’t need to be told to do more. They need to be built up so they can.",
+        alt: "Salwa Qadir: Train with intention.",
       },
     ],
     type: "website",
