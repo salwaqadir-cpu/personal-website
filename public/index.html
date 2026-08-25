@@ -86,6 +86,8 @@
     /* Shared type, buttons, and section rhythm. */
     h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
     .accent { color: var(--lavender-deep); font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .body-emphasis { color: var(--green); font-family: var(--serif); font-style: italic; font-weight: 600; background: linear-gradient(transparent 65%, rgba(242, 217, 160, .78) 65%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding-inline: .05em; }
+    .body-emphasis-on-dark { color: var(--white); font-family: var(--serif); font-style: italic; font-weight: 600; background: linear-gradient(transparent 65%, rgba(242, 217, 160, .58) 65%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding-inline: .05em; }
     .eyebrow { margin: 0 0 16px; color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .15em; line-height: 1.4; text-transform: uppercase; }
     .section { padding-block: clamp(84px, 10vw, 132px); scroll-margin-top: var(--header-h); }
     .section-heading { display: grid; gap: 22px; margin-bottom: 46px; }
@@ -128,9 +130,8 @@
     .wbc-title-accent { color: var(--lavender); }
     .wbc-pillars { margin: 10px 0 20px; color: var(--white); font-size: .71rem; font-weight: 700; letter-spacing: .16em; line-height: 1.55; text-transform: uppercase; }
     .wbc-pillars i { color: inherit; font-style: normal; }
-    .wbc-tagline { margin: 0 0 20px; color: var(--white); font-family: var(--serif); font-size: clamp(1.45rem, 6vw, 1.92rem); line-height: 1.1; }
-    .wbc-tagline span, .wbc-tagline em { display: block; }
-    .wbc-tagline em { margin-top: 10px; color: var(--lavender); font-style: italic; }
+    .wbc-tagline { display: grid; gap: 4px; margin: 0 0 24px; border-left: 2px solid var(--gold); padding-left: 16px; color: var(--white); font-family: var(--serif); font-size: clamp(1.45rem, 6vw, 1.92rem); line-height: 1.1; }
+    .wbc-tagline em { display: block; color: inherit; font-style: italic; }
     .wbc-body { max-width: 650px; margin: 0; color: rgba(255, 255, 255, .82); font-size: 1rem; line-height: 1.55; }
     .wbc-body + .wbc-body { margin-top: 20px; }
     .wbc-waitlist { position: relative; z-index: 1; width: 250px; height: 250px; display: grid; place-content: center; justify-self: center; border-radius: 50%; color: var(--green); background: var(--lavender); text-align: center; transform: rotate(-5deg); transition: transform .2s ease, background .2s ease; }
@@ -312,13 +313,13 @@
       </div>
       <div class="hero-content">
         <h1 id="hero-heading">Train with <em class="accent">efficiency.</em></h1>
-        <p class="hero-copy hero-statement">While the world is asking women to do more, I show you how to <em class="accent">do less, so you can do more.</em></p>
+        <p class="hero-copy hero-statement">While the world is asking women to do more, I show you how to <em class="body-emphasis">do less, so you can do more.</em></p>
         <div class="hero-supporting-copy">
           <p class="hero-copy">You can do a bodyweight squat or barbell squat. You can squat in a way where you feel more in your knees, or in your thighs, or in your glutes or in your calves.</p>
-          <p class="hero-copy">None of these are wrong.</p>
-          <p class="hero-copy">The question is: what do you want, why do you want it and <em class="accent">how do you get there?</em></p>
+          <p class="hero-copy"><em class="body-emphasis">None of these are wrong.</em></p>
+          <p class="hero-copy">The question is: what do you want, why do you want it and <em class="body-emphasis">how do you get there?</em></p>
           <p class="hero-copy">Train With Efficiency shows you how these variations differ, how your goals determine which one we choose, and what you should feel when you're doing it.</p>
-          <p class="hero-copy">Because in this day and age, who has time to do more?</p>
+          <p class="hero-copy">Because in this day and age, <em class="body-emphasis">who has time to do more?</em></p>
         </div>
         <div class="hero-actions">
           <a class="button button-solid" href="work.html">Work With Me</a>
@@ -334,9 +335,10 @@
           <p class="eyebrow">Founded by Salwa</p>
           <h2 id="wbc-heading">The Women’s<br><span class="wbc-title-accent">Barbell Club</span></h2>
           <p class="wbc-pillars">Intention <i>•</i> Strength <i>•</i> Sisterhood</p>
-          <p class="wbc-tagline"><span>Lighten Your Life.</span><em>Build strength. Fuel your body. Navigate real life together.</em></p>
+          <p class="wbc-tagline"><em>Build strength.</em><em>Fuel your body.</em><em>Navigate life together.</em></p>
           <p class="wbc-body">I founded The Women’s Barbell Club to bring my Train With Efficiency approach into a community where women can build strength, understand their training, and stay supported as real life changes.</p>
-          <p class="wbc-body">WBC is more than women lifting. It is a hybrid online and in-person community bringing together strength programming, technique, workout classes, lifting events, meal prep and fuel, retreats, and the sisterhood that helps carry the load of life.</p>
+          <p class="wbc-body">WBC is more than women lifting.</p>
+          <p class="wbc-body">It is a hybrid online and in-person community bringing together efficient strength technique classes, programs, workout classes, lifting events, meal prep, recovery elements, retreats, and the sisterhood that helps carry the load of life, <em class="body-emphasis-on-dark">so that you do less.</em></p>
         </div>
         <a class="wbc-waitlist" href="https://www.thewomensbarbell.club/wbc-waitlist" aria-label="Join The Women’s Barbell Club waitlist">
           <span>JOIN THE</span>
