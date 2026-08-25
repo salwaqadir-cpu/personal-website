@@ -40,7 +40,7 @@ test("serves the approved editorial pages and route redirects", async () => {
   assert.match(homepage, /class="button button-outline" href="about\.html">About Me<\/a>/);
   assert.match(homepage, /The Women’s Barbell Club/);
   assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/wbc-waitlist/g)?.length, 1);
-  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/\"/g)?.length, 1);
+  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/\"/g)?.length, 2);
   assert.match(homepage, /About Me/);
   assert.match(homepage, /mailto:salwa@salwaqadir\.com/);
   assert.match(homepage, /property="og:image"/);

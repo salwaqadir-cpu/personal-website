@@ -87,7 +87,7 @@
     h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: .98; text-wrap: balance; }
     .accent { color: var(--lavender-deep); font-family: var(--serif); font-style: italic; font-weight: 400; }
     .body-emphasis { color: var(--green); font-family: var(--serif); font-style: italic; font-weight: 600; background: linear-gradient(transparent 65%, rgba(242, 217, 160, .78) 65%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding-inline: .05em; }
-    .body-emphasis-on-dark { color: var(--white); font-family: var(--serif); font-style: italic; font-weight: 600; background: linear-gradient(transparent 65%, rgba(242, 217, 160, .58) 65%); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding-inline: .05em; }
+    .body-emphasis-on-dark { color: var(--gold); font-family: var(--serif); font-style: italic; font-weight: 600; }
     .eyebrow { margin: 0 0 16px; color: var(--green); font-size: .7rem; font-weight: 700; letter-spacing: .15em; line-height: 1.4; text-transform: uppercase; }
     .section { padding-block: clamp(84px, 10vw, 132px); scroll-margin-top: var(--header-h); }
     .section-heading { display: grid; gap: 22px; margin-bottom: 46px; }
@@ -134,6 +134,8 @@
     .wbc-tagline em { display: block; color: inherit; font-style: italic; }
     .wbc-body { max-width: 650px; margin: 0; color: rgba(255, 255, 255, .82); font-size: 1rem; line-height: 1.55; }
     .wbc-body + .wbc-body { margin-top: 20px; }
+    .wbc-inline-link { color: var(--white); font-weight: 800; text-decoration: none; transition: color .2s ease; }
+    .wbc-inline-link:hover, .wbc-inline-link:focus-visible { color: var(--gold); }
     .wbc-waitlist { position: relative; z-index: 1; width: 250px; height: 250px; display: grid; place-content: center; justify-self: center; border-radius: 50%; color: var(--green); background: var(--lavender); text-align: center; transform: rotate(-5deg); transition: transform .2s ease, background .2s ease; }
     .wbc-waitlist:hover { background: var(--gold); transform: rotate(0deg) translateY(-2px); }
     .wbc-waitlist span, .wbc-waitlist strong { display: block; font-family: var(--serif); font-size: 2.2rem; font-weight: 400; line-height: .82; }
@@ -336,9 +338,9 @@
           <h2 id="wbc-heading">The Women’s<br><span class="wbc-title-accent">Barbell Club</span></h2>
           <p class="wbc-pillars">Intention <i>•</i> Strength <i>•</i> Sisterhood</p>
           <p class="wbc-tagline"><em>Build strength.</em><em>Fuel your body.</em><em>Navigate life together.</em></p>
-          <p class="wbc-body">I founded The Women’s Barbell Club to bring my Train With Efficiency approach into a community where women can build strength, understand their training, and stay supported as real life changes.</p>
-          <p class="wbc-body">WBC is <em class="body-emphasis-on-dark">more than women lifting.</em></p>
-          <p class="wbc-body">It is a hybrid online and in-person community bringing together efficient strength technique classes, programs, workout classes, lifting events, meal prep, recovery elements, retreats, and the sisterhood that helps carry the load of life, so that you do less.</p>
+          <p class="wbc-body">I founded The Women’s Barbell Club to bring my Train With Efficiency approach into a community where women can build strength, understand their training, and stay supported as life changes.</p>
+          <p class="wbc-body"><a class="wbc-inline-link" href="https://www.thewomensbarbell.club/">WBC</a> is <em class="body-emphasis-on-dark">more than women lifting.</em></p>
+          <p class="wbc-body">It is a hybrid online and in-person community bringing together efficient strength technique classes, programs, workout classes, lifting events, meal prep, recovery elements, retreats, and the sisterhood that helps you carry the load of life, for you to <em class="body-emphasis-on-dark">do less.</em></p>
         </div>
         <a class="wbc-waitlist" href="https://www.thewomensbarbell.club/wbc-waitlist" aria-label="Join The Women’s Barbell Club waitlist">
           <span>JOIN THE</span>
