@@ -110,9 +110,8 @@
     .hero h1 { max-width: 12ch; font-size: clamp(3rem, 12.5vw, 6.7rem); }
     .hero-copy { max-width: 620px; margin: 22px 0 0; color: var(--ink); font-size: clamp(.98rem, 1.4vw, 1.15rem); }
     .hero-statement { max-width: 560px; color: var(--green); font-family: var(--serif); font-size: clamp(1.35rem, 2.25vw, 1.9rem); line-height: 1.16; }
-    .hero-supporting-copy { max-width: 660px; margin-top: 20px; }
+    .hero-supporting-copy { display: grid; gap: 14px; max-width: 660px; margin-top: 20px; }
     .hero-supporting-copy .hero-copy { margin: 0; font-size: clamp(.9rem, 1.08vw, 1rem); line-height: 1.5; }
-    .hero-supporting-copy .hero-copy + .hero-copy { margin-top: 11px; }
     .program-link { color: var(--green); font-family: var(--serif); font-size: 1.16em; font-style: italic; font-weight: 700; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .scroll-hint { position: absolute; bottom: 24px; left: 50%; display: grid; justify-items: center; gap: 7px; transform: translateX(-50%); color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .18em; }
@@ -269,9 +268,8 @@
       .hero-content { padding-top: 18px; padding-bottom: 56px; }
       .hero h1 { font-size: clamp(3.6rem, 5vw, 5rem); }
       .hero-statement { margin-top: 16px; font-size: 1.45rem; }
-      .hero-supporting-copy { margin-top: 14px; }
+      .hero-supporting-copy { gap: 9px; margin-top: 14px; }
       .hero-supporting-copy .hero-copy { font-size: .86rem; line-height: 1.4; }
-      .hero-supporting-copy .hero-copy + .hero-copy { margin-top: 8px; }
       .hero-actions { margin-top: 20px; }
     }
 
@@ -316,7 +314,11 @@
         <h1 id="hero-heading">Train with <em class="accent">efficiency.</em></h1>
         <p class="hero-copy hero-statement">While the world is asking women to do more, I show you how to <em class="accent">do less, so you can do more.</em></p>
         <div class="hero-supporting-copy">
-          <p class="hero-copy">You can do a bodyweight squat or barbell squat. You can squat in a way where you feel more in your knees, or in your thighs, or in your glutes or in your calves. None of these are wrong. The question is: what do you want, why do you want it and how do you get there? Train With Efficiency shows you how these variations differ, how your goals determine which one we choose, and what you should feel when you're doing it. Because in this day and age, who has time to do more?</p>
+          <p class="hero-copy">You can do a bodyweight squat or barbell squat. You can squat in a way where you feel more in your knees, or in your thighs, or in your glutes or in your calves.</p>
+          <p class="hero-copy">None of these are wrong.</p>
+          <p class="hero-copy">The question is: what do you want, why do you want it and <em class="accent">how do you get there?</em></p>
+          <p class="hero-copy">Train With Efficiency shows you how these variations differ, how your goals determine which one we choose, and what you should feel when you're doing it.</p>
+          <p class="hero-copy">Because in this day and age, who has time to do more?</p>
         </div>
         <div class="hero-actions">
           <a class="button button-solid" href="work.html">Work With Me</a>
