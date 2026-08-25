@@ -34,7 +34,7 @@ test("serves the approved editorial pages and route redirects", async () => {
   assert.match(homepage, /class="menu-panel"/);
   assert.match(homepage, /Train With Efficiency/);
   assert.match(homepage, /While the world is asking women to do more/);
-  assert.match(homepage, /You can do a bodyweight squat or barbell squat/);
+  assert.match(homepage, /You can do a bodyweight squat or a barbell squat/);
   assert.doesNotMatch(homepage, /\.program-link \{[^}]*border-bottom/);
   assert.match(homepage, /class="button button-solid" href="work\.html">Work With Me<\/a>/);
   assert.match(homepage, /class="button button-outline" href="about\.html">About Me<\/a>/);
