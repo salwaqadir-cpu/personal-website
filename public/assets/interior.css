@@ -221,7 +221,7 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 .about-approach-lift em { color: var(--lavender-deep); font-style: italic; }
 .about-approach-questions { display: grid; gap: 0; margin-block: clamp(48px, 7vw, 76px); border-top: 1px solid var(--hairline); }
 .about-approach-questions p { margin: 0; border-bottom: 1px solid var(--hairline); padding: 18px 0; color: var(--green); font-family: var(--serif); font-size: clamp(1.35rem, 3vw, 2rem); line-height: 1.16; }
-.about-course-cta { margin-top: 38px; }
+.about-course-cta { max-width: 100%; margin-top: 38px; white-space: nowrap; line-height: 1; }
 .about-course-cta em { margin-inline: .28em; font-family: var(--serif); font-size: 1.12em; font-style: italic; font-weight: 400; }
 
 /* Approach, WBC framework, and culture-led coaching page. */
@@ -287,6 +287,11 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 .footer-links a:hover, .footer-links a:focus-visible { color: var(--lavender); }
 .site-footer .footer-instagram { display: inline-block; margin-top: 8px; color: var(--lavender); font-weight: 600; }
 .site-footer .footer-instagram:hover, .site-footer .footer-instagram:focus-visible { color: var(--gold); }
+
+@media (max-width: 560px) {
+  .about-course-cta { width: 100%; padding-inline: 12px; font-size: clamp(.48rem, 2.2vw, .68rem); letter-spacing: -.025em; }
+  .about-course-cta em { margin-inline: 0; font-size: 1.02em; }
+}
 
 @media (min-width: 720px) {
   .offer-grid, .stories-grid { grid-template-columns: repeat(2, 1fr); }

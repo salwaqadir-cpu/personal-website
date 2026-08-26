@@ -8,15 +8,21 @@
   <title>Salwa Qadir | Women’s Strength Coach in Milton &amp; Mississauga</title>
   <link rel="canonical" href="https://salwaqadir.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta property="og:title" content="Salwa Qadir | Women’s Strength Coach in Milton &amp; Mississauga">
+  <meta property="og:title" content="Strength to Lighten Your Life | Salwa Qadir">
   <meta property="og:description" content="Strength to Lighten Your Life: women’s strength coaching that helps you understand your goals, choose what fits, and progress with expert guidance.">
   <meta property="og:url" content="https://salwaqadir.com/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://salwaqadir.com/og.png">
+  <meta property="og:image" content="https://salwaqadir.com/og.png?v=20260825">
+  <meta property="og:image:secure_url" content="https://salwaqadir.com/og.png?v=20260825">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1730">
+  <meta property="og:image:height" content="909">
+  <meta property="og:image:alt" content="Strength to Lighten Your Life. Do less, so that you can do more.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Salwa Qadir | Women’s Strength Coach in Milton &amp; Mississauga">
+  <meta name="twitter:title" content="Strength to Lighten Your Life | Salwa Qadir">
   <meta name="twitter:description" content="Strength to Lighten Your Life: women’s strength coaching that helps you understand your goals, choose what fits, and progress with expert guidance.">
-  <meta name="twitter:image" content="https://salwaqadir.com/og.png">
+  <meta name="twitter:image" content="https://salwaqadir.com/og.png?v=20260825">
+  <meta name="twitter:image:alt" content="Strength to Lighten Your Life. Do less, so that you can do more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -95,7 +101,7 @@
     .section-heading > p:last-child { max-width: 600px; margin: 0; color: var(--muted); }
     .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 100px; padding: 15px 34px; font-size: .76rem; font-weight: 700; line-height: 1; text-align: center; transition: transform .2s ease, background .2s ease, color .2s ease; }
     .button:hover { transform: translateY(-2px); }
-    .course-cta { max-width: 100%; line-height: 1.25; }
+    .course-cta { max-width: 100%; white-space: nowrap; line-height: 1; }
     .course-cta em { font-family: var(--serif); font-size: 1.08em; font-style: italic; }
     .button-solid { color: var(--white); background: var(--green); }
     .button-outline { border-color: var(--green); color: var(--green); background: transparent; }
@@ -340,6 +346,11 @@
     .footer-links a:hover, .footer-links a:focus-visible { color: var(--lavender); }
     .site-footer .footer-instagram { display: inline-block; margin-top: 8px; color: var(--lavender); font-weight: 600; }
     .site-footer .footer-instagram:hover, .site-footer .footer-instagram:focus-visible { color: var(--gold); }
+
+    @media (max-width: 560px) {
+      .course-cta { width: 100%; padding-inline: 12px; font-size: clamp(.48rem, 2.2vw, .68rem); letter-spacing: -.025em; }
+      .course-cta em { font-size: 1.02em; }
+    }
 
     @media (min-width: 720px) {
       .offer-grid, .stories-grid { grid-template-columns: repeat(2, 1fr); }

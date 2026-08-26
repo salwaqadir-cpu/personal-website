@@ -5,6 +5,7 @@ import {
   SITE_TITLE,
   SITE_URL,
   SOCIAL_IMAGE,
+  SOCIAL_TITLE,
 } from "@/lib/seo";
 import "./globals.css";
 
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     shortcut: `${basePath}/favicon.svg`,
   },
   openGraph: {
-    title: SITE_TITLE,
+    title: SOCIAL_TITLE,
     description: SITE_DESCRIPTION,
     url: "/",
     siteName: SITE_NAME,
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_TITLE,
+    title: SOCIAL_TITLE,
     description: SITE_DESCRIPTION,
     images: [`${basePath}${SOCIAL_IMAGE}`],
   },
