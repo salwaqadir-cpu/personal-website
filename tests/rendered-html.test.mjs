@@ -43,8 +43,9 @@ test("serves the two-page narrative and services experience", async () => {
   assert.match(homepage, /what to <em class="body-emphasis">push forward,<\/em> what to <em class="body-emphasis">pull back,<\/em> and what to <em class="body-emphasis">maintain\.<\/em>/);
   assert.doesNotMatch(homepage, /bodyweight squat or a barbell squat/);
   assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/strength-to-lighten-your-life/g)?.length, 6);
-  assert.match(homepage, /Get access to my FREE course,&nbsp;<em>Strength to Lighten Your Life<\/em>/);
-  assert.match(homepage, /class="button button-outline" href="#wbc">The Women’s Barbell Club<\/a>/);
+  assert.equal(homepage.match(/>Join the free course waitlist<\/a>/g)?.length, 4);
+  assert.equal(homepage.match(/>Join the Women’s Barbell Club waitlist<\/a>/g)?.length, 4);
+  assert.match(homepage, /class="hero-actions course-actions">[\s\S]*Join the free course waitlist[\s\S]*Join the Women’s Barbell Club waitlist/);
   assert.doesNotMatch(homepage, /<p class="eyebrow">(?:Experience \+ Credentials|About Me|Client Stories|Services)<\/p>/);
   assert.match(homepage, /<strong>13,000\+<\/strong><span>Hours coaching women<\/span>/);
   assert.match(homepage, /<strong>100s<\/strong><span>Of women coached<\/span>/);
@@ -53,7 +54,10 @@ test("serves the two-page narrative and services experience", async () => {
   assert.match(homepage, /<strong>1<\/strong><span>Goal<\/span>/);
   assert.equal(homepage.match(/class="home-credential-item"><span aria-hidden="true"><\/span>/g)?.length, 6);
   assert.doesNotMatch(homepage, /class="home-credential-item"><span>0[1-6]<\/span>/);
-  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/wbc-waitlist/g)?.length, 1);
+  assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/wbc-waitlist/g)?.length, 5);
+  assert.match(homepage, /JOIN THE WOMEN’S BARBELL CLUB WAITLIST/);
+  assert.doesNotMatch(homepage, /<span>JOIN THE<\/span>[\s\S]*<strong>WAITLIST<\/strong>/);
+  assert.match(homepage, /From Bodyweight to Barbells<\/a> is a signature program of The Women’s Barbell Club/);
   assert.match(homepage, /id="about"/);
   assert.match(homepage, /id="approach"/);
   assert.match(homepage, /Strength to Lighten Your Life<\/a> teaches you how to pick your health and wellness goals/);
@@ -90,6 +94,8 @@ test("serves the two-page narrative and services experience", async () => {
   assert.doesNotMatch(homepage, /For us to do everything we need in life/);
   assert.match(homepage, /I love lifting because it taught me <em>the secret sauce to balancing life\.<\/em>/);
   assert.doesNotMatch(homepage, /I love lifting because it taught me this technique\./);
+  assert.match(homepage, /I’ve learnt that <em class="about-thread">there is a way for women to “do it all\.”<\/em>/);
+  assert.doesNotMatch(homepage, /there is a way for women to do all of this\./);
   assert.match(homepage, /class="approach-powerlifting-photo"><img src="assets\/powerlifter\.jpg" alt="Salwa Qadir preparing to lift at a powerlifting competition"/);
   assert.ok(homepage.indexOf('assets/powerlifter.jpg') < homepage.indexOf('class="approach-lift"'));
   assert.doesNotMatch(homepage, /assets\/values\.jpg/);
@@ -102,6 +108,8 @@ test("serves the two-page narrative and services experience", async () => {
   assert.doesNotMatch(homepage, /lives they were already living—and/);
   assert.doesNotMatch(homepage, /What changed <em class="accent">through training\.<\/em>/);
   assert.equal(homepage.match(/class="story"/g)?.length, 4);
+  assert.equal(homepage.match(/Current client, [567]\+ years/g)?.length, 4);
+  assert.doesNotMatch(homepage, />Client, [567] years</);
   assert.match(homepage, /property="og:image"/);
 
   const sectionOrder = [
@@ -131,9 +139,13 @@ test("serves the two-page narrative and services experience", async () => {
   assert.equal(storiesResponse.status, 307);
   assert.equal(new URL(storiesResponse.headers.get("location")).hash, "#stories");
 
+  const programResponse = await fetchPage("/program");
+  assert.equal(programResponse.status, 307);
+  assert.equal(new URL(programResponse.headers.get("location")).pathname, "/program.html");
+
   const servicesPage = await readFile(new URL("../public/services.html", import.meta.url), "utf8");
-  assert.match(servicesPage, /One-to-One Strength Coaching/);
-  assert.match(servicesPage, /Small-Group Strength Training/);
+  assert.doesNotMatch(servicesPage, /One-to-One Strength Coaching/);
+  assert.doesNotMatch(servicesPage, /Small-Group Strength Training/);
   assert.match(servicesPage, /Fitness Business Mentorship/);
   assert.match(servicesPage, /Workshops \+ Speaking/);
   assert.match(servicesPage, /Brand \+ Media Partnerships/);
@@ -145,10 +157,30 @@ test("serves the two-page narrative and services experience", async () => {
   assert.match(servicesPage, /Lighten<\/em> Your Life\./);
   assert.match(servicesPage, /more than women lifting\./);
   assert.match(servicesPage, /so that you can <em class="body-emphasis-on-dark">do less\.<\/em>/);
-  assert.match(servicesPage, /\$120 per session/);
-  assert.match(servicesPage, /\$280 per month/);
+  assert.doesNotMatch(servicesPage, /\$120 per session/);
+  assert.doesNotMatch(servicesPage, /\$280 per month/);
+  assert.match(servicesPage, /JOIN THE WOMEN’S BARBELL CLUB WAITLIST/);
   assert.match(servicesPage, /id="contact-form"/);
   assert.match(servicesPage, /salwa@salwaqadir\.com/);
+
+  const programPage = await readFile(new URL("../public/program.html", import.meta.url), "utf8");
+  assert.doesNotMatch(programPage, /window\.location\.replace/);
+  assert.match(programPage, /From Bodyweight to Barbells is a signature program of The Women’s Barbell Club/);
+  assert.match(programPage, /Intention · Strength · Sisterhood/);
+  assert.match(programPage, /href="https:\/\/www\.thewomensbarbell\.club\/wbc-waitlist">Join the WBC waitlist<\/a>/);
+  assert.doesNotMatch(programPage, /One-to-One Coaching \+ Small-Group Training/);
+
+  const legacyRedirects = [
+    ["about.html", "/index.html#about"],
+    ["approach.html", "/index.html#approach"],
+    ["stories.html", "/index.html#stories"],
+    ["contact.html", "/services.html#contact"],
+    ["work.html", "/services.html"],
+  ];
+  for (const [file, destination] of legacyRedirects) {
+    const redirectPage = await readFile(new URL(`../public/${file}`, import.meta.url), "utf8");
+    assert.match(redirectPage, new RegExp(`window\\.location\\.replace\\("${destination.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\"\\)`));
+  }
 });
 
 test("uses an opaque full-viewport mobile navigation panel", async () => {

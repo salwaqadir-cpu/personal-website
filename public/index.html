@@ -102,7 +102,8 @@
     .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 100px; padding: 15px 34px; font-size: .76rem; font-weight: 700; line-height: 1; text-align: center; transition: transform .2s ease, background .2s ease, color .2s ease; }
     .button:hover { transform: translateY(-2px); }
     .course-cta { max-width: 100%; white-space: nowrap; line-height: 1; }
-    .course-cta em { font-family: var(--serif); font-size: 1.08em; font-style: italic; }
+    .course-actions { width: min(100%, 380px); display: grid; gap: 10px; justify-items: stretch; }
+    .course-actions .button { width: 100%; }
     .button-solid { color: var(--white); background: var(--green); }
     .button-outline { border-color: var(--green); color: var(--green); background: transparent; }
     .button-outline:hover { color: var(--white); background: var(--green); }
@@ -124,7 +125,7 @@
     .hero-supporting-copy { display: grid; gap: 14px; max-width: 660px; margin-top: 20px; }
     .hero-supporting-copy .hero-copy { margin: 0; font-size: clamp(.9rem, 1.08vw, 1rem); line-height: 1.5; }
     .program-link { color: var(--green); font-family: var(--serif); font-size: 1.16em; font-style: italic; font-weight: 700; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-actions { margin-top: 28px; }
     .scroll-hint { position: absolute; bottom: 24px; left: 50%; display: grid; justify-items: center; gap: 7px; transform: translateX(-50%); color: var(--muted); font-size: .62rem; font-weight: 700; letter-spacing: .18em; }
     .scroll-hint::after { width: 1px; height: 22px; content: ""; background: var(--muted); animation: scrollPulse 1.7s ease-in-out infinite; transform-origin: top; }
     @keyframes scrollPulse { 0%, 100% { transform: scaleY(.35); opacity: .45; } 50% { transform: scaleY(1); opacity: 1; } }
@@ -133,7 +134,7 @@
     .wbc { min-height: 100svh; display: flex; align-items: center; padding: 82px 0; color: var(--green); background: var(--paper); }
     .wbc-card { position: relative; width: min(var(--shell), calc(100% - 28px)); display: grid; align-items: center; gap: 56px; overflow: hidden; margin-inline: auto; border-radius: 22px; padding: 42px 28px; color: var(--white); background: var(--green); }
     .wbc-card::after { position: absolute; top: -140px; right: -120px; width: 340px; height: 340px; border-radius: 50%; content: ""; background: rgba(200, 184, 232, .09); pointer-events: none; }
-    .wbc-copy { position: relative; z-index: 1; }
+    .wbc-copy { position: relative; z-index: 1; min-width: 0; }
     .wbc .eyebrow { margin-bottom: 18px; color: var(--gold); }
     .wbc h2 { max-width: 700px; color: var(--white); font-size: clamp(2.8rem, 11.5vw, 3.76rem); line-height: .92; letter-spacing: -.025em; text-transform: uppercase; }
     .wbc-title-accent { color: var(--lavender); }
@@ -147,10 +148,9 @@
     .wbc-body + .wbc-body { margin-top: 20px; }
     .wbc-inline-link { color: var(--white); font-weight: 800; text-decoration: none; transition: color .2s ease; }
     .wbc-inline-link:hover, .wbc-inline-link:focus-visible { color: var(--gold); }
-    .wbc-waitlist { position: relative; z-index: 1; width: max-content; max-width: 100%; min-height: 44px; display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; justify-self: center; border-radius: 100px; padding: 15px 30px; color: var(--green); background: var(--lavender); text-align: center; transition: transform .2s ease, background .2s ease; }
+    .wbc-waitlist { position: relative; z-index: 1; width: 100%; min-width: 0; max-width: 100%; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; justify-self: stretch; border-radius: 100px; padding: 15px 20px; color: var(--green); background: var(--lavender); text-align: center; transition: transform .2s ease, background .2s ease; }
     .wbc-waitlist:hover { background: var(--gold); transform: translateY(-2px); }
-    .wbc-waitlist span, .wbc-waitlist strong { display: inline; font-family: var(--sans); font-size: .76rem; font-weight: 700; line-height: 1.15; }
-    .wbc-waitlist small { display: inline; margin-left: 4px; font-size: .61rem; font-weight: 700; letter-spacing: .1em; line-height: 1.3; }
+    .wbc-waitlist span { display: block; width: 100%; font-family: var(--sans); font-size: clamp(.7rem, 2.7vw, .82rem); font-weight: 700; letter-spacing: .035em; line-height: 1.2; white-space: nowrap; text-align: center; }
 
     /* Offer cards. */
     .work { background: var(--paper); }
@@ -294,7 +294,7 @@
     .execution-copy h3 { font-size: clamp(2.35rem, 5vw, 4.2rem); }
     .execution-copy p { margin: 22px 0 0; color: var(--ink); }
     .course-statement { font-family: var(--serif); font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 400; line-height: 1.28; }
-    .execution-copy .course-cta { margin-top: 30px; }
+    .execution-copy .course-actions { margin-top: 30px; }
     .execution-photo { aspect-ratio: 4 / 3; min-height: 0; overflow: hidden; margin: 34px 0 0; border-radius: 20px; background: var(--hairline); box-shadow: var(--shadow); }
     .execution-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
     .culture-story { margin: 0; }
@@ -348,8 +348,9 @@
     .site-footer .footer-instagram:hover, .site-footer .footer-instagram:focus-visible { color: var(--gold); }
 
     @media (max-width: 560px) {
-      .course-cta { width: 100%; padding-inline: 12px; font-size: clamp(.48rem, 2.2vw, .68rem); letter-spacing: -.025em; }
-      .course-cta em { font-size: 1.02em; }
+      .course-actions { width: 100%; }
+      .course-cta { width: 100%; padding-inline: 16px; font-size: .76rem; }
+      .course-actions .button-outline { padding-inline: 14px; font-size: clamp(.68rem, 3.1vw, .76rem); }
     }
 
     @media (min-width: 720px) {
@@ -383,7 +384,7 @@
       .scroll-hint { left: 76%; }
       .wbc { padding-block: 112px; }
       .wbc-card { grid-template-columns: minmax(0, 580px) minmax(300px, 420px); padding: 62px; border-radius: 32px; }
-      .wbc-waitlist { width: max-content; height: auto; aspect-ratio: auto; }
+      .wbc-waitlist { width: max-content; height: auto; justify-self: center; padding-inline: 30px; aspect-ratio: auto; }
       .proof-card { min-height: 126px; padding: 20px 18px 18px; }
       .proof-card strong { font-size: clamp(2.4rem, 3.7vw, 3.6rem); }
       .section-heading { grid-template-columns: 1.15fr .85fr; align-items: end; }
@@ -463,9 +464,9 @@
           <p class="hero-copy">The solution to “having it all” isn’t doing more. It’s learning what to <em class="body-emphasis">push forward,</em> what to <em class="body-emphasis">pull back,</em> and what to <em class="body-emphasis">maintain.</em></p>
           <p class="hero-copy">Because in this day and age, <em class="body-emphasis">who has time to do more?</em></p>
         </div>
-        <div class="hero-actions">
-          <a class="button button-solid course-cta" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Get access to my FREE course,&nbsp;<em>Strength to Lighten Your Life</em></a>
-          <a class="button button-outline" href="#wbc">The Women’s Barbell Club</a>
+        <div class="hero-actions course-actions">
+          <a class="button button-solid course-cta" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Join the free course waitlist</a>
+          <a class="button button-outline" href="https://www.thewomensbarbell.club/wbc-waitlist">Join the Women’s Barbell Club waitlist</a>
         </div>
       </div>
       <span class="scroll-hint" aria-hidden="true">SCROLL</span>
@@ -508,11 +509,10 @@
           <p class="wbc-body">I founded The Women’s Barbell Club to bring my Strength to Lighten Your Life approach into a community where women can build strength, understand their training, and stay supported as life changes.</p>
           <p class="wbc-body"><a class="wbc-inline-link" href="https://www.thewomensbarbell.club/">The Women’s Barbell Club</a> is <em class="body-emphasis-on-dark">more than women lifting.</em></p>
           <p class="wbc-body">It is a hybrid online and in-person community bringing together efficient strength technique classes, programs, workout classes, lifting events, meal prep, recovery elements, retreats, and the sisterhood that helps you carry the load of life, so that you can <em class="body-emphasis-on-dark">do less.</em></p>
+          <p class="wbc-body"><a class="wbc-inline-link" href="/program.html">From Bodyweight to Barbells</a> is a signature program of The Women’s Barbell Club, created to help women become confident barbell lifters.</p>
         </div>
         <a class="wbc-waitlist" href="https://www.thewomensbarbell.club/wbc-waitlist" aria-label="Join The Women’s Barbell Club waitlist">
-          <span>JOIN THE</span>
-          <strong>WAITLIST</strong>
-          <small>THE WOMEN’S BARBELL CLUB ↗</small>
+          <span>JOIN THE WOMEN’S BARBELL CLUB WAITLIST</span>
         </a>
       </div>
     </section>
@@ -609,7 +609,10 @@
             </div>
           </article>
         </div>
-        <a class="button button-solid course-cta about-course-action" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Get access to my FREE course,&nbsp;<em>Strength to Lighten Your Life</em></a>
+        <div class="course-actions about-course-action">
+          <a class="button button-solid course-cta" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Join the free course waitlist</a>
+          <a class="button button-outline" href="https://www.thewomensbarbell.club/wbc-waitlist">Join the Women’s Barbell Club waitlist</a>
+        </div>
       </div>
     </section>
 
@@ -643,15 +646,21 @@
               <h3>Strength to <em class="accent">Lighten Your Life.</em></h3>
               <p class="course-statement"><a class="program-link" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Strength to Lighten Your Life</a> teaches you how to pick your health and wellness goals, understand why you’re picking them, what typically holds women back from achieving them, and how you can achieve your goals working with your values, culture and priorities.</p>
               <p class="course-statement">In it, you’ll also understand why I believe that <em class="about-thread">strength training is a powerful anchor of life,</em> why I created <a class="program-link" href="https://www.thewomensbarbell.club/">The Women’s Barbell Club</a> and how its presence can benefit you.</p>
-              <a class="button button-solid course-cta" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Get access to my FREE course,&nbsp;<em>Strength to Lighten Your Life</em></a>
+              <div class="course-actions">
+                <a class="button button-solid course-cta" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Join the free course waitlist</a>
+                <a class="button button-outline" href="https://www.thewomensbarbell.club/wbc-waitlist">Join the Women’s Barbell Club waitlist</a>
+              </div>
             </div>
             <figure class="execution-photo"><img src="assets/foundations.jpg" alt="Salwa Qadir and her daughter exercising together on the ground" loading="lazy"></figure>
           </div>
         </div>
 
         <div class="approach-copy approach-close">
-          <p>I have spent <strong class="about-experience-proof">over 12 years</strong> and <strong class="about-experience-proof">more than 13,000 hours</strong> coaching women on how to balance life through strength. Through those hours and my own full and challenging journey, I’ve learnt that <em class="about-thread">there is a way for women to do all of this.</em></p>
-          <a class="button button-solid course-cta approach-action" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Get access to my FREE course,&nbsp;<em>Strength to Lighten Your Life</em></a>
+          <p>I have spent <strong class="about-experience-proof">over 12 years</strong> and <strong class="about-experience-proof">more than 13,000 hours</strong> coaching women on how to balance life through strength. Through those hours and my own full and challenging journey, I’ve learnt that <em class="about-thread">there is a way for women to “do it all.”</em></p>
+          <div class="course-actions approach-action">
+            <a class="button button-solid course-cta" href="https://www.thewomensbarbell.club/strength-to-lighten-your-life">Join the free course waitlist</a>
+            <a class="button button-outline" href="https://www.thewomensbarbell.club/wbc-waitlist">Join the Women’s Barbell Club waitlist</a>
+          </div>
         </div>
       </div>
     </section>
@@ -663,10 +672,10 @@
           <p>These women started in different places: recovering from pain or surgery, navigating significant life changes, or moving beyond years of starting and stopping. Their goals, values, and priorities were different. What connects them is that they built strength while working with the lives they were already living. That progress showed up both in their training and in daily life. In their own words.</p>
         </div>
         <div class="stories-grid">
-          <article class="story"><span class="story-outcome">Strength after major surgery</span><span class="quote-mark" aria-hidden="true">“</span><p>After two C-sections and major abdominal surgery, I’d lost all my core strength. Within six months I was strength training, going on vacation and doing <em>hard things</em>, keeping up with my kids, even training while fasting through Ramadan. She knew how I ate as a South Asian woman and coached me around my real life. It was her warmth and encouragement that changed my life for the better.</p><footer><strong>Anam S.</strong><span>Client, 6 years</span></footer></article>
-          <article class="story"><span class="story-outcome">From bodyweight squat to a 125 lb barbell</span><span class="quote-mark" aria-hidden="true">“</span><p>I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell, both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a movement specialist, and an extraordinary coach.</p><footer><strong>Maryam H.</strong><span>Client, 6 years</span></footer></article>
-          <article class="story"><span class="story-outcome">A plan that moves with real life</span><span class="quote-mark" aria-hidden="true">“</span><p>I’d never been under a bar in over a decade of training with other trainers. Salwa moulds the entire plan around whatever is happening in your life. You never feel like you’re failing; you always feel on track. She’s a life coach, trainer, and guide, not just the hour you see her at the gym.</p><footer><strong>Mehwish J.</strong><span>Client, 5 years</span></footer></article>
-          <article class="story"><span class="story-outcome">Rebuilding strength after injury</span><span class="quote-mark" aria-hidden="true">“</span><p>After a fall left me with a compression fracture, I thought I’d have to live with the limits. She built a progressive program with my physio and understood my body mechanics exceptionally well. It has literally been life-changing. I can resume and enjoy so many of the daily activities I couldn’t after the accident.</p><footer><strong>Dr. Linda Deppisch</strong><span>Client, 7 years</span></footer></article>
+          <article class="story"><span class="story-outcome">Strength after major surgery</span><span class="quote-mark" aria-hidden="true">“</span><p>After two C-sections and major abdominal surgery, I’d lost all my core strength. Within six months I was strength training, going on vacation and doing <em>hard things</em>, keeping up with my kids, even training while fasting through Ramadan. She knew how I ate as a South Asian woman and coached me around my real life. It was her warmth and encouragement that changed my life for the better.</p><footer><strong>Anam S.</strong><span>Current client, 6+ years</span></footer></article>
+          <article class="story"><span class="story-outcome">From bodyweight squat to a 125 lb barbell</span><span class="quote-mark" aria-hidden="true">“</span><p>I went from not being able to do a proper bodyweight squat to squatting a 125 lb barbell, both a physical and a highly emotional victory. From the time I started, I lost 30 pounds and went down almost three dress sizes. But more than that, I signed up for a trainer and got a world-class mentor, a movement specialist, and an extraordinary coach.</p><footer><strong>Maryam H.</strong><span>Current client, 6+ years</span></footer></article>
+          <article class="story"><span class="story-outcome">A plan that moves with real life</span><span class="quote-mark" aria-hidden="true">“</span><p>I’d never been under a bar in over a decade of training with other trainers. Salwa moulds the entire plan around whatever is happening in your life. You never feel like you’re failing; you always feel on track. She’s a life coach, trainer, and guide, not just the hour you see her at the gym.</p><footer><strong>Mehwish J.</strong><span>Current client, 5+ years</span></footer></article>
+          <article class="story"><span class="story-outcome">Rebuilding strength after injury</span><span class="quote-mark" aria-hidden="true">“</span><p>After a fall left me with a compression fracture, I thought I’d have to live with the limits. She built a progressive program with my physio and understood my body mechanics exceptionally well. It has literally been life-changing. I can resume and enjoy so many of the daily activities I couldn’t after the accident.</p><footer><strong>Dr. Linda Deppisch</strong><span>Current client, 7+ years</span></footer></article>
         </div>
       </div>
     </section>
@@ -674,8 +683,8 @@
     <section class="section services-invite" id="services" aria-labelledby="services-heading">
       <div class="shell services-invite-inner">
         <div>
-          <h2 id="services-heading">Get stronger for what matters to you.</h2>
-          <p>My work takes different forms, but the starting point is always the woman in front of me. Whether you are here to get stronger, build your fitness career, bring meaningful education to a group, or explore a collaboration, we begin with what matters to you.</p>
+          <h2 id="services-heading">Work with me beyond WBC.</h2>
+          <p>Beyond The Women’s Barbell Club, I offer fitness business mentorship, workshops and speaking, and values-aligned brand and media partnerships.</p>
         </div>
         <a class="button" href="services.html">Explore Services</a>
       </div>

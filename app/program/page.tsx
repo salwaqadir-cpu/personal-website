@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function ProgramPage() {
-  redirect("/services.html#coaching-options");
+  redirect("/program.html");
 }
