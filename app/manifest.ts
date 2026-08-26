@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Salwa Qadir | Women’s Strength Coach",
     short_name: "Salwa Qadir",
     description:
-      "Women’s strength coaching built around the Train With Efficiency approach.",
+      "Women’s strength coaching built around Strength to Lighten Your Life.",
     start_url: "/",
     display: "standalone",
     background_color: "#fbfcf9",

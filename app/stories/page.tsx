@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function StoriesPage() {
-  redirect("/stories.html");
+  redirect("/index.html#stories");
 }

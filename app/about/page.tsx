@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function AboutPage() {
-  redirect("/about.html");
+  redirect("/index.html#about");
 }
