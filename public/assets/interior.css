@@ -250,9 +250,11 @@ h1, h2, h3 { margin: 0; color: var(--green); font-family: var(--serif); font-wei
 .credential-photo { height: 430px; margin-top: 30px; overflow: hidden; border-radius: 22px; box-shadow: var(--shadow); }
 .credential-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
 .credential-list { border-top: 1px solid var(--hairline); }
-.credential-item { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--hairline); }
-.credential-item span { color: var(--muted); font-size: .68rem; letter-spacing: .1em; }
-.credential-item p { margin: 0; color: var(--green); font-weight: 600; }
+.credential-item { display: grid; gap: 5px; padding: 20px 0; border-bottom: 1px solid var(--hairline); }
+.credential-item strong { color: var(--green); font-size: .7rem; letter-spacing: .1em; line-height: 1.35; text-transform: uppercase; }
+.credential-item p { margin: 0; color: var(--muted); font-size: .86rem; font-weight: 500; line-height: 1.5; }
+.credential-proof-link { color: inherit; text-decoration: underline; text-decoration-color: rgba(124, 92, 191, .55); text-decoration-thickness: 1px; text-underline-offset: .2em; transition: color .2s ease, text-decoration-color .2s ease; }
+.credential-proof-link:hover, .credential-proof-link:focus-visible { color: var(--lavender-deep); text-decoration-color: currentColor; }
 .quote-band { padding: clamp(86px, 10vw, 130px) var(--gutter); color: var(--green); background: var(--gold); text-align: center; }
 .quote-band p { width: min(100%, 1100px); margin: 0 auto; font-family: var(--serif); font-size: clamp(2.5rem, 6.5vw, 5.4rem); line-height: .98; letter-spacing: -.035em; }
 .quote-band em { color: var(--lavender-deep); font-weight: 400; }
