@@ -230,9 +230,13 @@
     .credibility-photo { height: 420px; overflow: hidden; border-radius: 22px; background: var(--hairline); box-shadow: var(--shadow); }
     .credibility-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
     .home-credential-list { border-top: 1px solid rgba(23, 57, 47, .14); }
-    .home-credential-item { display: grid; grid-template-columns: 16px 1fr; gap: 14px; align-items: center; padding: 17px 0; border-bottom: 1px solid rgba(23, 57, 47, .14); }
-    .home-credential-item span { width: 8px; height: 8px; border-radius: 50%; background: var(--lavender-deep); box-shadow: 0 0 0 4px rgba(124, 92, 191, .12); }
-    .home-credential-item p { margin: 0; color: var(--green); font-size: .88rem; font-weight: 600; }
+    .home-credential-item { display: grid; grid-template-columns: 16px minmax(0, 1fr); gap: 14px; align-items: start; padding: 20px 0; border-bottom: 1px solid rgba(23, 57, 47, .14); }
+    .home-credential-item > span { width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; background: var(--lavender-deep); box-shadow: 0 0 0 4px rgba(124, 92, 191, .12); }
+    .home-credential-copy { display: grid; gap: 5px; }
+    .home-credential-copy strong { color: var(--green); font-size: .7rem; letter-spacing: .1em; line-height: 1.35; text-transform: uppercase; }
+    .home-credential-copy p { margin: 0; color: var(--muted); font-size: .86rem; font-weight: 500; line-height: 1.5; }
+    .credential-proof-link { color: inherit; text-decoration: underline; text-decoration-color: rgba(124, 92, 191, .55); text-decoration-thickness: 1px; text-underline-offset: .2em; transition: color .2s ease, text-decoration-color .2s ease; }
+    .credential-proof-link:hover, .credential-proof-link:focus-visible { color: var(--lavender-deep); text-decoration-color: currentColor; }
 
     /* Full founder story, broken into photographed chapters. */
     .home-about { background: var(--paper); }
@@ -487,12 +491,11 @@
         <div class="credibility-detail">
           <div class="credibility-photo"><img src="assets/experience.jpg" alt="Salwa Qadir in a professional portrait" loading="lazy"></div>
           <div class="home-credential-list" aria-label="Experience and credentials">
-            <div class="home-credential-item"><span aria-hidden="true"></span><p>Multiple awards + accolades at Canada’s largest fitness company</p></div>
-            <div class="home-credential-item"><span aria-hidden="true"></span><p>Fitness educator + workshop facilitator + resource developer for personal trainers</p></div>
-            <div class="home-credential-item"><span aria-hidden="true"></span><p>Advanced Fascial Stretch Therapy, Level 3</p></div>
-            <div class="home-credential-item"><span aria-hidden="true"></span><p>Exercise Therapy + Nutrition Coaching</p></div>
-            <div class="home-credential-item"><span aria-hidden="true"></span><p>Barbell Strength + Hypertrophy Training</p></div>
-            <div class="home-credential-item"><span aria-hidden="true"></span><p>Competitive Powerlifter · Powerlifting Coach · Provincial Referee</p></div>
+            <div class="home-credential-item"><span aria-hidden="true"></span><div class="home-credential-copy"><strong>Teaching the Industry</strong><p>1 of 5 company-wide education specialists at <a class="credential-proof-link" href="https://blog.goodlifefitness.com/article/exercising-safely-during-ramadan" target="_blank" rel="noopener noreferrer" aria-label="Read Salwa Qadir’s GoodLife Fitness article about exercising safely during Ramadan">GoodLife Fitness</a> · Women’s trainer development across 14 locations · Resources and workshops for 150+</p></div></div>
+            <div class="home-credential-item"><span aria-hidden="true"></span><div class="home-credential-copy"><strong><a class="credential-proof-link" href="https://islamichorizons.net/in-conversation-with-muslima-trainers/" target="_blank" rel="noopener noreferrer" aria-label="Read Salwa Qadir’s Islamic Horizons profile">Shaping Women’s Fitness</a></strong><p>Expert Panel · <a class="credential-proof-link" href="https://www.canfitpro.com/blog/working-out-while-fasting-for-ramadan-salwa-qadir/" target="_blank" rel="noopener noreferrer" aria-label="Read Salwa Qadir’s canfitpro article about working out while fasting for Ramadan">Ramadan training SME</a> · DEI and women’s fitness-space advisory</p></div></div>
+            <div class="home-credential-item"><span aria-hidden="true"></span><div class="home-credential-copy"><strong>Coaching with Depth</strong><p>Advanced Fascial Stretch Therapy Level 3 · Exercise Therapy · Nutrition · Barbell Strength and Hypertrophy</p></div></div>
+            <div class="home-credential-item"><span aria-hidden="true"></span><div class="home-credential-copy"><strong>Living the Practice</strong><p><a class="credential-proof-link" href="https://openpowerlifting.org/u/salwaqadir" target="_blank" rel="noopener noreferrer" aria-label="View Salwa Qadir’s verified OpenPowerlifting competition record">Competitive Powerlifter</a> · Coach · Ontario Provincial Referee</p></div></div>
+            <div class="home-credential-item"><span aria-hidden="true"></span><div class="home-credential-copy"><strong>Recognized for Impact</strong><p>Impact and Influencer Awards · Top 50 Personal Trainers · Top 10 Small Group Trainers</p></div></div>
           </div>
         </div>
       </div>
