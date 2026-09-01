@@ -32,20 +32,23 @@ test("serves the two-page narrative and services experience", async () => {
   assert.match(homepage, /rel="canonical" href="https:\/\/salwaqadir\.com\/"/);
   assert.match(homepage, /class="hero-media"/);
   assert.match(homepage, /class="menu-panel"/);
-  assert.match(homepage, /Strength to <em class="accent">Lighten Your Life\.<\/em>/);
+  assert.match(homepage, /Lighten <em class="accent">Your Life\.<\/em>/);
+  assert.doesNotMatch(homepage, /Strength to Lighten Your Life|Strength to <em class="accent">Lighten Your Life/);
   assert.doesNotMatch(homepage, /Train With Efficiency|Train with efficiency|Train with Efficiency/);
-  assert.match(homepage, /While the world is asking women to do more/);
-  assert.match(homepage, /Not every chapter of life can hold the same amount/);
-  assert.match(homepage, /choose your health and wellness goals/);
-  assert.match(homepage, /class="program-link" href="https:\/\/www\.thewomensbarbell\.club\/strength-to-lighten-your-life">Strength to Lighten Your Life<\/a>/);
-  assert.match(homepage, /recognize what typically holds women back from achieving them and <em class="body-emphasis">how to achieve them\.<\/em>/);
+  assert.match(homepage, /While the world is asking you to do more, let me show you how to/);
+  assert.match(homepage, /do less, so that you can do more of what matters to you/);
+  assert.match(homepage, /Not every chapter of your life can hold the same amount/);
+  assert.match(homepage, /choose your fitness goals/);
+  assert.match(homepage, /class="program-link" href="https:\/\/www\.thewomensbarbell\.club\/strength-to-lighten-your-life">Lighten Your Life<\/a>/);
+  assert.match(homepage, /<em class="body-emphasis">overcome what holds you back from achieving them\.<\/em>/);
   assert.match(homepage, /The solution to “having it all” isn’t doing more/);
-  assert.match(homepage, /what to <em class="body-emphasis">push forward,<\/em> what to <em class="body-emphasis">pull back,<\/em> and what to <em class="body-emphasis">maintain\.<\/em>/);
+  assert.match(homepage, /create balance between <em class="body-emphasis">your fitness, relationships, work, and the rest of your life\.<\/em>/);
+  assert.match(homepage, /adjust that balance and keep moving forward as life changes/);
   assert.doesNotMatch(homepage, /bodyweight squat or a barbell squat/);
   assert.equal(homepage.match(/https:\/\/www\.thewomensbarbell\.club\/strength-to-lighten-your-life/g)?.length, 6);
-  assert.equal(homepage.match(/>Join the free course waitlist<\/a>/g)?.length, 4);
+  assert.equal(homepage.match(/class="button button-solid course-cta" href="https:\/\/www\.thewomensbarbell\.club\/strength-to-lighten-your-life">Lighten Your Life<\/a>/g)?.length, 4);
   assert.equal(homepage.match(/>Join the Women’s Barbell Club waitlist<\/a>/g)?.length, 4);
-  assert.match(homepage, /class="hero-actions course-actions">[\s\S]*Join the free course waitlist[\s\S]*Join the Women’s Barbell Club waitlist/);
+  assert.match(homepage, /class="hero-actions course-actions">[\s\S]*>Lighten Your Life<\/a>[\s\S]*Join the Women’s Barbell Club waitlist/);
   assert.doesNotMatch(homepage, /<p class="eyebrow">(?:Experience \+ Credentials|About Me|Client Stories|Services)<\/p>/);
   assert.match(homepage, /<strong>13,000\+<\/strong><span>Hours coaching women<\/span>/);
   assert.match(homepage, /<strong>100s<\/strong><span>Of women coached<\/span>/);
@@ -74,14 +77,14 @@ test("serves the two-page narrative and services experience", async () => {
   assert.match(homepage, /From Bodyweight to Barbells<\/a> is a signature program of The Women’s Barbell Club/);
   assert.match(homepage, /id="about"/);
   assert.match(homepage, /id="approach"/);
-  assert.match(homepage, /Strength to Lighten Your Life<\/a> teaches you how to pick your health and wellness goals/);
+  assert.match(homepage, /Lighten Your Life<\/a> teaches you how to pick your health and wellness goals/);
   assert.match(homepage, /how you can achieve your goals working with your values, culture and priorities/);
   assert.match(homepage, /why I believe that <em class="about-thread">strength training is a powerful anchor of life,<\/em>/);
   assert.doesNotMatch(homepage, /“strength training is a powerful anchor of life,”/);
   assert.match(homepage, /why I created <a class="program-link" href="https:\/\/www\.thewomensbarbell\.club\/">The Women’s Barbell Club<\/a> and how its presence can benefit you\./);
   assert.doesNotMatch(homepage, /class="pillars-grid"|class="pillar-card"|Intentional Movement \+ Training Literacy|Recovery Intelligence \+ Visible Progress|Human Accountability \+ Supported Independence/);
   assert.match(homepage, /Minimum Effective Dose/);
-  assert.match(homepage, /Strength to Lighten Your Life<\/a> teaches you how to pick your health and wellness goals[\s\S]*how its presence can benefit you[\s\S]*class="execution-photo"/);
+  assert.match(homepage, /Lighten Your Life<\/a> teaches you how to pick your health and wellness goals[\s\S]*how its presence can benefit you[\s\S]*class="execution-photo"/);
   assert.match(homepage, /assets\/foundations\.jpg/);
   assert.match(homepage, /Your values, culture and priorities matter\./);
   assert.match(homepage, /there was always someone out there to remind me that’s what I should be chasing\./);
@@ -124,7 +127,7 @@ test("serves the two-page narrative and services experience", async () => {
   assert.equal(homepage.match(/class="story"/g)?.length, 4);
   assert.equal(homepage.match(/Current client, [567]\+ years/g)?.length, 4);
   assert.doesNotMatch(homepage, />Client, [567] years</);
-  assert.match(homepage, /property="og:image"/);
+  assert.match(homepage, /property="og:image" content="https:\/\/salwaqadir\.com\/og-lighten-your-life\.jpg"/);
 
   const sectionOrder = [
     'id="hero"', 'id="credibility"', 'id="wbc"', 'id="about"',
@@ -164,7 +167,8 @@ test("serves the two-page narrative and services experience", async () => {
   assert.match(servicesPage, /Workshops \+ Speaking/);
   assert.match(servicesPage, /Brand \+ Media Partnerships/);
   assert.doesNotMatch(servicesPage, /<p class="eyebrow">(?:Services|Contact)<\/p>/);
-  assert.match(servicesPage, /Strength to Lighten Your Life/);
+  assert.match(servicesPage, /Lighten Your Life/);
+  assert.doesNotMatch(servicesPage, /Strength to Lighten Your Life/);
   assert.doesNotMatch(servicesPage, /Train With Efficiency|Train with efficiency|Train with Efficiency/);
   assert.match(servicesPage, /The Women’s<br><span class="wbc-title-accent">Barbell Club<\/span>/);
   assert.match(servicesPage, /Build strength\.<\/em><em>Fuel your body\.<\/em><em>Navigate life together\./);

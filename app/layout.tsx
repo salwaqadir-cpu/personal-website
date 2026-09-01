@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${basePath}${SOCIAL_IMAGE}`,
-        width: 1730,
-        height: 909,
-        alt: "Salwa Qadir: Strength to Lighten Your Life.",
+        width: 1200,
+        height: 630,
+        alt: "Salwa Qadir: Lighten Your Life.",
       },
     ],
     type: "website",
